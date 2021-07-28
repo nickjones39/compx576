@@ -40,6 +40,11 @@ const Asset = mongoose.model('Asset', {
         type: Number,
         required: true,
         trim: true
+    },
+    lease: {
+        type: mongoose.Schema.Types.ObjectId,
+        //required: true,
+        ref: 'User'
     }
 })
 
