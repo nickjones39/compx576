@@ -49,7 +49,10 @@ router.patch('/assets/:id', async (req, res) => {
     }
 
     try {
-        const asset = await Asset.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+        const asset = await Asset.findById(req.params.id)
+
+        updates.forEach((update) => asset[update] = req.body[update])
+        await asset.save()
 
         if(!asset) {
             return res.status(404).send()
