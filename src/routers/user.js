@@ -4,33 +4,12 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
-router.post('/users', (req, res) => {
-    
-    
-
-    const user = new User(req.body)
-
-        // user.find({}, function(err, result) {
-        //   if (err) {
-        //     console.log(err)
-        //   } else {
-        //     //res.json(result);
-        //     res.status(201).json(result)
-        //   }
-        // });
-
-    user.find({}).then(() => {
-        res.status(201).send(user)
+router.get('/users', (req, res) => {
+    User.find({}).then((users) => {
+        res.send(users)
     }).catch((e) => {
         res.status(400).send(e)
     })
-
-    // user.save().then(() => {
-    //     res.status(201).send(user)
-    // }).catch((e) => {
-    //     res.status(400).send(e)
-    // })
-
 })
 
 
