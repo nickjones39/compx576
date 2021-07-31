@@ -4,8 +4,8 @@ const credentials = new Array ()
 
 const loginForm = document.getElementById('loginForm')
 
-credentials[0] = document.querySelector('email')
-credentials[1] = document.querySelector('password')
+credentials[0] = document.getElementById('email')
+credentials[1] = document.getElementById('password')
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
