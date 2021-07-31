@@ -4,8 +4,10 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
-router.get('/users', (req, res) => {
+router.post('/users', (req, res) => {
     
+    
+
     const user = new User(req.body)
 
         // user.find({}, function(err, result) {
@@ -17,7 +19,7 @@ router.get('/users', (req, res) => {
         //   }
         // });
 
-    user.find().then(() => {
+    user.save().then(() => {
         res.status(201).send(user)
     }).catch((e) => {
         res.status(400).send(e)
