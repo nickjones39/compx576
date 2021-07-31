@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', (e) => {
     const email = credentials[0].value
     const password = credentials[1].value
 
-    postData('https://example.com/answer', { email: email, password: password })
+    postData('https://compx576.herokuapp.com/users/login', { email: email, password: password })
     .then(data => {
         if (data.error) {
             console.log(data.error)
