@@ -22,6 +22,13 @@ app.get('', (req, res) => {
     })
 })
 
+app.get('/success', (req, res) => {
+    res.render('index', {
+        title: 'Success!',
+        name: 'Nick Jones'
+    })
+})
+
 app.use(express.json())
 app.use(userRouter)
 app.use(assetRouter)
