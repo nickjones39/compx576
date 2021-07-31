@@ -5,13 +5,16 @@ const router = new express.Router()
 
 
 router.get('/users', (req, res) => {
+    
     const user = new User(req.body)
 
-    user.save().then(() => {
-        res.status(201).send(user)
-    }).catch((e) => {
-        res.status(400).send(e)
-    })
+    await user.find();
+    // user.save().then(() => {
+    //     res.status(201).send(user)
+    // }).catch((e) => {
+    //     res.status(400).send(e)
+    // })
+
 })
 
 
