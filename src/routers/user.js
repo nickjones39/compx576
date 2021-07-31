@@ -19,7 +19,7 @@ router.post('/users', (req, res) => {
         //   }
         // });
 
-    user.save().then(() => {
+    user.find({}).then(() => {
         res.status(201).send(user)
     }).catch((e) => {
         res.status(400).send(e)
