@@ -16,7 +16,10 @@ app.set('view engine', 'hbs')
 // })
 
 app.get('', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'Asset Inventory Management System',
+        name: 'Nick Jones'
+    })
 })
 
 app.use(express.json())

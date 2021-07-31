@@ -2,12 +2,17 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 
 const Asset = mongoose.model('Asset', {
-    name: {
+    brand: {
         type: String,
         required: true,
         trim: true
     },
-    assetType: {
+    product: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    productType: {
         type: String,
         required: true,
         trim: true
@@ -25,11 +30,6 @@ const Asset = mongoose.model('Asset', {
     status: {
         type: Number,
         required: true
-    },
-    assetId: {
-        type: String,
-        required: true,
-        trim: true
     },
     description: {
         type: String,
