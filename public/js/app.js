@@ -4,10 +4,10 @@ const loginForm = document.getElementById('loginForm')
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const email =  document.getElementById('email').nodeValue
-    const password = document.getElementById('password').nodeValue
+    const email =  document.getElementById('email').value
+    const password = document.getElementById('password').value
 
-    postData('https://compx576.herokuapp.com/users/login', { email: email, password: password })
+    postData('https://compx576.herokuapp.com/users/login', { email: document.getElementById('email').value, password: document.getElementById('password').value })
       .then(data => {
           window.location.replace("https://compx576.herokuapp.com/success")
       }).catch(err => {
