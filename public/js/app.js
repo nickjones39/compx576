@@ -16,9 +16,9 @@ loginForm.addEventListener('submit', (e) => {
     postData('https://compx576.herokuapp.com/users/login', { email: email, password: password })
     .then(data => {
         if (data.error) {
-            console.log(data.error)
+            window.location.replace("https://compx576.herokuapp.com/fail")
         } else {
-            window.location.replace("https://compx576.herokuapp.com/success");
+            window.location.replace("https://compx576.herokuapp.com/success")
         }
     });
 

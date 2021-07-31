@@ -23,9 +23,16 @@ app.get('', (req, res) => {
 })
 
 app.get('/success', (req, res) => {
-    res.render('index', {
+    res.render('success', {
         title: 'Success!',
         name: 'Nick Jones'
+    })
+})
+
+app.get('/fail', (req, res) => {
+    res.render('fail', {
+        title: 'Fail',
+        name: 'Please check credentials, and try again'
     })
 })
 
