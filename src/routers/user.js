@@ -17,7 +17,7 @@ router.get('/users', (req, res) => {
         //   }
         // });
 
-    user.find({}).then(() => {
+    user.find().then(() => {
         res.status(201).send(user)
     }).catch((e) => {
         res.status(400).send(e)
