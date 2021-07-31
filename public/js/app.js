@@ -4,7 +4,7 @@ const loginForm = document.getElementById('loginForm')
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    postData('https://compx576.herokuapp.com/users/login', { email: document.getElementById('email'), password: document.getElementById('password') })
+    postData('https://compx576.herokuapp.com/users/login', { email: document.getElementById('email').nodeValue, password: document.getElementById('password').nodeValue })
       .then(data => {
           window.location.replace("https://compx576.herokuapp.com/success")
       }).catch(err => {
