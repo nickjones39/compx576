@@ -4,11 +4,11 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
-router.get('/users', (req, res) => {
+router.get('/all-users', (req, res) => {
     User.find({}).then((users) => {
         res.send(users)
     }).catch((e) => {
-        res.status(400).send(e)
+        res.status(500).send(e)
     })
 })
 

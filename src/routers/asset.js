@@ -35,6 +35,13 @@ router.get('/assets', auth, async (req, res) => {
     }
 })
 
+router.get('/all-assets', (req, res) => {
+    Asset.find({}).then((assets) => {
+        res.send(assets)
+    }).catch((e) => {
+        res.status(400).send(e)
+    })
+})
 // router.get('/assets/:id', async (req, res) => {
 //     const _id = req.params.id
 
