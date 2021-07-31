@@ -4,7 +4,7 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
-router.post('/users', (req, res) => {
+router.get('/users', (req, res) => {
     const user = new User(req.body)
 
     user.save().then(() => {
