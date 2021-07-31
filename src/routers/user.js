@@ -8,19 +8,20 @@ router.get('/users', (req, res) => {
     
     const user = new User(req.body)
 
+        // user.find({}, function(err, result) {
+        //   if (err) {
+        //     console.log(err)
+        //   } else {
+        //     //res.json(result);
+        //     res.status(201).json(result)
+        //   }
+        // });
 
-    
-        user.find({}, function(err, result) {
-          if (err) {
-            console.log(err)
-          } else {
-            //res.json(result);
-            res.status(201).json(result)
-          }
-        });
-      
-
-    
+    user.find().then(() => {
+        res.status(201).send(user)
+    }).catch((e) => {
+        res.status(400).send(e)
+    })
 
     // user.save().then(() => {
     //     res.status(201).send(user)
