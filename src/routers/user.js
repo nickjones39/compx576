@@ -8,7 +8,8 @@ router.get('/users', (req, res) => {
     
     const user = new User(req.body)
 
-    await user.find();
+    //await user.find();
+    
     // user.save().then(() => {
     //     res.status(201).send(user)
     // }).catch((e) => {
