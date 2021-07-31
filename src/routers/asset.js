@@ -4,7 +4,7 @@ const auth = require('../middleware/auth')
 const router = new express.Router()
 
 
-router.post('/assets', auth, async (req, res) => {
+router.post('/assets', async (req, res) => { // auth
     //const asset = new Asset(req.body)
     const asset = new Asset({
         ...req.body,
@@ -19,7 +19,7 @@ router.post('/assets', auth, async (req, res) => {
     }
 })
 
-router.get('/assets', auth, async (req, res) => {
+router.get('/assets', async (req, res) => { // auth
     try {
         // !old! const assets = await Asset.find({})
 
@@ -58,7 +58,7 @@ router.get('/all-assets', (req, res) => {
 //     }
 // })
 
-router.get('/assets/:id', auth, async (req, res) => {
+router.get('/assets/:id', async (req, res) => { // auth
     const _id = req.params.id
 
     try {
@@ -101,7 +101,7 @@ router.get('/assets/:id', auth, async (req, res) => {
 // })
 
 
-router.patch('/assets/:id', auth, async (req, res) => {
+router.patch('/assets/:id', async (req, res) => { // auth
     const updates = Object.keys(req,body)
     const allowedUpdates = ['name', 'assetType', 'serialNumber', 'model', 'status', 'assetId', 'description', 'condition']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -146,7 +146,7 @@ router.patch('/assets/:id', auth, async (req, res) => {
 // })
 
 
-router.delete('/assets/:id', auth, async (req, res) => {
+router.delete('/assets/:id', async (req, res) => { // auth
     try {
         //const asset = await User.findByIdAndDelete(req.params.id)
 

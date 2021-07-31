@@ -36,7 +36,7 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.post('/users/logout', auth, async (req, res) => {
+router.post('/users/logout', async (req, res) => {  //auth
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
             return token.token !== req.token
@@ -49,7 +49,7 @@ router.post('/users/logout', auth, async (req, res) => {
     }
 })
 
-router.post('/users/logoutAll', auth, async (req, res) => {
+router.post('/users/logoutAll', async (req, res) => { // auth
     try {
         req.user.tokens = []
         await req.user.save()
@@ -60,7 +60,7 @@ router.post('/users/logoutAll', auth, async (req, res) => {
 })
 
 
-router.get('/users/me', auth, async (req, res) => {
+router.get('/users/me', async (req, res) => { // auth
     res.send(req.user)
 })
 
@@ -106,7 +106,7 @@ router.get('/users/:id', async (req, res) => {
 //     }
 // })
 
-router.patch('/users/update', auth, async (req, res) => {
+router.patch('/users/update', async (req, res) => { // auth
     const updates = Object.keys(req,body)
     const allowedUpdates = ['name', 'address', 'phone', 'email', 'password']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -138,7 +138,7 @@ router.patch('/users/update', auth, async (req, res) => {
 //     }
 // })
 
-router.delete('/users/delete', auth, async (req, res) => {
+router.delete('/users/delete', async (req, res) => { //auth
     try {
         await req.user.remove()
         res.send(req.user)
