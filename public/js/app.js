@@ -14,13 +14,11 @@ loginForm.addEventListener('submit', (e) => {
     const password = credentials[1].value
 
     postData('https://compx576.herokuapp.com/users/login', { email: email, password: password })
-    .then(data => {
-        if (data.error) {
-            window.location.replace("https://compx576.herokuapp.com/fail")
-        } else {
-            window.location.replace("https://compx576.herokuapp.com/success")
-        }
-    });
+      .then(data => {
+          window.location.replace("https://compx576.herokuapp.com/success")
+      }).catch(err => {
+          window.location.replace("https://compx576.herokuapp.com/fail")
+      })
 
     // fetch('https://compx576.herokuapp.com/users/login?email=' + email +'?password=' + password).then((response) => {
     //     method: "POST"
