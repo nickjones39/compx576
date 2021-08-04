@@ -4,7 +4,9 @@ const loginForm = document.getElementById('loginForm')
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    postData('https://compx576.herokuapp.com/users/login', { email: document.getElementById('email').value, password: document.getElementById('password').value })
+    postData('https://compx576.herokuapp.com/users/login', { 
+      email: document.getElementById('email').value, 
+      password: document.getElementById('password').value })
       .then(data => {
           window.location.replace("https://compx576.herokuapp.com/success")
       }).catch(err => {
@@ -25,7 +27,9 @@ async function postData(url = '', data = {}) {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      referrerPolicy: 'no-referrer', 
+      // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, 
+      // same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
     return response.json(); // parses JSON response into native JavaScript objects
