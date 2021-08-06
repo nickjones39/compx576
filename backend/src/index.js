@@ -8,33 +8,33 @@ const assetRouter = require('./routers/asset')
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
-app.set('view engine', 'hbs')
+//app.set('view engine', 'hbs')
 // app.use((req, res, next) => {
 //     res.status(503).send('Site currently down. Check back soon!')
 // })
 
-app.get('', (req, res) => {
-    res.render('index', {
-        title: 'Asset Inventory Management System',
-        name: 'Nick Jones'
-    })
-})
+// app.get('', (req, res) => {
+//     res.render('index', {
+//         title: 'Asset Inventory Management System',
+//         name: 'Nick Jones'
+//     })
+// })
 
-app.get('/success', (req, res) => {
-    res.render('success', {
-        title: 'Success!',
-        name: 'Nick Jones'
-    })
-})
+// app.get('/success', (req, res) => {
+//     res.render('success', {
+//         title: 'Success!',
+//         name: 'Nick Jones'
+//     })
+// })
 
-app.get('/fail', (req, res) => {
-    res.render('fail', {
-        title: 'Fail',
-        name: 'Please check credentials, and try again'
-    })
-})
+// app.get('/fail', (req, res) => {
+//     res.render('fail', {
+//         title: 'Fail',
+//         name: 'Please check credentials, and try again'
+//     })
+// })
 
 app.use(express.json())
 app.use(userRouter)
