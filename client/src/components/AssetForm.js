@@ -112,12 +112,52 @@ const AssetForm = ({
           </Form.Control>
         </Form.Group>
         <Form.Group>
+          <Form.Label>Serial Number</Form.Label>
+          <Form.Control
+            type='text'
+            name='serialNumber'
+            value={asset.serialNumber}
+            placeholder='Optional Serial Number'
+            onChange={onChange}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Model</Form.Label>
+          <Form.Control
+            type='text'
+            name='model'
+            value={asset.model}
+            placeholder='Optional Model'
+            onChange={onChange}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Status</Form.Label>
+          <Form.Control
+            type='number'
+            name='status'
+            value={asset.status}
+            placeholder='Status'
+            onChange={onChange}
+          />
+        </Form.Group>
+        <Form.Group>
           <Form.Label>Description</Form.Label>
           <Form.Control
             type='text'
             name='description'
             value={asset.description}
             placeholder='Asset Description'
+            onChange={onChange}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Condition</Form.Label>
+          <Form.Control
+            type='text'
+            name='condition'
+            value={asset.condition}
+            placeholder='Optional Asset Condition'
             onChange={onChange}
           />
         </Form.Group>
