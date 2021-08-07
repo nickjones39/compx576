@@ -82,16 +82,6 @@ const AssetForm = ({
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            type='text'
-            name='description'
-            value={asset.description}
-            placeholder='Asset Description'
-            onChange={onChange}
-          />
-        </Form.Group>
-        <Form.Group>
           <Form.Label>Category</Form.Label>
           <Form.Control
             as='select'
@@ -120,6 +110,16 @@ const AssetForm = ({
               </option>
             ))}
           </Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            type='text'
+            name='description'
+            value={asset.description}
+            placeholder='Asset Description'
+            onChange={onChange}
+          />
         </Form.Group>
         <Form.Group>
           <Button as='input' type='submit' value='Submit' />
