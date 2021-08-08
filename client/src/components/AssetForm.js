@@ -15,15 +15,22 @@ const AssetForm = ({
     assetToUpdate
       ? {
           name: assetToUpdate.name,
-          description: assetToUpdate.description,
           category: assetToUpdate.category._id ?? '5f8e782efd960400178547c8',
           location: assetToUpdate.location._id ?? '5fa027494b79a300171969a9',
+          serialNumber: assetToUpdate.serialNumber,
+          model: assetToUpdate.model,
+          description: assetToUpdate.description,
+          condition: assetToUpdate.condition,
         }
       : {
           name: '',
           description: '',
           category: '5f8e782efd960400178547c8', // hardcode a category id for assets with unassigned category
           location: '5fa027494b79a300171969a9', // hardcode a location id for assets with unassigned location
+          serialNumber: '',
+          model: '',
+          description: '',
+          condition: '',
         }
   );
 
