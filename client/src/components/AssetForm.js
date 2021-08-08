@@ -5,6 +5,7 @@ const AssetForm = ({
   create,
   categories,
   locations,
+  users,
   dispatch,
   addAsset,
   history,
