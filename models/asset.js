@@ -5,7 +5,9 @@ const assetSchema = new mongoose.Schema(
     name: { type: String, required: true },
     category: { type: mongoose.ObjectId, ref: 'Category' },
     location: { type: mongoose.ObjectId, ref: 'Location' },
+    assignedTo: { type: mongoose.ObjectId, ref: 'User' },
     serialNumber: { type: String, unique: true },
+    assetID: { type: String, unique: true },
     model: { type: String },
     description: { type: String },
     condition: { type: String}
