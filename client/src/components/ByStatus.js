@@ -25,7 +25,7 @@ const ByStatus = ({ assets, statuses, loading, error }) => {
                 </Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey={x._id}>
-                {assetsByLoc(assets, x).length === 0 ? (
+                {assetsBySta(assets, x).length === 0 ? (
                   <Card.Body>No Statuses found</Card.Body>
                 ) : (
                   <Card.Body>
