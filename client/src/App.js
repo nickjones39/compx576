@@ -20,7 +20,7 @@ import ManageAssets from './components/ManageAssets';
 import AssetForm from './components/AssetForm';
 import ManageCategories from './components/ManageCategories';
 import CategoryForm from './components/CategoryForm';
-import ManageStatuses from './components/ManageStatuses';
+import ManageStatus from './components/ManageStatus';
 import StatusForm from './components/StatusForm';
 import LoginForm from './components/LoginForm';
 import UserData from './components/UserData';
@@ -30,7 +30,7 @@ import UserForm from './components/UserForm';
 import {
   fetchAssets,
   fetchCategories,
-  fetchStatuses,
+  fetchStatus,
   refreshAfterError,
   fetchFilteredAssets,
   changeSearchTerm,
@@ -43,7 +43,7 @@ import {
   addCategory,
   updateCategory,
   deleteCategory,
-  fetchFilteredStatuses,
+  fetchFilteredStatus,
   changeStatusSearchTerm,
   addStatus,
   updateStatus,
@@ -63,7 +63,7 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, {
     assets: [],
     categories: [],
-    statuses: [],
+    status: [],
     loading: true,
     error: null,
     searchTerm: '',
@@ -73,7 +73,7 @@ const App = () => {
     categorySearchTerm: '',
     filteredCategories: [],
     statusSearchTerm: '',
-    filteredStatuses: [],
+    filteredStatus: [],
     token: localStorage.getItem('token'),
     loggedUserId: jwt.decode(localStorage.getItem('token'))?.id,
     username: jwt.decode(localStorage.getItem('token'))?.name,
@@ -87,7 +87,7 @@ const App = () => {
   useEffect(() => {
     fetchAssets(dispatch);
     fetchCategories(dispatch);
-    fetchStatuses(dispatch);
+    fetchStatus(dispatch);
   }, []);
 
   useEffect(() => {
@@ -99,7 +99,7 @@ const App = () => {
   }, [state.categorySearchTerm]);
 
   useEffect(() => {
-    fetchFilteredStatuses(dispatch, state.statusSearchTerm);
+    fetchFilteredStatus(dispatch, state.statusSearchTerm);
   }, [state.statusSearchTerm]);
 
   useEffect(() => {
@@ -156,7 +156,7 @@ const App = () => {
               <Tab eventKey='by-status' title='ByStatus'>
                 <ByStatus
                   assets={state.assets}
-                  statuses={state.statuses}
+                  status={state.status}
                   loading={state.loading}
                   error={state.error}
                 />
@@ -200,7 +200,7 @@ const App = () => {
                   {...props}
                   create={true}
                   categories={state.categories}
-                  statuses={state.statuses}
+                  status={state.status}
                   dispatch={dispatch}
                   addAsset={addAsset}
                 />
@@ -221,7 +221,7 @@ const App = () => {
                     (x) => x._id === props.match.params.id
                   )}
                   categories={state.categories}
-                  statuses={state.statuses}
+                  status={state.status}
                   dispatch={dispatch}
                   updateAsset={updateAsset}
                 />
@@ -284,10 +284,10 @@ const App = () => {
             }
           />
 
-          <Route path='/statuses'>
+          <Route path='/status'>
             {state.token ? (
-              <ManageStatuses
-                statuses={state.filteredStatuses}
+              <ManageStatus
+                status={state.filteredStatus}
                 loading={state.loading}
                 error={state.error}
                 dispatch={dispatch}
@@ -325,7 +325,7 @@ const App = () => {
                 <StatusForm
                   {...props}
                   create={false}
-                  statusToUpdate={state.statuses.find(
+                  statusToUpdate={state.status.find(
                     (x) => x._id === props.match.params.id
                   )}
                   dispatch={dispatch}

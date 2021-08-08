@@ -95,35 +95,35 @@ export const fetchFilteredCategories = async (dispatch, term) => {
   }
 };
 
-export const fetchStatuses = async (dispatch) => {
+export const fetchStatus = async (dispatch) => {
   try {
-    dispatch({ type: 'fetch-statuses-request', loading: true });
-    const { data } = await axios.get('/api/statuses');
-    console.log('in fetchStatuses - data.data is:', data.data);
+    dispatch({ type: 'fetch-status-request', loading: true });
+    const { data } = await axios.get('/api/status');
+    console.log('in fetchStatus - data.data is:', data.data);
     dispatch({
-      type: 'fetch-statuses-ok',
-      statuses: data.data,
+      type: 'fetch-status-ok',
+      status: data.data,
       loading: false,
     });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'fetch-statuses-fail', loading: false, error });
+    dispatch({ type: 'fetch-status-fail', loading: false, error });
   }
 };
 
-export const fetchFilteredStatuses = async (dispatch, term) => {
+export const fetchFilteredStatus = async (dispatch, term) => {
   try {
-    dispatch({ type: 'fetch-filtered-statuses-request', loading: true });
-    const { data } = await axios.get(`/api/statuses?search=${term}`);
-    console.log('in fetchFilteredStatuses - data.data is:', data.data);
+    dispatch({ type: 'fetch-filtered-status-request', loading: true });
+    const { data } = await axios.get(`/api/status?search=${term}`);
+    console.log('in fetchFilteredStatus - data.data is:', data.data);
     dispatch({
-      type: 'fetch-filtered-statuses-ok',
-      filteredStatuses: data.data,
+      type: 'fetch-filtered-status-ok',
+      filteredStatus: data.data,
       loading: false,
     });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'fetch-filtered-statuses-fail', loading: false, error });
+    dispatch({ type: 'fetch-filtered-status-fail', loading: false, error });
   }
 };
 
@@ -232,7 +232,7 @@ export const deleteCategory = async (dispatch, id) => {
 export const addStatus = async (dispatch, postData) => {
   try {
     dispatch({ type: 'add-status-request', loading: true });
-    const { data } = await axios.post('/api/statuses', postData);
+    const { data } = await axios.post('/api/status', postData);
     console.log('in addStatus - data.data is:', data.data);
     dispatch({
       type: 'add-status-ok',
@@ -248,8 +248,8 @@ export const addStatus = async (dispatch, postData) => {
 export const updateStatus = async (dispatch, id, postData) => {
   try {
     dispatch({ type: 'update-status-request', loading: true });
-    const { data } = await axios.patch(`/api/statuses/${id}`, postData);
-    console.log('in updateStatuses - data.data is:', data.data);
+    const { data } = await axios.patch(`/api/status/${id}`, postData);
+    console.log('in updateStatus - data.data is:', data.data);
     dispatch({
       type: 'update-status-ok',
       updatedStatus: data.data,
@@ -264,7 +264,7 @@ export const updateStatus = async (dispatch, id, postData) => {
 export const deleteStatus = async (dispatch, id) => {
   try {
     dispatch({ type: 'delete-status-request', loading: true });
-    await axios.delete(`/api/statuses/${id}`);
+    await axios.delete(`/api/status/${id}`);
     dispatch({ type: 'delete-status-ok', deletedId: id, loading: false });
   } catch (error) {
     console.log(error);

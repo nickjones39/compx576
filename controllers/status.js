@@ -12,11 +12,11 @@ exports.createStatus = async (req, res, next) => {
   }
 };
 
-exports.readStatuses = async (req, res, next) => {
+exports.readStatus = async (req, res, next) => {
   try {
     const searchQuery = defineSearchQuery(req);
-    const statuses = await Status.find(searchQuery).sort('name');
-    res.status(200).json({ data: statuses });
+    const status = await Status.find(searchQuery).sort('name');
+    res.status(200).json({ data: status });
   } catch (err) {
     next(err);
   }

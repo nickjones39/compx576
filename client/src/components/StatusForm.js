@@ -37,7 +37,7 @@ const StatusForm = ({
     document.getElementById('editing').classList.add('hidden');
     document.getElementById('submitted').classList.remove('hidden');
     setTimeout(() => {
-      history.push('/statuses');
+      history.push('/status');
       window.location.reload();
     }, 1500);
   };

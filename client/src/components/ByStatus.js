@@ -6,7 +6,7 @@ const assetsBySta = (assets, sta) => {
   return assets.filter((asset) => asset.status?._id === sta._id);
 };
 
-const ByStatus = ({ assets, statuses, loading, error }) => {
+const ByStatus = ({ assets, status, loading, error }) => {
   return (
     <>
       {loading ? (
@@ -17,7 +17,7 @@ const ByStatus = ({ assets, statuses, loading, error }) => {
         </Alert>
       ) : (
         <Accordion>
-          {statuses.map((x) => (
+          {status.map((x) => (
             <Card key={x._id}>
               <Card.Header>
                 <Accordion.Toggle as={Button} variant='link' eventKey={x._id}>
@@ -26,7 +26,7 @@ const ByStatus = ({ assets, statuses, loading, error }) => {
               </Card.Header>
               <Accordion.Collapse eventKey={x._id}>
                 {assetsBySta(assets, x).length === 0 ? (
-                  <Card.Body>No Statuses found</Card.Body>
+                  <Card.Body>No status found</Card.Body>
                 ) : (
                   <Card.Body>
                     <Table responsive>

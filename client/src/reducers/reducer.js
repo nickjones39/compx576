@@ -23,7 +23,7 @@ const reducer = (state, action) => {
     case 'fetch-assets-request':
     case 'fetch-filtered-assets-request':
     case 'fetch-categories-request':
-    case 'fetch-statuses-request':
+    case 'fetch-status-request':
     case 'add-asset-request':
     case 'update-asset-request':
     case 'delete-asset-request':
@@ -31,7 +31,7 @@ const reducer = (state, action) => {
     case 'add-category-request':
     case 'update-category-request':
     case 'delete-category-request':
-    case 'fetch-filtered-statuses-request':
+    case 'fetch-filtered-status-request':
     case 'add-status-request':
     case 'update-status-request':
     case 'delete-status-request':
@@ -67,16 +67,16 @@ const reducer = (state, action) => {
         filteredCategories: action.filteredCategories,
         loading: action.loading,
       };
-    case 'fetch-statuses-ok':
+    case 'fetch-status-ok':
       return {
         ...state,
-        statuses: action.statuses,
+        status: action.status,
         // loading: action.loading,
       };
-    case 'fetch-filtered-statuses-ok':
+    case 'fetch-filtered-status-ok':
       return {
         ...state,
-        filteredStatuses: action.filteredStatuses,
+        filteredStatus: action.filteredStatus,
         loading: action.loading,
       };
     case 'fetch-filtered-users-ok':
@@ -102,8 +102,8 @@ const reducer = (state, action) => {
     case 'add-status-ok':
       return {
         ...state,
-        statuses: [action.newStatus, ...state.statuses],
-        filteredStatuses: [action.newStatus, ...state.filteredStatuses],
+        status: [action.newStatus, ...state.status],
+        filteredStatus: [action.newStatus, ...state.filteredStatus],
         loading: action.loading,
       };
     case 'add-user-ok':
@@ -137,10 +137,10 @@ const reducer = (state, action) => {
     case 'update-status-ok':
       return {
         ...state,
-        statuses: state.statuses.map((x) =>
+        status: state.status.map((x) =>
           x._id === action.updatedStatus._id ? action.updatedStatus : x
         ),
-        filteredStatuses: state.filteredStatuses.map((x) =>
+        filteredStatus: state.filteredStatus.map((x) =>
           x._id === action.updatedStatus._id ? action.updatedStatus : x
         ),
         loading: action.loading,
@@ -174,8 +174,8 @@ const reducer = (state, action) => {
     case 'delete-status-ok':
       return {
         ...state,
-        statuses: state.statuses.filter((x) => x._id !== action.deletedId),
-        filteredStatuses: state.filteredStatuses.filter(
+        status: state.status.filter((x) => x._id !== action.deletedId),
+        filteredStatus: state.filteredStatus.filter(
           (x) => x._id !== action.deletedId
         ),
         loading: action.loading,
@@ -204,7 +204,7 @@ const reducer = (state, action) => {
     case 'fetch-assets-fail':
     case 'fetch-filtered-assets-fail':
     case 'fetch-categories-fail':
-    case 'fetch-statuses-fail':
+    case 'fetch-status-fail':
     case 'add-asset-fail':
     case 'update-asset-fail':
     case 'delete-asset-fail':
@@ -212,7 +212,7 @@ const reducer = (state, action) => {
     case 'add-category-fail':
     case 'update-category-fail':
     case 'delete-category-fail':
-    case 'fetch-filtered-statuses-fail':
+    case 'fetch-filtered-status-fail':
     case 'add-status-fail':
     case 'update-status-fail':
     case 'delete-status-fail':

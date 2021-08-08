@@ -35,9 +35,9 @@ const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
                 </NavDropdown.Item>
               </LinkContainer>
               <NavDropdown.Divider />
-              <LinkContainer to='/statuses'>
+              <LinkContainer to='/status'>
                 <NavDropdown.Item>
-                  <i className='fas fa-compass mr-2'></i> Statuses
+                  <i className='fas fa-compass mr-2'></i> Status
                 </NavDropdown.Item>
               </LinkContainer>
               {admin && (

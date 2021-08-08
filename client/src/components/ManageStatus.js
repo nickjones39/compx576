@@ -4,8 +4,8 @@ import { Alert, Table, Jumbotron, Button } from 'react-bootstrap';
 import Loading from './Loading';
 import Search from './Search';
 
-const ManageStatuses = ({
-  statuses,
+const ManageStatus = ({
+  status,
   loading,
   error,
   dispatch,
@@ -59,12 +59,12 @@ const ManageStatuses = ({
               </tr>
             </thead>
             <tbody>
-              {statuses?.length === 0 ? (
+              {status?.length === 0 ? (
                 <tr>
-                  <td colSpan='5'>No Statuses Found</td>
+                  <td colSpan='5'>No Status Found</td>
                 </tr>
               ) : (
-                statuses?.map((x, index) => {
+                status?.map((x, index) => {
                   return (
                     <tr key={x._id ? x._id : 'tempkey'}>
                       <td>{index + 1}</td>
@@ -95,4 +95,4 @@ const ManageStatuses = ({
   );
 };
 
-export default ManageStatuses;
+export default ManageStatus;
