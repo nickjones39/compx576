@@ -131,7 +131,7 @@ const AssetForm = ({
           >
             {users?.map((x) => (
               <option key={x._id} value={x._id}>
-                {x.userId}
+                {x.name}
               </option>
             ))}
           </Form.Control>
