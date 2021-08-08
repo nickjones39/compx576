@@ -57,7 +57,6 @@ import {
   addUser,
   updateUser,
   deleteUser,
-  deleteStatus,
 } from './methods/methods';
 
 const App = () => {
