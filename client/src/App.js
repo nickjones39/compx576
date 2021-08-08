@@ -13,15 +13,15 @@ import NotFound from './components/NotFound';
 import About from './components/About';
 import Assets from './components/Assets';
 import ByCategory from './components/ByCategory';
-import ByLocation from './components/ByLocation';
+import ByStatus from './components/ByStatus';
 import Search from './components/Search';
 import PaginationButtons from './components/PaginationButtons';
 import ManageAssets from './components/ManageAssets';
 import AssetForm from './components/AssetForm';
 import ManageCategories from './components/ManageCategories';
 import CategoryForm from './components/CategoryForm';
-import ManageLocations from './components/ManageLocations';
-import LocationForm from './components/LocationForm';
+import ManageStatuses from './components/ManageStatuses';
+import StatusForm from './components/StatusForm';
 import LoginForm from './components/LoginForm';
 import UserData from './components/UserData';
 import ManageUsers from './components/ManageUsers';
@@ -30,7 +30,7 @@ import UserForm from './components/UserForm';
 import {
   fetchAssets,
   fetchCategories,
-  fetchLocations,
+  fetchStatuses,
   refreshAfterError,
   fetchFilteredAssets,
   changeSearchTerm,
@@ -43,11 +43,11 @@ import {
   addCategory,
   updateCategory,
   deleteCategory,
-  fetchFilteredLocations,
-  changeLocationSearchTerm,
-  addLocation,
-  updateLocation,
-  deleteLocation,
+  fetchFilteredStatuses,
+  changeStatusSearchTerm,
+  addStatus,
+  updateStatus,
+  deleteStatus,
   setToken,
   loginUser,
   logoutUser,
@@ -57,13 +57,14 @@ import {
   addUser,
   updateUser,
   deleteUser,
+  deleteStatus,
 } from './methods/methods';
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, {
     assets: [],
     categories: [],
-    locations: [],
+    statuses: [],
     loading: true,
     error: null,
     searchTerm: '',
@@ -72,8 +73,8 @@ const App = () => {
     page: 1,
     categorySearchTerm: '',
     filteredCategories: [],
-    locationSearchTerm: '',
-    filteredLocations: [],
+    statusSearchTerm: '',
+    filteredStatuses: [],
     token: localStorage.getItem('token'),
     loggedUserId: jwt.decode(localStorage.getItem('token'))?.id,
     username: jwt.decode(localStorage.getItem('token'))?.name,
@@ -87,7 +88,7 @@ const App = () => {
   useEffect(() => {
     fetchAssets(dispatch);
     fetchCategories(dispatch);
-    fetchLocations(dispatch);
+    fetchStatuses(dispatch);
   }, []);
 
   useEffect(() => {
@@ -99,8 +100,8 @@ const App = () => {
   }, [state.categorySearchTerm]);
 
   useEffect(() => {
-    fetchFilteredLocations(dispatch, state.locationSearchTerm);
-  }, [state.locationSearchTerm]);
+    fetchFilteredStatuses(dispatch, state.statusSearchTerm);
+  }, [state.statusSearchTerm]);
 
   useEffect(() => {
     if (state.admin) {
@@ -153,10 +154,10 @@ const App = () => {
                   error={state.error}
                 />
               </Tab>
-              <Tab eventKey='by-location' title='ByLocation'>
-                <ByLocation
+              <Tab eventKey='by-status' title='ByStatus'>
+                <ByStatus
                   assets={state.assets}
-                  locations={state.locations}
+                  statuses={state.statuses}
                   loading={state.loading}
                   error={state.error}
                 />
@@ -200,7 +201,7 @@ const App = () => {
                   {...props}
                   create={true}
                   categories={state.categories}
-                  locations={state.locations}
+                  statuses={state.statuses}
                   dispatch={dispatch}
                   addAsset={addAsset}
                 />
@@ -221,7 +222,7 @@ const App = () => {
                     (x) => x._id === props.match.params.id
                   )}
                   categories={state.categories}
-                  locations={state.locations}
+                  statuses={state.statuses}
                   dispatch={dispatch}
                   updateAsset={updateAsset}
                 />
@@ -284,17 +285,17 @@ const App = () => {
             }
           />
 
-          <Route path='/locations'>
+          <Route path='/statuses'>
             {state.token ? (
-              <ManageLocations
-                locations={state.filteredLocations}
+              <ManageStatuses
+                statuses={state.filteredStatuses}
                 loading={state.loading}
                 error={state.error}
                 dispatch={dispatch}
                 refreshAfterError={refreshAfterError}
-                searchTerm={state.locationSearchTerm}
-                changeSearchTerm={changeLocationSearchTerm}
-                deleteLocation={deleteLocation}
+                searchTerm={state.statusSearchTerm}
+                changeSearchTerm={changeStatusSearchTerm}
+                deleteStatus={deleteStatus}
               />
             ) : (
               <Alert variant='danger'>401 Not Authorized</Alert>
@@ -302,15 +303,15 @@ const App = () => {
           </Route>
 
           <Route
-            path='/location'
+            path='/status'
             exact
             render={(props) =>
               state.token ? (
-                <LocationForm
+                <StatusForm
                   {...props}
                   create={true}
                   dispatch={dispatch}
-                  addLocation={addLocation}
+                  addStatus={addStatus}
                 />
               ) : (
                 <Alert variant='danger'>401 Not Authorized</Alert>
@@ -319,17 +320,17 @@ const App = () => {
           />
 
           <Route
-            path='/location/:id'
+            path='/status/:id'
             render={(props) =>
               state.token ? (
-                <LocationForm
+                <StatusForm
                   {...props}
                   create={false}
-                  locationToUpdate={state.locations.find(
+                  statusToUpdate={state.statuses.find(
                     (x) => x._id === props.match.params.id
                   )}
                   dispatch={dispatch}
-                  updateLocation={updateLocation}
+                  updateStatus={updateStatus}
                 />
               ) : (
                 <Alert variant='danger'>401 Not Authorized</Alert>

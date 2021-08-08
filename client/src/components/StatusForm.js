@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 
-const LocationForm = ({
+const StatusForm = ({
   create,
   dispatch,
-  addLocation,
+  addStatus,
   history,
-  locationToUpdate,
-  updateLocation,
+  statusToUpdate,
+  updateStatus,
 }) => {
-  const [location, setLocation] = useState(
-    locationToUpdate
+  const [status, setStatus] = useState(
+    statusToUpdate
       ? {
-          name: locationToUpdate.name,
-          description: locationToUpdate.description,
+          name: statusToUpdate.name,
+          description: statusToUpdate.description,
         }
       : {
           name: '',
@@ -24,40 +24,40 @@ const LocationForm = ({
   const onChange = (e) => {
     document.getElementById('editing').classList.remove('hidden');
     document.getElementById('submitted').classList.add('hidden');
-    setLocation({ ...location, [e.target.name]: e.target.value });
+    setStatus({ ...status, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (create) {
-      addLocation(dispatch, location);
+      addStatus(dispatch, status);
     } else {
-      updateLocation(dispatch, locationToUpdate._id, location);
+      updateStatus(dispatch, statusToUpdate._id, status);
     }
     document.getElementById('editing').classList.add('hidden');
     document.getElementById('submitted').classList.remove('hidden');
     setTimeout(() => {
-      history.push('/locations');
+      history.push('/statuses');
       window.location.reload();
     }, 1500);
   };
 
   useEffect(() => {
-    if (!locationToUpdate) {
-      history.push('/location');
+    if (!statusToUpdate) {
+      history.push('/status');
     }
-  }, [locationToUpdate, history]);
+  }, [statusToUpdate, history]);
 
   return (
     <>
       {create && (
         <div id='editing'>
-          <Alert variant='primary'>Create Location</Alert>
+          <Alert variant='primary'>Create Status</Alert>
         </div>
       )}
       {!create && (
         <div id='editing'>
-          <Alert variant='primary'>Update Location</Alert>
+          <Alert variant='primary'>Update Status</Alert>
         </div>
       )}
       <div id='submitted' className='hidden'>
@@ -69,8 +69,8 @@ const LocationForm = ({
           <Form.Control
             type='text'
             name='name'
-            value={location.name}
-            placeholder='Location Name'
+            value={status.name}
+            placeholder='Status Name'
             onChange={onChange}
             required
           />
@@ -80,8 +80,8 @@ const LocationForm = ({
           <Form.Control
             type='text'
             name='description'
-            value={location.description}
-            placeholder='Location Description'
+            value={status.description}
+            placeholder='Status Description'
             onChange={onChange}
           />
         </Form.Group>
@@ -93,4 +93,4 @@ const LocationForm = ({
   );
 };
 
-export default LocationForm;
+export default StatusForm;

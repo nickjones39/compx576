@@ -54,15 +54,18 @@ const ManageUsers = ({
                 <th>#</th>
                 <th></th>
                 <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
                 <th>Email</th>
                 <th>Role</th>
+                <th>UserId</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {users?.length === 0 ? (
                 <tr>
-                  <td colSpan='6'>No Users Found</td>
+                  <td colSpan='9'>No Users Found</td>
                 </tr>
               ) : (
                 users?.map((x, index) => {
@@ -75,8 +78,11 @@ const ManageUsers = ({
                         </Link>
                       </td>
                       <td>{x.name}</td>
+                      <td>{x.address}</td>
+                      <td>{x.phone}</td>
                       <td>{x.email}</td>
                       <td>{x.admin ? 'Admin' : 'User'}</td>
+                      <td>{x.userId}</td>
                       <td>
                         <i
                           className='far fa-trash-alt'

@@ -11,7 +11,7 @@ const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
   return (
     <Navbar expand='lg' bg='dark' variant='dark'>
       <LinkContainer to='/'>
-        <Navbar.Brand>Asset Manager</Navbar.Brand>
+        <Navbar.Brand>Asset Inventory Management System</Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse>
@@ -35,9 +35,9 @@ const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
                 </NavDropdown.Item>
               </LinkContainer>
               <NavDropdown.Divider />
-              <LinkContainer to='/locations'>
+              <LinkContainer to='/statuses'>
                 <NavDropdown.Item>
-                  <i className='fas fa-compass mr-2'></i> Locations
+                  <i className='fas fa-compass mr-2'></i> Statuses
                 </NavDropdown.Item>
               </LinkContainer>
               {admin && (

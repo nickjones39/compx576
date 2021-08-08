@@ -6,7 +6,7 @@ const connect = require('./connect');
 require('dotenv').config();
 
 const categoriesRoutes = require('./routes/categories');
-const locationsRoutes = require('./routes/locations');
+const statusesRoutes = require('./routes/statuses');
 const assetsRoutes = require('./routes/assets');
 const usersRoutes = require('./routes/users');
 
@@ -20,7 +20,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/categories', categoriesRoutes);
-app.use('/api/locations', locationsRoutes);
+app.use('/api/statuses', statusesRoutes);
 app.use('/api/assets', assetsRoutes);
 app.use('/api/users', usersRoutes);
 

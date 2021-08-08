@@ -34,8 +34,12 @@ const ByCategory = ({ assets, categories, loading, error }) => {
                         <tr>
                           <th>#</th>
                           <th>Name</th>
+                          <th>Category</th>
+                          <th>Status</th>
+                          <th>Serial Number</th>
+                          <th>Model</th>
                           <th>Description</th>
-                          <th>Location</th>
+                          <th>Condition</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -44,8 +48,12 @@ const ByCategory = ({ assets, categories, loading, error }) => {
                             <tr key={asset._id}>
                               <td>{index + 1}</td>
                               <td>{asset.name}</td>
+                              <td>{asset.category?.name}</td>
+                              <td>{asset.status?.name}</td>
+                              <td>{asset.serialNumber}</td>
+                              <td>{asset.model}</td>
                               <td>{asset.description}</td>
-                              <td>{asset.location?.name}</td>
+                              <td>{asset.condition}</td>
                             </tr>
                           );
                         })}

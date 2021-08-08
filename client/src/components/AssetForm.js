@@ -4,7 +4,7 @@ import { Alert, Form, Button } from 'react-bootstrap';
 const AssetForm = ({
   create,
   categories,
-  locations,
+  status,
   dispatch,
   addAsset,
   history,
@@ -17,13 +17,13 @@ const AssetForm = ({
           name: assetToUpdate.name,
           description: assetToUpdate.description,
           category: assetToUpdate.category._id ?? '5f8e782efd960400178547c8',
-          location: assetToUpdate.location._id ?? '5fa027494b79a300171969a9',
+          status: assetToUpdate.status._id ?? '5fa027494b79a300171969a9',
         }
       : {
           name: '',
           description: '',
           category: '5f8e782efd960400178547c8', // hardcode a category id for assets with unassigned category
-          location: '5fa027494b79a300171969a9', // hardcode a location id for assets with unassigned location
+          status: '5fa027494b79a300171969a9', // hardcode a status id for assets with unassigned status
         }
   );
 
@@ -97,14 +97,14 @@ const AssetForm = ({
           </Form.Control>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Location</Form.Label>
+          <Form.Label>Status</Form.Label>
           <Form.Control
             as='select'
-            name='location'
-            value={asset.location}
+            name='status'
+            value={asset.status}
             onChange={onChange}
           >
-            {locations?.map((x) => (
+            {status?.map((x) => (
               <option key={x._id} value={x._id}>
                 {x.name}
               </option>
@@ -128,16 +128,6 @@ const AssetForm = ({
             name='model'
             value={asset.model}
             placeholder='Optional Model'
-            onChange={onChange}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Status</Form.Label>
-          <Form.Control
-            type='number'
-            name='status'
-            value={asset.status}
-            placeholder='Status'
             onChange={onChange}
           />
         </Form.Group>

@@ -15,9 +15,9 @@ export const changeCategorySearchTerm = (dispatch, term) => {
   dispatch({ type: 'change-category-search-term', categorySearchTerm: term });
 };
 
-export const changeLocationSearchTerm = (dispatch, term) => {
+export const changeStatusSearchTerm = (dispatch, term) => {
   dispatch({
-    type: 'change-location-search-term',
+    type: 'change-status-search-term',
     locationSearchTerm: term,
   });
 };
@@ -95,35 +95,35 @@ export const fetchFilteredCategories = async (dispatch, term) => {
   }
 };
 
-export const fetchLocations = async (dispatch) => {
+export const fetchStatuses = async (dispatch) => {
   try {
-    dispatch({ type: 'fetch-loacations-request', loading: true });
-    const { data } = await axios.get('/api/locations');
-    console.log('in fetchLocations - data.data is:', data.data);
+    dispatch({ type: 'fetch-statuses-request', loading: true });
+    const { data } = await axios.get('/api/statuses');
+    console.log('in fetchStatuses - data.data is:', data.data);
     dispatch({
-      type: 'fetch-locations-ok',
-      locations: data.data,
+      type: 'fetch-statuses-ok',
+      statuses: data.data,
       loading: false,
     });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'fetch-locations-fail', loading: false, error });
+    dispatch({ type: 'fetch-statuses-fail', loading: false, error });
   }
 };
 
-export const fetchFilteredLocations = async (dispatch, term) => {
+export const fetchFilteredStatuses = async (dispatch, term) => {
   try {
-    dispatch({ type: 'fetch-filtered-locations-request', loading: true });
-    const { data } = await axios.get(`/api/locations?search=${term}`);
-    console.log('in fetchFilteredLocations - data.data is:', data.data);
+    dispatch({ type: 'fetch-filtered-statuses-request', loading: true });
+    const { data } = await axios.get(`/api/statuses?search=${term}`);
+    console.log('in fetchFilteredStatuses - data.data is:', data.data);
     dispatch({
-      type: 'fetch-filtered-locations-ok',
-      filteredLocations: data.data,
+      type: 'fetch-filtered-statuses-ok',
+      filteredStatuses: data.data,
       loading: false,
     });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'fetch-filtered-locations-fail', loading: false, error });
+    dispatch({ type: 'fetch-filtered-statuses-fail', loading: false, error });
   }
 };
 
@@ -229,46 +229,46 @@ export const deleteCategory = async (dispatch, id) => {
   }
 };
 
-export const addLocation = async (dispatch, postData) => {
+export const addStatus = async (dispatch, postData) => {
   try {
-    dispatch({ type: 'add-location-request', loading: true });
-    const { data } = await axios.post('/api/locations', postData);
-    console.log('in addLocation - data.data is:', data.data);
+    dispatch({ type: 'add-status-request', loading: true });
+    const { data } = await axios.post('/api/statuses', postData);
+    console.log('in addStatus - data.data is:', data.data);
     dispatch({
-      type: 'add-location-ok',
-      newLocation: data.data,
+      type: 'add-status-ok',
+      newStatus: data.data,
       loading: false,
     });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'add-location-fail', loading: false, error });
+    dispatch({ type: 'add-status-fail', loading: false, error });
   }
 };
 
-export const updateLocation = async (dispatch, id, postData) => {
+export const updateStatus = async (dispatch, id, postData) => {
   try {
-    dispatch({ type: 'update-location-request', loading: true });
-    const { data } = await axios.patch(`/api/locations/${id}`, postData);
-    console.log('in updateLocation - data.data is:', data.data);
+    dispatch({ type: 'update-status-request', loading: true });
+    const { data } = await axios.patch(`/api/statuses/${id}`, postData);
+    console.log('in updateStatuses - data.data is:', data.data);
     dispatch({
-      type: 'update-location-ok',
-      updatedLocation: data.data,
+      type: 'update-status-ok',
+      updatedStatus: data.data,
       loading: false,
     });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'update-location-fail', loading: false, error });
+    dispatch({ type: 'update-status-fail', loading: false, error });
   }
 };
 
-export const deleteLocation = async (dispatch, id) => {
+export const deleteStatus = async (dispatch, id) => {
   try {
-    dispatch({ type: 'delete-location-request', loading: true });
-    await axios.delete(`/api/locations/${id}`);
-    dispatch({ type: 'delete-location-ok', deletedId: id, loading: false });
+    dispatch({ type: 'delete-status-request', loading: true });
+    await axios.delete(`/api/statuses/${id}`);
+    dispatch({ type: 'delete-status-ok', deletedId: id, loading: false });
   } catch (error) {
     console.log(error);
-    dispatch({ type: 'delete-location-fail', loading: false, error });
+    dispatch({ type: 'delete-status-fail', loading: false, error });
   }
 };
 

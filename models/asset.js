@@ -4,10 +4,9 @@ const assetSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, unique: true },
     category: { type: mongoose.ObjectId, ref: 'Category' },
-    location: { type: mongoose.ObjectId, ref: 'Location' },
+    status: { type: mongoose.ObjectId, ref: 'Status' },
     serialNumber: { type: String, unique: true },
     model: { type: String },
-    status: { type: Number, required: true},
     description: { type: String },
     condition: { type: String}
   },

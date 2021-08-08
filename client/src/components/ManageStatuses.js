@@ -4,20 +4,20 @@ import { Alert, Table, Jumbotron, Button } from 'react-bootstrap';
 import Loading from './Loading';
 import Search from './Search';
 
-const ManageLocations = ({
-  locations,
+const ManageStatuses = ({
+  statuses,
   loading,
   error,
   dispatch,
   refreshAfterError,
   searchTerm,
   changeSearchTerm,
-  deleteLocation,
+  deleteStatus,
 }) => {
   const onDeleteHandler = (e) => {
-    console.log(`delete location with id ${e.target.getAttribute('loc-id')}`);
-    if (window.confirm('Confirm Location Deletion')) {
-      deleteLocation(dispatch, e.target.getAttribute('loc-id'));
+    console.log(`delete Status with id ${e.target.getAttribute('loc-id')}`);
+    if (window.confirm('Confirm Status Deletion')) {
+      deleteStatus(dispatch, e.target.getAttribute('loc-id'));
     }
   };
 
@@ -28,9 +28,9 @@ const ManageLocations = ({
   return (
     <div className='my-table'>
       <Jumbotron>
-        <Link to='/location'>
+        <Link to='/Status'>
           <Button variant='primary'>
-            <i className='fas fa-plus'></i> Add New Location
+            <i className='fas fa-plus'></i> Add New Status
           </Button>
         </Link>
       </Jumbotron>
@@ -53,23 +53,23 @@ const ManageLocations = ({
               <tr>
                 <th>#</th>
                 <th></th>
-                <th>Location</th>
+                <th>Status</th>
                 <th>Description</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {locations?.length === 0 ? (
+              {statuses?.length === 0 ? (
                 <tr>
-                  <td colSpan='5'>No Locations Found</td>
+                  <td colSpan='5'>No Statuses Found</td>
                 </tr>
               ) : (
-                locations?.map((x, index) => {
+                statuses?.map((x, index) => {
                   return (
                     <tr key={x._id ? x._id : 'tempkey'}>
                       <td>{index + 1}</td>
                       <td>
-                        <Link to={`/location/${x._id}`}>
+                        <Link to={`/Status/${x._id}`}>
                           <i className='far fa-edit'></i>
                         </Link>
                       </td>
@@ -95,4 +95,4 @@ const ManageLocations = ({
   );
 };
 
-export default ManageLocations;
+export default ManageStatuses;

@@ -15,15 +15,15 @@ const reducer = (state, action) => {
         ...state,
         categorySearchTerm: action.categorySearchTerm,
       };
-    case 'change-location-search-term':
+    case 'change-status-search-term':
       return {
         ...state,
-        locationSearchTerm: action.locationSearchTerm,
+        statusSearchTerm: action.statusSearchTerm,
       };
     case 'fetch-assets-request':
     case 'fetch-filtered-assets-request':
     case 'fetch-categories-request':
-    case 'fetch-locations-request':
+    case 'fetch-statuses-request':
     case 'add-asset-request':
     case 'update-asset-request':
     case 'delete-asset-request':
@@ -31,10 +31,10 @@ const reducer = (state, action) => {
     case 'add-category-request':
     case 'update-category-request':
     case 'delete-category-request':
-    case 'fetch-filtered-locations-request':
-    case 'add-location-request':
-    case 'update-location-request':
-    case 'delete-location-request':
+    case 'fetch-filtered-statuses-request':
+    case 'add-status-request':
+    case 'update-status-request':
+    case 'delete-status-request':
     case 'login-user-request':
     case 'logout-user-request':
     case 'change-user-password-request':
@@ -67,16 +67,16 @@ const reducer = (state, action) => {
         filteredCategories: action.filteredCategories,
         loading: action.loading,
       };
-    case 'fetch-locations-ok':
+    case 'fetch-statuses-ok':
       return {
         ...state,
-        locations: action.locations,
+        statuses: action.statuses,
         // loading: action.loading,
       };
-    case 'fetch-filtered-locations-ok':
+    case 'fetch-filtered-statuses-ok':
       return {
         ...state,
-        filteredLocations: action.filteredLocations,
+        filteredStatuses: action.filteredStatuses,
         loading: action.loading,
       };
     case 'fetch-filtered-users-ok':
@@ -99,11 +99,11 @@ const reducer = (state, action) => {
         filteredCategories: [action.newCategory, ...state.filteredCategories],
         loading: action.loading,
       };
-    case 'add-location-ok':
+    case 'add-status-ok':
       return {
         ...state,
-        locations: [action.newLocation, ...state.locations],
-        filteredLocations: [action.newLocation, ...state.filteredLocations],
+        statuses: [action.newStatus, ...state.statuses],
+        filteredStatuses: [action.newStatus, ...state.filteredStatuses],
         loading: action.loading,
       };
     case 'add-user-ok':
@@ -134,14 +134,14 @@ const reducer = (state, action) => {
         ),
         loading: action.loading,
       };
-    case 'update-location-ok':
+    case 'update-status-ok':
       return {
         ...state,
-        locations: state.locations.map((x) =>
-          x._id === action.updatedLocation._id ? action.updatedLocation : x
+        statuses: state.statuses.map((x) =>
+          x._id === action.updatedStatus._id ? action.updatedStatus : x
         ),
-        filteredLocations: state.filteredLocations.map((x) =>
-          x._id === action.updatedLocation._id ? action.updatedLocation : x
+        filteredStatuses: state.filteredStatuses.map((x) =>
+          x._id === action.updatedStatus._id ? action.updatedStatus : x
         ),
         loading: action.loading,
       };
@@ -171,11 +171,11 @@ const reducer = (state, action) => {
         ),
         loading: action.loading,
       };
-    case 'delete-location-ok':
+    case 'delete-status-ok':
       return {
         ...state,
-        locations: state.locations.filter((x) => x._id !== action.deletedId),
-        filteredLocations: state.filteredLocations.filter(
+        statuses: state.statuses.filter((x) => x._id !== action.deletedId),
+        filteredStatuses: state.filteredStatuses.filter(
           (x) => x._id !== action.deletedId
         ),
         loading: action.loading,
@@ -204,7 +204,7 @@ const reducer = (state, action) => {
     case 'fetch-assets-fail':
     case 'fetch-filtered-assets-fail':
     case 'fetch-categories-fail':
-    case 'fetch-locations-fail':
+    case 'fetch-statuses-fail':
     case 'add-asset-fail':
     case 'update-asset-fail':
     case 'delete-asset-fail':
@@ -212,10 +212,10 @@ const reducer = (state, action) => {
     case 'add-category-fail':
     case 'update-category-fail':
     case 'delete-category-fail':
-    case 'fetch-filtered-locations-fail':
-    case 'add-location-fail':
-    case 'update-location-fail':
-    case 'delete-location-fail':
+    case 'fetch-filtered-statuses-fail':
+    case 'add-status-fail':
+    case 'update-status-fail':
+    case 'delete-status-fail':
     case 'logout-user-fail':
     case 'change-user-password-fail':
     case 'fetch-filtered-users-fail':

@@ -2,11 +2,11 @@ import { Alert, Accordion, Card, Button, Table } from 'react-bootstrap';
 
 import Loading from './Loading';
 
-const assetsByLoc = (assets, loc) => {
-  return assets.filter((asset) => asset.location?._id === loc._id);
+const assetsBySta = (assets, sta) => {
+  return assets.filter((asset) => asset.status?._id === sta._id);
 };
 
-const ByLocation = ({ assets, locations, loading, error }) => {
+const ByStatus = ({ assets, statuses, loading, error }) => {
   return (
     <>
       {loading ? (
@@ -17,7 +17,7 @@ const ByLocation = ({ assets, locations, loading, error }) => {
         </Alert>
       ) : (
         <Accordion>
-          {locations.map((x) => (
+          {statuses.map((x) => (
             <Card key={x._id}>
               <Card.Header>
                 <Accordion.Toggle as={Button} variant='link' eventKey={x._id}>
@@ -26,7 +26,7 @@ const ByLocation = ({ assets, locations, loading, error }) => {
               </Card.Header>
               <Accordion.Collapse eventKey={x._id}>
                 {assetsByLoc(assets, x).length === 0 ? (
-                  <Card.Body>No locations found</Card.Body>
+                  <Card.Body>No Statuses found</Card.Body>
                 ) : (
                   <Card.Body>
                     <Table responsive>
@@ -34,18 +34,26 @@ const ByLocation = ({ assets, locations, loading, error }) => {
                         <tr>
                           <th>#</th>
                           <th>Name</th>
-                          <th>Description</th>
                           <th>Category</th>
+                          <th>Status</th>
+                          <th>Serial Number</th>
+                          <th>Model</th>
+                          <th>Description</th>
+                          <th>Condition</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {assetsByLoc(assets, x).map((asset, index) => {
+                        {assetsBySta(assets, x).map((asset, index) => {
                           return (
                             <tr key={asset._id}>
                               <td>{index + 1}</td>
                               <td>{asset.name}</td>
-                              <td>{asset.description}</td>
                               <td>{asset.category?.name}</td>
+                              <td>{asset.status?.name}</td>
+                              <td>{asset.serialNumber}</td>
+                              <td>{asset.model}</td>
+                              <td>{asset.description}</td>
+                              <td>{asset.condition}</td>
                             </tr>
                           );
                         })}
@@ -62,4 +70,4 @@ const ByLocation = ({ assets, locations, loading, error }) => {
   );
 };
 
-export default ByLocation;
+export default ByStatus;
