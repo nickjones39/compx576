@@ -1,7 +1,7 @@
 const Asset = require('../models/asset');
 const Category = require('../models/category');
 const Location = require('../models/location');
-const Location = require('../models/user');
+const User = require('../models/user');
 
 const defineSearchQuery = require('../utils/define-search-query');
 const calculatePaginationValues = require('../utils/calculate-pagination-values');
