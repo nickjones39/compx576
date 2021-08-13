@@ -18,7 +18,7 @@ const AssetForm = ({
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '610f2f4ea7115100151ea10e',
           location: assetToUpdate.location._id ?? '610f4ed1c40f480015e66f61',
-          assignedTo: assetToUpdate.user._id,
+          assignedTo: assetToUpdate.user._id ?? '61161b109996fddae8d5696c',
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
@@ -29,7 +29,7 @@ const AssetForm = ({
           description: '',
           category: '610f2f4ea7115100151ea10e', // hardcode a category id for assets with unassigned category
           location: '610f4ed1c40f480015e66f61', // hardcode a location id for assets with unassigned location
-          assignedTo: '',
+          assignedTo: '61161b109996fddae8d5696c',
           serialNumber: '',
           model: '',
           description: '',
@@ -129,7 +129,7 @@ const AssetForm = ({
             value={asset.assignedTo}
             onChange={onChange}
           >
-            {locations?.map((x) => (
+            {users?.map((x) => (
               <option key={x._id} value={x._id}>
                 {x.name}
               </option>
