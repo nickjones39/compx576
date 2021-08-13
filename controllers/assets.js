@@ -70,7 +70,7 @@ exports.readAsset = async (req, res, next) => {
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
       /* Added user here */
-      { path: 'location', select: ['name', 'userId'] },
+      { path: 'user', select: ['name', 'userId'] },
     ];
     const asset = await Asset.findById(req.params.id).populate(populateQuery);
     if (!asset) {
