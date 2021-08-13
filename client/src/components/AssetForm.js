@@ -129,9 +129,9 @@ const AssetForm = ({
             value={asset.assignedTo}
             onChange={onChange}
           >
-            {users?.map((x) => (
+            {locations?.map((x) => (
               <option key={x._id} value={x._id}>
-                {x.address}
+                {x.name}
               </option>
             ))}
           </Form.Control>
