@@ -1,6 +1,7 @@
 const Asset = require('../models/asset');
 const Category = require('../models/category');
 const Location = require('../models/location');
+const Location = require('../models/user');
 
 const defineSearchQuery = require('../utils/define-search-query');
 const calculatePaginationValues = require('../utils/calculate-pagination-values');
@@ -15,6 +16,12 @@ exports.createAsset = async (req, res, next) => {
     if (!location) {
       return res.status(404).json({ error: 'Location not found' });
     }
+    /* adding user here */
+    const user = await User.findById(req.body.user);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    /*        */
     const asset = await new Asset(req.body).save();
     res.status(200).json({ data: asset });
   } catch (err) {
@@ -27,6 +34,8 @@ exports.readAssets = async (req, res, next) => {
     const populateQuery = [
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
+      /* Added user here */
+      { path: 'user', select: ['name', 'userId'] },
     ];
     const searchQuery = defineSearchQuery(req);
     const pagination = calculatePaginationValues(req);
@@ -60,6 +69,8 @@ exports.readAsset = async (req, res, next) => {
     const populateQuery = [
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
+      /* Added user here */
+      { path: 'location', select: ['name', 'userId'] },
     ];
     const asset = await Asset.findById(req.params.id).populate(populateQuery);
     if (!asset) {
