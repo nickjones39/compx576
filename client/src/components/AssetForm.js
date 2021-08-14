@@ -5,7 +5,7 @@ const AssetForm = ({
   create,
   categories,
   locations,
-  /* users, */
+  /* users,  */
   dispatch,
   addAsset,
   history,
@@ -27,7 +27,7 @@ const AssetForm = ({
       : {
           name: '',
           category: '61171936a9e02900161fb08a', // hardcode a category id for assets with unassigned category
-          location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
+          location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 
           /* assignedTo: '61048e5b7d0a89980ae44c22', */
           serialNumber: '',
           model: '',
