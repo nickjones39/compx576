@@ -26,7 +26,6 @@ const AssetForm = ({
         }
       : {
           name: '',
-          description: '',
           category: '6117053a9363b60016effb5e', // hardcode a category id for assets with unassigned category
           location: '6117050a9363b60016effb5c', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
           /* assignedTo: '61048e5b7d0a89980ae44c22', */
