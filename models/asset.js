@@ -11,7 +11,7 @@ const assetSchema = new mongoose.Schema(
     assetID: { type: String, unique: true },
     model: { type: String },
     description: { type: String },
-    condition: { type: String}
+    condition: { type: String},
   },
   {
     timestamps: true,
