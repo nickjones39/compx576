@@ -16,8 +16,8 @@ const AssetForm = ({
     assetToUpdate
       ? {
           name: assetToUpdate.name,
-          category: assetToUpdate.category._id ?? '6117053a9363b60016effb5e',
-          location: assetToUpdate.location._id ?? '6117050a9363b60016effb5c', // 610f4ed1c40f480015e66f61
+          category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
+          location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
           /* assignedTo: assetToUpdate.user._id ?? '61048e5b7d0a89980ae44c22', */
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
@@ -26,8 +26,8 @@ const AssetForm = ({
         }
       : {
           name: '',
-          category: '6117053a9363b60016effb5e', // hardcode a category id for assets with unassigned category
-          location: '6117050a9363b60016effb5c', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
+          category: '61171936a9e02900161fb08a', // hardcode a category id for assets with unassigned category
+          location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
           /* assignedTo: '61048e5b7d0a89980ae44c22', */
           serialNumber: '',
           model: '',
