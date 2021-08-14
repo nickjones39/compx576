@@ -122,26 +122,6 @@ const AssetForm = ({
           </Form.Control>
         </Form.Group>
 
-        {/* 
-
-        <Form.Group>
-          <Form.Label>Assigned To</Form.Label>
-          <Form.Control
-            as='select'
-            name='user'
-            value={asset.assignedTo}
-            onChange={onChange}
-          >
-            {users?.map((x) => (
-              <option key={x._id} value={x._id}>
-                {x.name}
-              </option>
-            ))}
-          </Form.Control>
-        </Form.Group>
-
-            */}
-
         <Form.Group>
           <Form.Label>Serial Number</Form.Label>
           <Form.Control
