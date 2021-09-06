@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const usersController = require('../controllers/users');
-// const adminonly = require('../middleware/adminonly');
-// const authorize = require('../middleware/authorize');
+const adminonly = require('../middleware/adminonly');
+const authorize = require('../middleware/authorize');
 
 router.post('/', usersController.createUser);  // adminonly,
 router.post('/login', usersController.loginUser);

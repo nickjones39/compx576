@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+
 userSchema.methods.generateToken = function () {
   return jwt.sign(
     { id: this._id, name: this.name, admin: this.admin },
