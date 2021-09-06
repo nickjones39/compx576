@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const usersController = require('../controllers/users');
-const adminonly = require('../middleware/adminonly');
-const authorize = require('../middleware/authorize');
+// const adminonly = require('../middleware/adminonly');
+// const authorize = require('../middleware/authorize');
 
-router.post('/', adminonly, usersController.createUser);
+router.post('/', usersController.createUser);  // adminonly,
 router.post('/login', usersController.loginUser);
-router.get('/', adminonly, usersController.readUsers);
-router.get('/:id', adminonly, usersController.readUser);
-router.patch('/:id', adminonly, usersController.updateUser);
-router.delete('/:id', adminonly, usersController.deleteUser);
+router.get('/', usersController.readUsers); // adminonly, 
+router.get('/:id',  usersController.readUser); // adminonly,
+router.patch('/:id', usersController.updateUser); // adminonly,
+router.delete('/:id', usersController.deleteUser); // adminonly,
 router.patch(
   '/changeownpassword/:id',
   authorize,
