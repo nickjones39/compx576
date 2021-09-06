@@ -11,7 +11,7 @@ const AssetForm = ({
   history,
   assetToUpdate,
   updateAsset,
-}) => {
+}) => { 
   const [asset, setAsset] = useState(
     assetToUpdate
       ? {
