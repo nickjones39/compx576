@@ -1,1 +1,3 @@
-alert("This is an Alert!"); 
+const jsonObj = document.getElementById("usersHack").innerHTML;
+
+alert(jsonObj); 
