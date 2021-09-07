@@ -18,7 +18,7 @@ const AssetForm = ({
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
           location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
-          assignedTo: assetToUpdate.user._id ?? '61371eac2773ef0016e315d5', 
+          assignedTo: assetToUpdate.assignedTo._id ?? '61371eac2773ef0016e315d5', 
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
@@ -130,7 +130,7 @@ const AssetForm = ({
           <Form.Label>Assigned to</Form.Label>
           <Form.Control
             as='select'
-            name='user'
+            name='assignedTo'
             value={asset.assignedTo}
             onChange={onChange}
           >
