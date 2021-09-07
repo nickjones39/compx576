@@ -65,7 +65,7 @@ const AssetForm = ({
 
   const jsonObj = document.getElementById("usersHack").innerHTML;
   const usersList = JSON.parse(jsonObj);
-  alert(usersList.name[0]);
+  alert(usersList);
 
   return (
     <>
