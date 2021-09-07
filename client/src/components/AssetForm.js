@@ -5,7 +5,6 @@ const AssetForm = ({
   create,
   categories,
   locations,
-  users,
   dispatch,
   addAsset,
   history,
@@ -64,6 +63,11 @@ const AssetForm = ({
   }, [assetToUpdate, history]);
 
   const jsonObj = document.getElementById("usersHack").innerHTML;
+
+  jsonObj.sort(function(a, b){
+    return a.name - b.name;
+  });
+
   const usersList = JSON.parse(jsonObj);
 
   return (
