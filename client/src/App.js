@@ -64,6 +64,8 @@ const App = () => {
     assets: [],
     categories: [],
     locations: [],
+    /* added Users */
+    users: [],
     loading: true,
     error: null,
     searchTerm: '',
@@ -201,6 +203,7 @@ const App = () => {
                   create={true}
                   categories={state.categories}
                   locations={state.locations}
+                  users={state.users}
                   dispatch={dispatch}
                   addAsset={addAsset}
                 />
