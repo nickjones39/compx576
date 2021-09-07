@@ -11,8 +11,7 @@ const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
   return (
     <Navbar expand='lg' bg='dark' variant='dark'>
       <LinkContainer to='/'>
-        <Navbar.Brand>Asset Inventory Management System</Navbar.Brand>
-        <div id="usersHack"></div>
+        <Navbar.Brand>Asset Inventory Management System <div id="usersHack"></div></Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse>
