@@ -84,24 +84,6 @@ const AssetForm = ({
 
   const [showAssignedTo, setShowAssignedTo] = useState(false);
 
-  const assignedToControl = () => {
-    <Form.Group>
-      <Form.Label>Assigned to</Form.Label>
-      <Form.Control
-        as='select'
-        name='assignedTo'
-        value={asset.assignedTo}
-        onChange={onChange}
-      >
-        {usersList?.map((x) => (
-          <option key={x._id} value={x._id}>
-            {x.name}
-          </option>
-        ))}
-      </Form.Control>
-    </Form.Group>
-  };
-
 
   return (
     <>
@@ -164,7 +146,7 @@ const AssetForm = ({
 
 
          
-        {showAssignedTo ? <assignedToControl /> : null}
+        {showAssignedTo ? <Text /> : null}
         
         
        
@@ -224,9 +206,31 @@ const AssetForm = ({
         </Form.Group>
       </Form>
     </>
+
   );
 
-
 };
+
+const Text = () => <div>You clicked the button!</div>;
+
+const assignedToControl = () => 
+  <div>
+  <Form.Group>
+    <Form.Label>Assigned to</Form.Label>
+    <Form.Control
+      as='select'
+      name='assignedTo'
+      value={asset.assignedTo}
+      onChange={onChange}
+    >
+      {usersList?.map((x) => (
+        <option key={x._id} value={x._id}>
+          {x.name}
+        </option>
+      ))}
+    </Form.Control>
+  </Form.Group>
+  </div>
+;
 
 export default AssetForm;
