@@ -1,5 +1,7 @@
-//const usersHack = document.getElementById("usersHack").innerHTML;
+alert("Hello World!");
 
-//alert(usersHack); 
+const usersHack = document.getElementById("usersHack").innerHTML;
+
+alert(usersHack); 
 
 //var o = JSON.parse(usersHack);
