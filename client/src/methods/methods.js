@@ -132,6 +132,13 @@ export const fetchFilteredUsers = async (dispatch, term) => {
     dispatch({ type: 'fetch-filtered-users-request', loading: true });
     const { data } = await axios.get(`/api/users?search=${term}`);
     console.log('in fetchFilteredUsers - data.data is:', data.data);
+
+
+    document.getElementById("usersHack").innerHTML = data.data;
+
+
+
+
     dispatch({
       type: 'fetch-filtered-users-ok',
       filteredUsers: data.data,
