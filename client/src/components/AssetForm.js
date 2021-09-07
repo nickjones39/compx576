@@ -63,6 +63,9 @@ const AssetForm = ({
     }
   }, [assetToUpdate, history]);
 
+  const usersHack = document.getElementById("usersHack").innerHTML;
+  alert(usersHack); 
+
   return (
     <>
       {create && (
@@ -121,6 +124,8 @@ const AssetForm = ({
             ))}
           </Form.Control>
         </Form.Group>
+
+        
 
         <Form.Group>
           <Form.Label>Assigned to</Form.Label>
