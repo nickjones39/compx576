@@ -38,6 +38,7 @@ const AssetForm = ({
   const onChange = (e) => {
 
     if (e.target.value == "611718f1a9e02900161fb087") {
+      alert("On Lease Selected!");
       setShowAssignedTo(true)
     }
 
