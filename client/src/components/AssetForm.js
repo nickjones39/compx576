@@ -64,7 +64,6 @@ const AssetForm = ({
   }, [assetToUpdate, history]);
 
   const usersHack = document.getElementById("usersHack").innerHTML;
-  alert(usersHack); 
   var o = JSON.parse(usersHack);
   alert(o.name[0]);
 
@@ -137,7 +136,7 @@ const AssetForm = ({
             value={asset.assignedTo}
             onChange={onChange}
           >
-            {users?.map((x) => (
+            {o?.map((x) => (
               <option key={x._id} value={x._id}>
                 {x.name}
               </option>
