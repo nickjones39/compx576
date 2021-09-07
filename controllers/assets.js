@@ -61,7 +61,7 @@ exports.readAsset = async (req, res, next) => {
     const populateQuery = [
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
-      //{ path: 'user', select: ['name']},
+      { path: 'user', select: ['name']},
     ];
     const asset = await Asset.findById(req.params.id).populate(populateQuery);
     if (!asset) {
