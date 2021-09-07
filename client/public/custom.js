@@ -1,7 +1,7 @@
-alert("Hello World!");
+// alert("Hello World!");
 
-const usersHack = document.getElementById("usersHack").innerHTML;
+// const usersHack = document.getElementById("usersHack").innerHTML;
 
-alert(usersHack); 
+// alert(usersHack); 
 
 //var o = JSON.parse(usersHack);
