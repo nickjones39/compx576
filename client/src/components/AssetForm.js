@@ -62,11 +62,25 @@ const AssetForm = ({
     }
   }, [assetToUpdate, history]);
 
+  function sortByProperty(property){  
+    return function(a,b){  
+       if(a[property] > b[property])  
+          return 1;  
+       else if(a[property] < b[property])  
+          return -1;  
+   
+       return 0;  
+    }  
+ }
+
   const jsonObj = document.getElementById("usersHack").innerHTML;
   let usersList = JSON.parse(jsonObj);
-  usersList.sort(function(a, b){
-    return a.name - b.name;
-  });
+  
+  usersList.sort(sortByProperty("name"));
+
+  //usersList.sort(function(a, b){
+  //  return a.name - b.name;
+  //});
 
   return (
     <>
