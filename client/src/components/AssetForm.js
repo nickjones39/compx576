@@ -77,12 +77,21 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-  function hideMe(){
-    setVisible(false);
-  }
+  state = {
+    isActive: false
+  };
 
-  let style = { borderColor: color, backgroundColor: color };
-  if (!visible) style.display = "none";
+  handleShow = () => {
+    this.setState({
+      isActive: true
+    });
+  };
+
+  handleHide = () => {
+    this.setState({
+      isActive: false
+    });
+  };
 
 
 
@@ -145,8 +154,10 @@ const AssetForm = ({
           </Form.Control>
         </Form.Group>
 
+
+        {this.state.isActive && 
         
-        <Form.Group style={{visibility: hidden}}>
+        <Form.Group>
           <Form.Label>Assigned to</Form.Label>
           <Form.Control
             as='select'
@@ -162,6 +173,7 @@ const AssetForm = ({
           </Form.Control>
         </Form.Group>
 
+        }
        
 
         <Form.Group>
