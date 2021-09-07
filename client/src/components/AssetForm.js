@@ -65,6 +65,8 @@ const AssetForm = ({
 
   const usersHack = document.getElementById("usersHack").innerHTML;
   alert(usersHack); 
+  var o = JSON.parse(usersHack);
+  alert(o.name[0]);
 
   return (
     <>
