@@ -1,8 +1,6 @@
 const Asset = require('../models/asset');
 const Category = require('../models/category');
 const Location = require('../models/location');
-/* added User */
-const User = require('../models/user');
 
 const defineSearchQuery = require('../utils/define-search-query');
 const calculatePaginationValues = require('../utils/calculate-pagination-values');
@@ -29,8 +27,6 @@ exports.readAssets = async (req, res, next) => {
     const populateQuery = [
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
-      /* added User */
-      { path: 'user', select: ['name', 'userId']}
     ];
     const searchQuery = defineSearchQuery(req);
     const pagination = calculatePaginationValues(req);
