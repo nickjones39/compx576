@@ -80,6 +80,25 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
+  const [showAssignedTo, setShowAssignedTo] = useState(false);
+
+  const assignedToControl = () => {
+    <Form.Group>
+      <Form.Label>Assigned to</Form.Label>
+      <Form.Control
+        as='select'
+        name='assignedTo'
+        value={asset.assignedTo}
+        onChange={onChange}
+      >
+        {usersList?.map((x) => (
+          <option key={x._id} value={x._id}>
+            {x.name}
+          </option>
+        ))}
+      </Form.Control>
+    </Form.Group>
+  };
 
 
   return (
@@ -143,24 +162,8 @@ const AssetForm = ({
 
 
          
+        {showAssignedTo ? <assignedToControl /> : null}
         
-        <Form.Group>
-          <Form.Label>Assigned to</Form.Label>
-          <Form.Control
-            as='select'
-            name='assignedTo'
-            value={asset.assignedTo}
-            onChange={onChange}
-          >
-            {usersList?.map((x) => (
-              <option key={x._id} value={x._id}>
-                {x.name}
-              </option>
-            ))}
-          </Form.Control>
-          
-        </Form.Group>
-
         
        
 
@@ -220,6 +223,8 @@ const AssetForm = ({
       </Form>
     </>
   );
+
+
 };
 
 export default AssetForm;
