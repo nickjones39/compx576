@@ -80,22 +80,6 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-  state = {
-    isActive: false
-  };
-
-  handleShow = () => {
-    this.setState({
-      isActive: true
-    });
-  };
-
-  handleHide = () => {
-    this.setState({
-      isActive: false
-    });
-  };
-
 
 
   return (
@@ -174,6 +158,7 @@ const AssetForm = ({
               </option>
             ))}
           </Form.Control>
+          
         </Form.Group>
 
         
