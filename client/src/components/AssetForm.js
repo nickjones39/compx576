@@ -37,7 +37,9 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    alert(e.target.value);
+    if (e.target.value == "611718f1a9e02900161fb087") {
+      setShowAssignedTo(true)
+    }
 
     document.getElementById('editing').classList.remove('hidden');
     document.getElementById('submitted').classList.add('hidden');
