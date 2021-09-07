@@ -63,12 +63,10 @@ const AssetForm = ({
   }, [assetToUpdate, history]);
 
   const jsonObj = document.getElementById("usersHack").innerHTML;
-
-  jsonObj.sort(function(a, b){
+  let usersList = JSON.parse(jsonObj);
+  usersList.sort(function(a, b){
     return a.name - b.name;
   });
-
-  const usersList = JSON.parse(jsonObj);
 
   return (
     <>
