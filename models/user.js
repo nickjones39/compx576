@@ -5,8 +5,6 @@ const validateEmail = require('../utils/validate-email');
 const userSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    address: { type: String },
-    phone: { type: String },
     email: {
       type: String,
       trim: true,
@@ -18,16 +16,14 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: 'Password is required',
-      minlength: [8, 'Minimum password length is eight characters'],
+      minlength: [6, 'Minimum password length is six characters'],
     },
-    userId: { type: String, unique: true },
     admin: { type: Boolean, default: false },
   },
   {
     timestamps: true,
   }
 );
-
 
 userSchema.methods.generateToken = function () {
   return jwt.sign(

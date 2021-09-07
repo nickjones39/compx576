@@ -28,10 +28,10 @@ exports.createUser = async (req, res, next) => {
       return res.status(400).json({ error: 'Email already registered' });
     }
 
-    if (!req.body.password || req.body.password.length < 6) {
+    if (!req.body.password || req.body.password.length < 8) {
       return res
         .status(400)
-        .json({ error: 'Please enter a six or more characters long password' });
+        .json({ error: 'Please enter a eight or more characters long password' });
     }
 
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
