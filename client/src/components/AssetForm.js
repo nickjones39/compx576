@@ -36,6 +36,9 @@ const AssetForm = ({
   );
 
   const onChange = (e) => {
+
+    alert(e);
+
     document.getElementById('editing').classList.remove('hidden');
     document.getElementById('submitted').classList.add('hidden');
     setAsset({ ...asset, [e.target.name]: e.target.value });
