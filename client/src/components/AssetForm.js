@@ -146,7 +146,7 @@ const AssetForm = ({
         </Form.Group>
 
         
-        <Form.Group style={{visibility: hidden}} id={{assigned}}>
+        <Form.Group style={{visibility: hidden}}>
           <Form.Label>Assigned to</Form.Label>
           <Form.Control
             as='select'
