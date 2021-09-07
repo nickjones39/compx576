@@ -105,6 +105,7 @@ const AssetForm = ({
             ))}
           </Form.Control>
         </Form.Group>
+        
         <Form.Group>
           <Form.Label>Location</Form.Label>
           <Form.Control
