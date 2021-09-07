@@ -1,3 +1,5 @@
-const jsonObj = document.getElementById("usersHack").innerHTML;
+const usersHack = document.getElementById("usersHack").innerHTML;
 
-alert(jsonObj); 
+alert(usersHack); 
+
+//var o = JSON.parse(usersHack);
