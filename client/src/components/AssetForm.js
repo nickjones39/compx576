@@ -158,7 +158,7 @@ const AssetForm = ({
         </Form.Group>
 
 
-        {this.state.isActive && 
+         
         
         <Form.Group>
           <Form.Label>Assigned to</Form.Label>
@@ -176,7 +176,7 @@ const AssetForm = ({
           </Form.Control>
         </Form.Group>
 
-        }
+        
        
 
         <Form.Group>
