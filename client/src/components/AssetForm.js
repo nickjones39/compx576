@@ -129,7 +129,7 @@ const AssetForm = ({
             value={asset.assignedTo}
             onChange={onChange}
           >
-            {staff?.map((x) => (
+            {locations?.map((x) => (
               <option key={x._id} value={x._id}>
                 {x.name}
               </option>
