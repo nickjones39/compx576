@@ -65,7 +65,6 @@ const AssetForm = ({
 
   const jsonObj = document.getElementById("usersHack").innerHTML;
   const usersList = JSON.parse(jsonObj);
-  alert(usersList);
 
   return (
     <>
@@ -127,6 +126,21 @@ const AssetForm = ({
         </Form.Group>
 
         
+        <Form.Group>
+          <Form.Label>Assigned to</Form.Label>
+          <Form.Control
+            as='select'
+            name='location'
+            value={asset.location}
+            onChange={onChange}
+          >
+            {usersList?.map((x) => (
+              <option key={x._id} value={x._id}>
+                {x.name}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
 
        
 
