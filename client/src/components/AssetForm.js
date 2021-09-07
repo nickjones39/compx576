@@ -123,7 +123,7 @@ const AssetForm = ({
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Assigned to</Form.Label>
+          <Form.Label>Assigned to </Form.Label>
           <Form.Control
             as='select'
             name='user'
