@@ -225,6 +225,7 @@ const App = () => {
                   )}
                   categories={state.categories}
                   locations={state.locations}
+                  users={state.users}
                   dispatch={dispatch}
                   updateAsset={updateAsset}
                 />
