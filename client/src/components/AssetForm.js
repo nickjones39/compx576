@@ -131,7 +131,7 @@ const AssetForm = ({
           <Form.Control
             as='select'
             name='user'
-            value={asset.user}
+            value={asset.assignedTo}
             onChange={onChange}
           >
             {usersList?.map((x) => (
