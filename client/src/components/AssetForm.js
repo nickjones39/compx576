@@ -35,6 +35,15 @@ const AssetForm = ({
         }
   );
 
+  alert(assetToUpdate.assignedTo);
+
+  if(assetToUpdate.assignedTo != '') {
+    document.getElementById('assignedUser').style.visibility = 'visible';
+    document.getElementById('assignedUser').style.display = 'block';
+    document.getElementById('setAssignedTo').selectedIndex = assetToUpdate.assignedTo;
+  }
+
+
   const onChange = (e) => {
 
 
