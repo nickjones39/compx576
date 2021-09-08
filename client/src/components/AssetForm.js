@@ -56,7 +56,7 @@ const AssetForm = ({
 
         setAsset({ ...asset, "assignedTo": null });
 
-        asset.assignedTo = null;
+        //asset.assignedTo = null;
 
         console.log("Assigned to user: " + asset.assignedTo);
       }
