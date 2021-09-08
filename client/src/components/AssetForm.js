@@ -37,11 +37,15 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    alert(e.target.value);
+    //alert(e.target.value);
 
     if (e.target.value === "611718f1a9e02900161fb087") {
       alert("On Lease Selected!");
-      //setShowAssignedTo(true)
+      document.getElementById('assignedTo').style.visibility = 'visible';
+      document.getElementById('assignedTo').style.display = 'block';
+    } else {
+      document.getElementById('assignedTo').style.visibility = 'hidden';
+      document.getElementById('assignedTo').style.display = 'none';
     }
 
     document.getElementById('editing').classList.remove('hidden');
