@@ -43,11 +43,16 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
       } else {
-        alert( assetToUpdate.assignedTo._id)
+        
+        
+        alert( document.getElementById('setAssignedTo').selected.value)
+
+
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        assetToUpdate.assignedTo._id = '';
-        alert( assetToUpdate.assignedTo._id)
+        document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
+        //assetToUpdate.assignedTo._id = '';
+        //alert( assetToUpdate.assignedTo._id)
       }
     }
 
@@ -157,6 +162,7 @@ const AssetForm = ({
           <Form.Group>
               <Form.Label>Assigned to</Form.Label>
               <Form.Control
+                  id="setAssignedTo"
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
