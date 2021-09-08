@@ -62,11 +62,13 @@ const AssetForm = ({
       }
     }
     
+
+    /*
     if(e.target.name === 'assignedTo' && asset.location === '611718f1a9e02900161fb087') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
         //document.getElementById('setAssignedTo').selectedIndex = asset;
-    }
+    }*/
 
     document.getElementById('editing').classList.remove('hidden');
     document.getElementById('submitted').classList.add('hidden');
@@ -110,18 +112,10 @@ const AssetForm = ({
   usersList.sort(sortByProperty("name"));
 
   if(asset.location === '611718f1a9e02900161fb087') {
+    alert("working!")
     document.getElementById('assignedUser').style.visibility = 'visible';
     document.getElementById('assignedUser').style.display = 'block';
   }
-
-  function onLoad () {
-      alert(asset.assignedTo);  // asset.assignedTo
-      if(asset.location === '611718f1a9e02900161fb087') {
-        document.getElementById('assignedUser').style.visibility = 'visible';
-        document.getElementById('assignedUser').style.display = 'block';
-        document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
-      }
-  };
   
 
   return (
@@ -193,7 +187,6 @@ const AssetForm = ({
                   name='assignedTo'
                   value={asset.assignedTo}
                   onChange={onChange}
-                  onLoad={onChange}
               >
                   <option value="">-- Please select user to assign asset to --</option>
                   {usersList?.map((x) => (
@@ -234,7 +227,6 @@ const AssetForm = ({
             value={asset.model}
             placeholder='Optional Model'
             onChange={onChange}
-            onLoad={onLoad}
           />
         </Form.Group>
         <Form.Group>
