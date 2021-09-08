@@ -48,7 +48,10 @@ const AssetForm = ({
         alert( document.getElementById('setAssignedTo').value)
 
         document.getElementById('setAssignedTo').value = '';
-        document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
+
+        document.getElementById('setAssignedTo').options.selectedIndex = 0;
+
+
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
 
