@@ -31,7 +31,7 @@ const [asset, setAsset] = useState(
           name: '',
           category: '61171936a9e02900161fb08a', // hardcode a category id for assets with unassigned category
           location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
-          assignedTo: '0',  // 61386d38268d951496513125
+          assignedTo: '613945076676a4b590fd31cc',  // 61386d38268d951496513125
           serialNumber: '',
           model: '',
           description: '',
@@ -60,11 +60,11 @@ const [asset, setAsset] = useState(
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo
       } else {
-        document.getElementById('setAssignedTo').value = '0'; // 61386d38268d951496513125
+        document.getElementById('setAssignedTo').value = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
         document.getElementById('setAssignedTo').selectedIndex = 0;
         console.log("Assigned to user: " + asset.assignedTo);
-        setAsset({ ...asset, "assignedTo": '0' }); // 61386d38268d951496513125
-        asset.assignedTo = '0'; // 61386d38268d951496513125
+        setAsset({ ...asset, "assignedTo": '613945076676a4b590fd31cc' }); // 61386d38268d951496513125
+        asset.assignedTo = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
         console.log("Assigned to user: " + asset.assignedTo);
       }
     }
@@ -76,7 +76,7 @@ const [asset, setAsset] = useState(
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo === '0') { // 61386d38268d951496513125
+    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo === '613945076676a4b590fd31cc') { // 61386d38268d951496513125
       alert('Error: Please select user to assign asset to');
     } else {
       if (create) {
@@ -112,7 +112,7 @@ const [asset, setAsset] = useState(
   } else {
     disableAssignedToSelect.disabled = true;
     try {
-      document.getElementById('setAssignedTo').value = '0'; // 61386d38268d951496513125
+      document.getElementById('setAssignedTo').value = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
       document.getElementById('setAssignedTo').selectedIndex = 0;
     }
     catch (e) {
@@ -193,7 +193,7 @@ const [asset, setAsset] = useState(
                   id="setAssignedTo"
                   onChange={onChange}
               >
-                  <option value='0'>-- Please select user to assign asset to --</option>
+                  <option value='613945076676a4b590fd31cc'>-- Please select user to assign asset to --</option>
                   {usersList?.map((x) => (
                     <option key={x._id} value={x._id} >{x.name}</option>
                   ))}
