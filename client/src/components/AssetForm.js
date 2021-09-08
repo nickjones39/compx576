@@ -48,7 +48,7 @@ const AssetForm = ({
 
     if (asset.location === '611718f1a9e02900161fb087') {
   
-      alert("version 3.3: " + asset.assignedTo);
+      alert("version 3.4: " + asset.assignedTo);
       
       sel.disabled = false;
       sel.value = asset.assignedTo;
@@ -64,7 +64,8 @@ const AssetForm = ({
     //  }
     //}
   
-    document.getElementById("setAssignedTo").options.namedItem(asset.assignedTo).selected=true;
+    
+    document.getElementById("setAssignedTo").selectedIndex=asset.assignedTo;
   
   
     } else {
@@ -103,7 +104,7 @@ const AssetForm = ({
         //  }
         //}
 
-        document.getElementById("setAssignedTo").options.namedItem(asset.assignedTo).selected=true;
+        document.getElementById("setAssignedTo").selectedIndex=asset.assignedTo;
 
         //let sel = document.getElementById('setAssignedTo');
 
