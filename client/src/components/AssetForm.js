@@ -51,7 +51,10 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
 
-        //document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
+        document.getElementById('setAssignedTo').value = '';
+        document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
+
+        alert( document.getElementById('setAssignedTo').value)
 
         //assetToUpdate.assignedTo._id = '';
         //alert( assetToUpdate.assignedTo._id)
