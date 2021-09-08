@@ -43,14 +43,14 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
       } else {
+
         
-        
-        alert( document.getElementById('setAssignedTo').selectedIndex.value)
+        alert( document.getElementById('setAssignedTo').value)
 
 
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        
+
         //document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
 
         //assetToUpdate.assignedTo._id = '';
