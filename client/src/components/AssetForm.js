@@ -33,15 +33,10 @@ const AssetForm = ({
           description: '',
           condition: '',
         }
+
   );
 
-  alert(assetToUpdate.assignedTo);
-
-  if(assetToUpdate.assignedTo != '') {
-    document.getElementById('assignedUser').style.visibility = 'visible';
-    document.getElementById('assignedUser').style.display = 'block';
-    document.getElementById('setAssignedTo').selectedIndex = assetToUpdate.assignedTo;
-  }
+  
 
 
   const onChange = (e) => {
@@ -102,6 +97,14 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
+  const onLoad = (e) => {
+      alert(assetToUpdate.assignedTo);
+      if(assetToUpdate.assignedTo != '') {
+        document.getElementById('assignedUser').style.visibility = 'visible';
+        document.getElementById('assignedUser').style.display = 'block';
+        document.getElementById('setAssignedTo').selectedIndex = assetToUpdate.assignedTo;
+      }
+  };
 
   return (
     <>
@@ -118,7 +121,7 @@ const AssetForm = ({
       <div id='submitted' className='hidden'>
         <Alert variant='success'>Data Submitted</Alert>
       </div>
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit} onLoad={onLoad}>
         <Form.Group>
           <Form.Label>Name</Form.Label>
           <Form.Control
@@ -241,6 +244,8 @@ const AssetForm = ({
     </>
 
   );
+
+ 
 
 };
 
