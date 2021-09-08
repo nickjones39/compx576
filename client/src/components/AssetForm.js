@@ -70,13 +70,10 @@ const AssetForm = ({
       }
     }
     
-    if(e.target.name === "assignedTo") {
-      alert(e.target.value);  // asset.assignedTo
-      if(e.target.value != '') {
+    if(e.target.name === 'assignedTo' && asset.location === '611718f1a9e02900161fb087') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
-        document.getElementById('setAssignedTo').selectedIndex = e.target.value;
-      }
+        //document.getElementById('setAssignedTo').selectedIndex = asset;
     }
 
     document.getElementById('editing').classList.remove('hidden');
@@ -123,13 +120,12 @@ const AssetForm = ({
 
   function onLoad () {
       alert(asset.assignedTo);  // asset.assignedTo
-      if(asset.assignedTo != '') {
+      if(asset.location === '611718f1a9e02900161fb087') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
         document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
       }
   };
-
   
 
   return (
