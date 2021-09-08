@@ -122,11 +122,11 @@ const AssetForm = ({
 
 
   function onLoad () {
-      alert(e.target.value);  // asset.assignedTo
-      if(e.target.value != '') {
+      alert(asset.assignedTo);  // asset.assignedTo
+      if(asset.assignedTo != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
-        document.getElementById('setAssignedTo').selectedIndex = e.target.value;
+        document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
       }
   };
 
