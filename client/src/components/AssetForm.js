@@ -43,22 +43,12 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
       } else {
-
-        
-        alert( "Begining: " + document.getElementById('setAssignedTo').value)
-
+        console.log( "Begining: " + document.getElementById('setAssignedTo').value);
         document.getElementById('setAssignedTo').value = '';
-
         document.getElementById('setAssignedTo').selectedIndex = 0;
-
-
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-
-        alert( "After: " + document.getElementById('setAssignedTo').value)
-
-        //assetToUpdate.assignedTo._id = '';
-        //alert( assetToUpdate.assignedTo._id)
+        console.log( "After: " + document.getElementById('setAssignedTo').value);
       }
     }
 
