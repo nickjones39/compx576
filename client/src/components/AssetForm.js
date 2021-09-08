@@ -41,7 +41,7 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    assignedUser = document.getElementById('assignedUser')
+    let assignedUser = document.getElementById('assignedUser')
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
@@ -113,9 +113,7 @@ const AssetForm = ({
   let usersList = JSON.parse(jsonObj);
     
   usersList.sort(sortByProperty("name"));
-  
-  var assignedUser = '';
-  
+
 
   if(asset.location === '611718f1a9e02900161fb087') {
     const style = document.createElement('style');
@@ -271,6 +269,4 @@ const AssetForm = ({
 
 
 export default AssetForm;
-
-assignedUser =  document.getElementById('assignedUser');
 
