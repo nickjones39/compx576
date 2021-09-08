@@ -15,8 +15,7 @@ const AssetForm = ({
   updateAsset,
 }) => { 
   
-  alert("loading 1.0: " + assetToUpdate.assignedTo._id);
-  alert("loading 1.0: " + assetToUpdate.assignedTo);
+  alert("pre-loading 1.1: " + assetToUpdate.assignedTo);
   
   const [asset, setAsset] = useState(
 
@@ -26,7 +25,7 @@ const AssetForm = ({
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
           location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
-          assignedTo: assetToUpdate.assignedTo._id, // ?? '61386d38268d951496513125',  
+          assignedTo: assetToUpdate.assignedTo, // ?? '61386d38268d951496513125',  
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
@@ -156,8 +155,8 @@ const AssetForm = ({
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
-    alert("version 1.0: " + asset.assignedTo);
-    disableAssignedToSelect.value = asset.assignedTo;
+    alert("version 1.1: " + assetToUpdate.assignedTo);
+    disableAssignedToSelect.value = assetToUpdate.assignedTo;
   } else {
     disableAssignedToSelect.disabled = true;
   }
