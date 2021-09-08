@@ -198,13 +198,11 @@ const AssetForm = ({
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
               <Form.Control {...disableAssignedToSelect} 
-                  id="setAssignedTo"
                   as='select'
+                  defaultValue={asset.assignedTo}
                   name='assignedTo'
-                  value={asset.assignedTo}
+                  id="setAssignedTo"
                   onChange={onChange}
-                  
-                  required
               >
                   
                   {usersList?.map((x) => (
