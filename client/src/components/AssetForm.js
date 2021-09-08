@@ -85,8 +85,6 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-  const [showAssignedTo, setShowAssignedTo] = useState(false);
-
 
   return (
     <>
@@ -148,10 +146,8 @@ const AssetForm = ({
         </Form.Group>
 
 
-        {showAssignedTo ? <Text /> : null}
+        <div id="assignedUser"></div>
 
-        
-       
 
         <Form.Group>
           <Form.Label>Serial Number</Form.Label>
@@ -212,11 +208,5 @@ const AssetForm = ({
   );
 
 };
-
-
-// {showAssignedTo ? <Text /> : null}
-
-const Text = () => <div>You clicked the button!</div>;
-
 
 export default AssetForm;
