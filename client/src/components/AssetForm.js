@@ -37,15 +37,16 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    //alert(e.target.value);
+    alert(e.target.name);
 
-    if (e.target.value === "611718f1a9e02900161fb087") {
-      //alert("On Lease Selected!");
-      document.getElementById('assignedUser').style.visibility = 'visible';
-      document.getElementById('assignedUser').style.display = 'block';
-    } else {
-      document.getElementById('assignedUser').style.visibility = 'hidden';
-      document.getElementById('assignedUser').style.display = 'none';
+    if(e.target.name === "location") {
+      if (e.target.value === "611718f1a9e02900161fb087") {
+        document.getElementById('assignedUser').style.visibility = 'visible';
+        document.getElementById('assignedUser').style.display = 'block';
+      } else {
+        document.getElementById('assignedUser').style.visibility = 'hidden';
+        document.getElementById('assignedUser').style.display = 'none';
+      }
     }
 
     document.getElementById('editing').classList.remove('hidden');
