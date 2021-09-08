@@ -238,7 +238,7 @@ const AssetForm = ({
           />
         </Form.Group>
         <Form.Group>
-          <Button as='input' type='submit' value='Submit' />
+          <Button as='input' type='submit' value='Submit' onLoad={onLoad}/>
         </Form.Group>
       </Form>
     </>
