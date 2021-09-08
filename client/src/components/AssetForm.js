@@ -55,7 +55,6 @@ const AssetForm = ({
         assignedUser.style.visibility = 'visible';
         assignedUser.style.display = 'block';
         disableAssignedToSelect.disabled = false;
-        alert(asset.assignedTo);
         disableAssignedToSelect.value = asset.assignedTo;
       } else {
 
@@ -199,12 +198,13 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Control {...disableAssignedToSelect}
-                  id='setAssignedTo'
+              <Form.Control {...disableAssignedToSelect} 
+                  defaultValue='-- Please select user to assign asset to --'
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
                   onChange={onChange}
+                  
                   required
               >
                   
