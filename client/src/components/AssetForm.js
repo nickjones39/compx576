@@ -163,11 +163,12 @@ const AssetForm = ({
 
     try {
       alert("version 1.2: " + assetToUpdate.assignedTo);
+      disableAssignedToSelect.value = assetToUpdate.assignedTo;
     }
     catch (e) {
-  
+      disableAssignedToSelect.value = asset.assignedTo;
     }
-    disableAssignedToSelect.value = assetToUpdate.assignedTo;
+    
   } else {
     disableAssignedToSelect.disabled = true;
     document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
