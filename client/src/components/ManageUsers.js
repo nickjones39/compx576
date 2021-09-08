@@ -69,32 +69,32 @@ const ManageUsers = ({
                 </tr>
               ) : (
                 users?.map((x, index) => {
-                  if(x.name != '-- Please select user to assign asset to --') {
-                    return (
-                      <tr key={x._id ? x._id : 'tempkey'}>
-                        <td>{index + 1}</td>
-                        <td>
-                          <Link to={`/user/${x._id}`}>
-                            <i className='far fa-edit'></i>
-                          </Link>
-                        </td>
-                        <td>{x.name}</td>
-                        <td>{x.address}</td>
-                        <td>{x.phone}</td>
-                        <td>{x.email}</td>
-                        <td>{x.admin ? 'Admin' : 'User'}</td>
-                        <td>{x.userId}</td>
-                        <td>
-                          <i
-                            className='far fa-trash-alt'
-                            user-id={x._id}
-                            onClick={onDeleteHandler}
-                            style={{ color: 'darkred', cursor: 'pointer' }}
-                          ></i>
-                        </td>
-                      </tr>
-                    );
-                  }
+                  //if(x.name != '-- Please select user to assign asset to --') {
+                  return (
+                    <tr key={x._id ? x._id : 'tempkey'}>
+                      <td>{index + 1}</td>
+                      <td>
+                        <Link to={`/user/${x._id}`}>
+                          <i className='far fa-edit'></i>
+                        </Link>
+                      </td>
+                      <td>{x.name}</td>
+                      <td>{x.address}</td>
+                      <td>{x.phone}</td>
+                      <td>{x.email}</td>
+                      <td>{x.admin ? 'Admin' : 'User'}</td>
+                      <td>{x.userId}</td>
+                      <td>
+                        <i
+                          className='far fa-trash-alt'
+                          user-id={x._id}
+                          onClick={onDeleteHandler}
+                          style={{ color: 'darkred', cursor: 'pointer' }}
+                        ></i>
+                      </td>
+                    </tr>
+                  );
+                  //}
                 })
               )}
             </tbody>
