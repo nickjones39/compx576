@@ -112,9 +112,17 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
+  alert(asset.assignedTo);
+  if(asset.assignedTo != '') {
+    document.getElementById('assignedUser').style.visibility = 'visible';
+    document.getElementById('assignedUser').style.display = 'block';
+    document.getElementById('setAssignedTo').selectedIndex = assetToUpdate.assignedTo;
+  }
+
+
   const onLoad = (e) => {
-      alert(assetToUpdate.assignedTo);
-      if(assetToUpdate._id.assignedTo != '') {
+      alert(asset.assignedTo);
+      if(asset.assignedTo != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
         document.getElementById('setAssignedTo').selectedIndex = assetToUpdate.assignedTo;
