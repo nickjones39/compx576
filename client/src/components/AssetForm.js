@@ -48,6 +48,7 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.display = 'block';
       } else {
 
+        alert(assetToUpdate.assignedTo);
         alert(assetToUpdate._id.assignedTo);
         alert(asset.assignedTo._id);
         alert(asset.assetToUpdate.assignedTo._id);
@@ -59,7 +60,9 @@ const AssetForm = ({
         document.getElementById('setAssignedTo').selectedIndex = 0;
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        setAsset({ ...asset, [assetToUpdate._id.assignedTo]: '' });
+
+        //setAsset({ ...asset, [assetToUpdate._id.assignedTo]: '' });
+
         console.log(assetToUpdate.assignedTo);
       }
     }
@@ -106,7 +109,7 @@ const AssetForm = ({
   usersList.sort(sortByProperty("name"));
 
   const onLoad = (e) => {
-      alert(assetToUpdate._id.assignedTo);
+      alert(assetToUpdate.assignedTo);
       if(assetToUpdate._id.assignedTo != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
