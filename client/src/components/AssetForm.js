@@ -50,15 +50,21 @@ const AssetForm = ({
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 
+
+
+
   window.addEventListener('load', function () {
-    let disableAssignedToSelect = {};
-  if (asset.location === '611718f1a9e02900161fb087') {
-    alert("version 2: " + asset.assignedTo);
-    disableAssignedToSelect.disabled = false;
-    document.getElementById('setAssignedTo').value = asset.assignedTo;
-    //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
-    
-    $('#setAssignedTo').val(asset.assignedTo);
+
+    let sel = document.getElementById('setAssignedTo');
+
+    if (asset.location === '611718f1a9e02900161fb087') {
+
+      alert("version 3: " + asset.assignedTo);
+      
+      sel.disabled = false;
+      sel.value = asset.assignedTo;
+      sel.selectedIndex = asset.assignedTo;
+      $('#setAssignedTo').val(asset.assignedTo);
 
     //let sel = document.getElementById('setAssignedTo');
 
@@ -69,9 +75,10 @@ const AssetForm = ({
     //  }
     //}
 
-  } else {
-    disableAssignedToSelect.disabled = true;
-  }
+    } else {
+      sel.disabled = true;
+    }
+
   })
 
   
@@ -105,8 +112,6 @@ const AssetForm = ({
 
         document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
-        assignedUser.style.visibility = 'hidden';
-        assignedUser.style.display = 'none';
 
         console.log("Assigned to user: " + asset.assignedTo);
 
@@ -241,7 +246,7 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Control {...disableAssignedToSelect} 
+              <Form.Control
                   as='select'
                   value={asset.assignedTo}
                   name='assignedTo'
