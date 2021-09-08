@@ -44,14 +44,16 @@ const AssetForm = ({
     document.getElementById('setAssignedTo').value = asset.assignedTo;
     //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
     
-    let sel = document.getElementById('setAssignedTo');
+    $('#setAssignedTo').val(asset.assignedTo);
 
-    for(var i = 0; i < sel.options.length; ++i) {
-      if(sel.options[i].value === asset.assignedTo) {
-         sel.selectedIndex = i;
-         break;
-      }
-    }
+    //let sel = document.getElementById('setAssignedTo');
+
+    //for(var i = 0; i < sel.options.length; ++i) {
+    //  if(sel.options[i].value === asset.assignedTo) {
+    //     sel.selectedIndex = i;
+    //     break;
+    //  }
+    //}
 
   } else {
     disableAssignedToSelect.disabled = true;
@@ -65,7 +67,8 @@ const AssetForm = ({
       if (e.target.value === "611718f1a9e02900161fb087") {
         disableAssignedToSelect.disabled = false;
         document.getElementById('setAssignedTo').value = asset.assignedTo;
-        document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
+        //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
+        $('#setAssignedTo').val(asset.assignedTo);
       } else {
 
         disableAssignedToSelect.disabled = true;
@@ -217,7 +220,7 @@ const AssetForm = ({
               >
                   
                   {usersList?.map((x) => (
-                    <option key={x._id} value={x._id} selected={asset.assignedTo ? asset.assignedTo == x._id ? true : true : false} >{x.name}</option>
+                    <option key={x._id} value={x._id} >{x.name}</option>
                   ))}
 
                   {...disableAssignedToSelect} 
