@@ -110,10 +110,11 @@ const AssetForm = ({
   }
   
 
-  const jsonObj = JSON.stringify(document.getElementById("usersHack").innerHTML);  
-  const usersList = JSON.parse(jsonObj);
+  const jsonObj = document.getElementById("usersHack").innerHTML;  
+  let usersList = JSON.parse(jsonObj);
     
   usersList.sort(sortByProperty("name"));
+
 
 
   if(asset.location === '611718f1a9e02900161fb087') {
