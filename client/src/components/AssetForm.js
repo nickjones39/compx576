@@ -42,8 +42,8 @@ const AssetForm = ({
     alert(asset.assignedTo);
     alert(assetToUpdate.assignedTo._id);
     disableAssignedToSelect.disabled = false;
-    disableAssignedToSelect.value = asset.assignedTo;
-    disableAssignedToSelect.selectedIndex = asset.assignedTo;
+    document.getElementById('setAssignedTo').value = asset.assignedTo;
+    document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
   } else {
     disableAssignedToSelect.disabled = true;
   }
@@ -55,8 +55,8 @@ const AssetForm = ({
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
         disableAssignedToSelect.disabled = false;
-        disableAssignedToSelect.value = asset.assignedTo;
-        disableAssignedToSelect.selectedIndex = asset.assignedTo;
+        document.getElementById('setAssignedTo').value = asset.assignedTo;
+        document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
       } else {
 
         disableAssignedToSelect.disabled = true;
