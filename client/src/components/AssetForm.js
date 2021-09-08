@@ -47,14 +47,6 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.display = 'block';
       } else {
 
-        //alert(assignedTo);
-        //alert(assetToUpdate._id.assignedTo);
-        //alert(asset.assignedTo._id);
-        //alert(asset.assetToUpdate.assignedTo._id);
-        //alert(assetToUpdate._id);
-        //alert(asset._id);
-
-
         document.getElementById('setAssignedTo').value = '';
         document.getElementById('setAssignedTo').selectedIndex = 0;
         document.getElementById('assignedUser').style.visibility = 'hidden';
