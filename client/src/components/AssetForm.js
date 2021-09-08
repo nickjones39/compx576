@@ -35,7 +35,12 @@ const AssetForm = ({
         }
   );
 
-
+  let disableAssignedToSelect = {};
+  if (asset.location === '611718f1a9e02900161fb087') {
+    disableAssignedToSelect.disabled = false;
+  } else {
+    disableAssignedToSelect.disabled = true;
+  }
 
   const onChange = (e) => {
 
@@ -45,7 +50,10 @@ const AssetForm = ({
       if (e.target.value === "611718f1a9e02900161fb087") {
         assignedUser.style.visibility = 'visible';
         assignedUser.style.display = 'block';
+        disableAssignedToSelect.disabled = false;
       } else {
+
+        disableAssignedToSelect.disabled = true;
 
         document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
@@ -118,6 +126,8 @@ const AssetForm = ({
   }
   
 
+  
+
   return (
     <>
       {create && (
@@ -183,7 +193,7 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Select 
+              <Form.Select {...disableAssignedToSelect}
                   id='setAssignedTo'
                   as='select'
                   name='assignedTo'
