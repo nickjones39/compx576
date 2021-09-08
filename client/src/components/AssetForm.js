@@ -33,7 +33,6 @@ const AssetForm = ({
           description: '',
           condition: '',
         }
-
   );
 
   
@@ -122,6 +121,8 @@ const AssetForm = ({
       }
   };
 
+  
+
   return (
     <>
       {create && (
@@ -131,7 +132,7 @@ const AssetForm = ({
       )}
       {!create && (
         <div id='editing'>
-          <Alert variant='primary' onLoad={onLoad}>Update Asset</Alert>
+          <Alert variant='primary' onLoadStart={onLoad}>Update Asset</Alert>
         </div>
       )}
       <div id='submitted' className='hidden'>
@@ -265,12 +266,5 @@ const AssetForm = ({
 
 };
 
-alert(asset.assignedTo);
-
-if(asset.assignedTo != '') {
-  document.getElementById('assignedUser').style.visibility = 'visible';
-  document.getElementById('assignedUser').style.display = 'block';
-  document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
-}
 
 export default AssetForm;
