@@ -40,8 +40,8 @@ const AssetForm = ({
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
-    alert(asset.assignedTo);
     disableAssignedToSelect.value = asset.assignedTo;
+    disableAssignedToSelect.selectedIndex = asset.assignedTo;
   } else {
     disableAssignedToSelect.disabled = true;
   }
@@ -52,10 +52,9 @@ const AssetForm = ({
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
-        assignedUser.style.visibility = 'visible';
-        assignedUser.style.display = 'block';
         disableAssignedToSelect.disabled = false;
         disableAssignedToSelect.value = asset.assignedTo;
+        disableAssignedToSelect.selectedIndex = asset.assignedTo;
       } else {
 
         disableAssignedToSelect.disabled = true;
