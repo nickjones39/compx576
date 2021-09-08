@@ -79,7 +79,9 @@ const AssetForm = ({
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
-        disableAssignedToSelect.disabled = false;
+
+        sel.disabled = false;
+
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
 
@@ -104,7 +106,7 @@ const AssetForm = ({
 
       } else {
 
-        disableAssignedToSelect.disabled = true;
+        sel.disabled = true;
 
         document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
