@@ -111,7 +111,7 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-  const onLoad = (e) => {
+  function onLoad() {
     alert("Working!");
     if(asset.location === '611718f1a9e02900161fb087') {
       document.getElementById('assignedUser').style.visibility = 'visible';
@@ -187,6 +187,7 @@ const AssetForm = ({
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
+                  onLoad={onLoad}
                   onChange={onChange}
               >
                   <option value="">-- Please select user to assign asset to --</option>
@@ -198,8 +199,6 @@ const AssetForm = ({
               </Form.Control>
           </Form.Group>
         </div>
-
-
 
         <Form.Group>
           <Form.Label>Serial Number</Form.Label>
