@@ -43,9 +43,11 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
       } else {
+        alert( assetToUpdate.assignedTo._id)
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
         assetToUpdate.assignedTo._id = '';
+        alert( assetToUpdate.assignedTo._id)
       }
     }
 
