@@ -146,7 +146,7 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div id="assignedUser"></div>
+        <div id="assignedUser"><AssignedTo /></div>
 
 
         <Form.Group>
