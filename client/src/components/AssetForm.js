@@ -45,17 +45,17 @@ const AssetForm = ({
       } else {
 
         
-        alert( document.getElementById('setAssignedTo').value)
+        alert( "Begining: " + document.getElementById('setAssignedTo').value)
 
         document.getElementById('setAssignedTo').value = '';
 
-        document.getElementById('setAssignedTo').options.selectedIndex = 0;
+        document.getElementById('setAssignedTo').selectedIndex = 0;
 
 
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
 
-        alert( document.getElementById('setAssignedTo').value)
+        alert( "After: " + document.getElementById('setAssignedTo').value)
 
         //assetToUpdate.assignedTo._id = '';
         //alert( assetToUpdate.assignedTo._id)
