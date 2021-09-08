@@ -36,21 +36,21 @@ const AssetForm = ({
   );
 
   
-
+  const assignedUser =  document.querySelector('.assignedUser');
 
   const onChange = (e) => {
 
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
-        document.getElementById('assignedUser').style.visibility = 'visible';
-        document.getElementById('assignedUser').style.display = 'block';
+        assignedUser.style.visibility = 'visible';
+        assignedUser.style.display = 'block';
       } else {
 
         document.getElementById('setAssignedTo').value = '';
         document.getElementById('setAssignedTo').selectedIndex = 0;
-        document.getElementById('assignedUser').style.visibility = 'hidden';
-        document.getElementById('assignedUser').style.display = 'none';
+        assignedUser.style.visibility = 'visible';
+        assignedUser.style.display = 'block';
 
         console.log("Assigned to user: " + asset.assignedTo);
 
@@ -111,13 +111,13 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-  function onLoad() {
-    alert("Working!");
-    if(asset.location === '611718f1a9e02900161fb087') {
-      document.getElementById('assignedUser').style.visibility = 'visible';
-      document.getElementById('assignedUser').style.display = 'block';
-    }
+  
+
+  if(asset.location === '611718f1a9e02900161fb087') {
+    assignedUser.style.visibility = 'visible';
+    assignedUser.style.display = 'block';
   }
+  
 
   return (
     <>
@@ -179,7 +179,7 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div id="assignedUser" onLoad={onLoad}>
+        <div class="assignedUser">
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
               <Form.Control
@@ -187,7 +187,6 @@ const AssetForm = ({
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
-                  onLoad={onLoad}
                   onChange={onChange}
               >
                   <option value="">-- Please select user to assign asset to --</option>

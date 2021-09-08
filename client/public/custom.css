@@ -2,7 +2,7 @@
     display: none;
     visibility: hidden;    
 }
-#assignedUser {
+.assignedUser {
     display: none;
     visibility: hidden;    
 }
