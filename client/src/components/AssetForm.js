@@ -39,7 +39,7 @@ const AssetForm = ({
 
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
-    alert(asset.assignedTo);
+    alert("version 1: " + asset.assignedTo);
     disableAssignedToSelect.disabled = false;
     document.getElementById('setAssignedTo').value = asset.assignedTo;
     //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
