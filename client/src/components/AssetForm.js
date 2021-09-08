@@ -112,7 +112,11 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-  //alert(asset.assignedTo);
+
+  alert(asset.assetToUpdate.assignedTo);
+
+
+
   if(asset.assignedTo != '') {
     document.getElementById('assignedUser').style.visibility = 'visible';
     document.getElementById('assignedUser').style.display = 'block';
@@ -121,7 +125,7 @@ const AssetForm = ({
 
 
   const onLoad = (e) => {
-      alert(asset.assignedTo);
+      alert(asset.assetToUpdate.assignedTo);
       if(asset.assignedTo != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
