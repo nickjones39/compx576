@@ -107,7 +107,7 @@ const AssetForm = ({
 
         setAsset({ ...asset, "assignedTo": '61386d38268d951496513125' });
 
-        asset.assignedTo = '61386d38268d951496513125';
+        //asset.assignedTo = '61386d38268d951496513125';
 
         console.log("Assigned to user: " + asset.assignedTo);
       }
