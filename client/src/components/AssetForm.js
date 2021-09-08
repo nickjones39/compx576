@@ -69,6 +69,15 @@ const AssetForm = ({
         console.log("Assigned to user: " + asset.assignedTo);
       }
     }
+    
+    if(e.target.name === "assignedTo") {
+      alert(e.target.value);  // asset.assignedTo
+      if(e.target.value != '') {
+        document.getElementById('assignedUser').style.visibility = 'visible';
+        document.getElementById('assignedUser').style.display = 'block';
+        document.getElementById('setAssignedTo').selectedIndex = e.target.value;
+      }
+    }
 
     document.getElementById('editing').classList.remove('hidden');
     document.getElementById('submitted').classList.add('hidden');
@@ -191,8 +200,8 @@ const AssetForm = ({
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
-                  onLoad={onLoad}
                   onChange={onChange}
+                  onLoad={onChange}
               >
                   <option value="">-- Please select user to assign asset to --</option>
                   {usersList?.map((x) => (
