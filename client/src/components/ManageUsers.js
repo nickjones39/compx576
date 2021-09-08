@@ -68,7 +68,7 @@ const ManageUsers = ({
                   <td colSpan='9'>No Users Found</td>
                 </tr>
               ) : (
-                users?.map((x = x + 1, index) => {
+                users?.map((x, index) => {
                   return (
                     <tr key={x._id ? x._id : 'tempkey'}>
                       <td>{index + 1}</td>
@@ -77,12 +77,12 @@ const ManageUsers = ({
                           <i className='far fa-edit'></i>
                         </Link>
                       </td>
-                      <td>{x.name}</td>
-                      <td>{x.address}</td>
-                      <td>{x.phone}</td>
-                      <td>{x.email}</td>
-                      <td>{x.admin ? 'Admin' : 'User'}</td>
-                      <td>{x.userId}</td>
+                      <td>{(x + 1).name}</td>
+                      <td>{(x + 1).address}</td>
+                      <td>{(x + 1).phone}</td>
+                      <td>{(x + 1).email}</td>
+                      <td>{(x + 1).admin ? 'Admin' : 'User'}</td>
+                      <td>{(x + 1).userId}</td>
                       <td>
                         <i
                           className='far fa-trash-alt'
