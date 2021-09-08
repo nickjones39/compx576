@@ -217,7 +217,7 @@ const AssetForm = ({
               >
                   
                   {usersList?.map((x) => (
-                    <option key={x._id} value={x._id} selected={asset.assignedTo ? asset.assignedTo == x._id ? true : 'true' : 'false'} >{x.name}</option>
+                    <option key={x._id} value={x._id} selected={asset.assignedTo ? asset.assignedTo == x._id ? true : true : false} >{x.name}</option>
                   ))}
 
                   {...disableAssignedToSelect} 
