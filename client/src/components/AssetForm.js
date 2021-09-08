@@ -178,7 +178,7 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div id='assignedUser'>
+        <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
               <Form.Control
@@ -188,6 +188,7 @@ const AssetForm = ({
                   value={asset.assignedTo}
                   onChange={onChange}
                   required
+                  disabled={true}
               >
                   <option value=''>-- Please select user to assign asset to --</option>
                   {usersList?.map((x) => (
@@ -197,7 +198,7 @@ const AssetForm = ({
                   ))}
               </Form.Control>
           </Form.Group>
-        </div>
+        
 
         <Form.Group>
           <Form.Label>Serial Number</Form.Label>
