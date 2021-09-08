@@ -111,12 +111,12 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-
-  if(asset.location === '611718f1a9e02900161fb087') {
-    document.getElementById('assignedUser').style.visibility = 'visible';
-    document.getElementById('assignedUser').style.display = 'block';
+  const onLoad = (e) => {
+    if(asset.location === '611718f1a9e02900161fb087') {
+      document.getElementById('assignedUser').style.visibility = 'visible';
+      document.getElementById('assignedUser').style.display = 'block';
+    }
   }
-  
 
   return (
     <>
@@ -178,7 +178,7 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div id="assignedUser">
+        <div id="assignedUser" onLoad={onLoad}>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
               <Form.Control
@@ -258,7 +258,6 @@ const AssetForm = ({
 
   );
 
- 
 
 };
 
