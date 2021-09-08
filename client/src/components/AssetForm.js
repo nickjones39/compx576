@@ -111,7 +111,7 @@ const AssetForm = ({
   
 
   const jsonObj = JSON.stringify(document.getElementById("usersHack").innerHTML);  
-  let usersList = JSON.parse(jsonObj);
+  const usersList = JSON.parse(jsonObj);
     
   usersList.sort(sortByProperty("name"));
 
