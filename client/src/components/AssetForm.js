@@ -37,7 +37,6 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    alert(e.target.name);
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
@@ -46,6 +45,7 @@ const AssetForm = ({
       } else {
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
+        assetToUpdate.assignedTo._id = '';
       }
     }
 
