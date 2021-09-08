@@ -51,7 +51,7 @@ const AssetForm = ({
 
       alert("version 3: " + asset.assignedTo);
       
-      sel.disabled = false;
+      sel.removeAttribute("disabled");
       sel.value = asset.assignedTo;
       sel.selectedIndex = asset.assignedTo;
       //$('#setAssignedTo').val(asset.assignedTo);
@@ -66,7 +66,7 @@ const AssetForm = ({
     }
 
     } else {
-      sel.disabled = true;
+      sel.setAttribute('disabled', 'disabled');
     }
 
   })
@@ -80,7 +80,7 @@ const AssetForm = ({
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
 
-        sel.disabled = false;
+        sel.removeAttribute("disabled");
 
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
@@ -106,7 +106,7 @@ const AssetForm = ({
 
       } else {
 
-        sel.disabled = true;
+        sel.setAttribute('disabled', 'disabled');
 
         document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
