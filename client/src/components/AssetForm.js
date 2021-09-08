@@ -109,7 +109,9 @@ const AssetForm = ({
     }  
   }
   
-  const jsonObj = document.getElementById("usersHack").innerHTML;
+  const { data } = await axios.get('/api/users?search=');
+
+  const jsonObj = JSON.stringify(data.data);  // document.getElementById("usersHack").innerHTML;
   let usersList = JSON.parse(jsonObj);
     
   usersList.sort(sortByProperty("name"));
