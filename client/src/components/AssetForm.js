@@ -16,7 +16,7 @@ const AssetForm = ({
 }) => { 
   
   try {
-    alert("pre-loading 1.1: " + assetToUpdate.assignedTo);
+    alert("pre-loading 1.2: " + assetToUpdate.assignedTo);
   }
   catch (e) {
     alert("Creating New Asset");
@@ -104,14 +104,14 @@ const AssetForm = ({
 
         // document.getElementById("setAssignedTo").disabled = true;
 
-        // document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
+        document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
 
         console.log("Assigned to user: " + asset.assignedTo);
 
         setAsset({ ...asset, "assignedTo": '61386d38268d951496513125' });
 
-        //asset.assignedTo = '61386d38268d951496513125';
+        asset.assignedTo = '61386d38268d951496513125';
 
         console.log("Assigned to user: " + asset.assignedTo);
       }
@@ -162,7 +162,7 @@ const AssetForm = ({
     disableAssignedToSelect.disabled = false;
 
     try {
-      alert("version 1.1: " + assetToUpdate.assignedTo);
+      alert("version 1.2: " + assetToUpdate.assignedTo);
     }
     catch (e) {
   
@@ -170,6 +170,8 @@ const AssetForm = ({
     disableAssignedToSelect.value = assetToUpdate.assignedTo;
   } else {
     disableAssignedToSelect.disabled = true;
+    document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
+    document.getElementById('setAssignedTo').selectedIndex = 0;
   }
   
 
