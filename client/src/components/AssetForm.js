@@ -113,19 +113,8 @@ const AssetForm = ({
   usersList.sort(sortByProperty("name"));
 
 
-  alert(asset.assetToUpdate.assignedTo);
-
-
-
-  if(asset.assignedTo != '') {
-    document.getElementById('assignedUser').style.visibility = 'visible';
-    document.getElementById('assignedUser').style.display = 'block';
-    document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
-  }
-
-
   const onLoad = (e) => {
-      alert(asset.assetToUpdate.assignedTo);
+      alert(asset.assignedTo);
       if(asset.assignedTo != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
@@ -275,5 +264,13 @@ const AssetForm = ({
  
 
 };
+
+alert(asset.assignedTo);
+
+if(asset.assignedTo != '') {
+  document.getElementById('assignedUser').style.visibility = 'visible';
+  document.getElementById('assignedUser').style.display = 'block';
+  document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
+}
 
 export default AssetForm;
