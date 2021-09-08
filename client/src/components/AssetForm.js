@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 
+
+    
+
 const AssetForm = ({
   create,
   categories,
@@ -12,8 +15,8 @@ const AssetForm = ({
   updateAsset,
 }) => { 
   const [asset, setAsset] = useState(
-    
-   
+
+
     assetToUpdate
       ? {
           name: assetToUpdate.name,
@@ -38,59 +41,33 @@ const AssetForm = ({
   );
 
 
+  function sortByProperty(property){  
+    return function(a,b){  
+       if(a[property] > b[property])  
+          return 1;  
+       else if(a[property] < b[property])  
+          return -1;  
+       return 0;  
+    }  
+  }
   
+  let jsonObj = document.getElementById("usersHack").innerHTML; 
+  let usersList = JSON.parse(jsonObj);
+        
+  usersList.sort(sortByProperty("name"));
 
 
-  setTimeout(function(){
-
-
-    let sel = document.getElementById('setAssignedTo');
-
-    if (asset.location === '611718f1a9e02900161fb087') {
-  
-      alert("version 3.5: " + asset.assignedTo);
-      
-      sel.disabled = false;
-      sel.value = asset.assignedTo;
-      sel.selectedIndex = asset.assignedTo;
-      //$('#setAssignedTo').val(asset.assignedTo);
-  
-    //let sel = document.getElementById('setAssignedTo');
-  
-    //for(var i = 0; i < sel.options.length; ++i) {
-    //  if(sel.options[i].value === asset.assignedTo) {
-    //     sel.selectedIndex = i;
-    //     break;
-    //  }
-    //}
-  
-    
-    document.getElementById("setAssignedTo").selectedIndex=asset.assignedTo;
-  
-  
-    } else {
-      document.getElementById("setAssignedTo").disabled = true;
-    }
-
-
-   }, 250);
-
-  //window.addEventListener('load', function () {
-
-   
-
-  //})
 
   
 
   const onChange = (e) => {
 
-    let sel = document.getElementById('assignedUser')
+    // let sel = document.getElementById('assignedUser')
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
 
-        sel.disabled = false;
+       /// sel.disabled = false;
 
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
@@ -117,9 +94,9 @@ const AssetForm = ({
 
       } else {
 
-        document.getElementById("setAssignedTo").disabled = true;
+        // document.getElementById("setAssignedTo").disabled = true;
 
-        document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
+        // document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
 
         console.log("Assigned to user: " + asset.assignedTo);
@@ -158,23 +135,6 @@ const AssetForm = ({
     }
   }, [assetToUpdate, history]);
 
-  
-  function sortByProperty(property){  
-    return function(a,b){  
-       if(a[property] > b[property])  
-          return 1;  
-       else if(a[property] < b[property])  
-          return -1;  
-       return 0;  
-    }  
-  }
-  
-
-  const jsonObj = document.getElementById("usersHack").innerHTML;  
-  let usersList = JSON.parse(jsonObj);
-    
-  usersList.sort(sortByProperty("name"));
-
 
 
   if(asset.location === '611718f1a9e02900161fb087') {
@@ -188,6 +148,15 @@ const AssetForm = ({
   }
   
 
+
+  let disableAssignedToSelect = {};
+  if (asset.location === '611718f1a9e02900161fb087') {
+    disableAssignedToSelect.disabled = false;
+    alert(asset.assignedTo);
+    disableAssignedToSelect.value = asset.assignedTo;
+  } else {
+    disableAssignedToSelect.disabled = true;
+  }
   
 
   return (
@@ -255,7 +224,7 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Control
+              <Form.Control  {...disableAssignedToSelect}
                   as='select'
                   value={asset.assignedTo}
                   name='assignedTo'
