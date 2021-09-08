@@ -162,7 +162,7 @@ const AssetForm = ({
     disableAssignedToSelect.disabled = false;
 
     try {
-      alert("version 1.2: " + assetToUpdate.assignedTo);
+      alert("version 1.3: " + assetToUpdate.assignedTo);
       disableAssignedToSelect.value = assetToUpdate.assignedTo;
     }
     catch (e) {
@@ -171,8 +171,13 @@ const AssetForm = ({
     
   } else {
     disableAssignedToSelect.disabled = true;
-    document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
-    document.getElementById('setAssignedTo').selectedIndex = 0;
+    try {
+      document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
+      document.getElementById('setAssignedTo').selectedIndex = 0;
+    }
+    catch (e) {
+
+    }
   }
   
 
