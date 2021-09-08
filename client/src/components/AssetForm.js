@@ -35,7 +35,9 @@ const AssetForm = ({
         }
   );
 
-  
+  var div = document.createElement('div');
+  div.setAttribute('class', 'assignedUser'); 
+  document.body.appendChild(div);
   const assignedUser =  document.querySelector('.assignedUser');
 
   const onChange = (e) => {
