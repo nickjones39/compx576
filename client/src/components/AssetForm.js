@@ -189,8 +189,6 @@ const AssetForm = ({
                   name='assignedTo'
                   value={asset.assignedTo}
                   onChange={onChange}
-                  required
-                  disabled={true}
               >
                   
                   {usersList?.map((x) => (
