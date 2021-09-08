@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
-
 
 const AssetForm = ({
   create,
@@ -29,7 +27,7 @@ const AssetForm = ({
           name: '',
           category: '61171936a9e02900161fb08a', // hardcode a category id for assets with unassigned category
           location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
-          //assignedTo: null,                       // default is not assigned
+          assignedTo: null,                       // default is not assigned
           serialNumber: '',
           model: '',
           description: '',
