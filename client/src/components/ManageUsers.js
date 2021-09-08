@@ -68,7 +68,7 @@ const ManageUsers = ({
                   <td colSpan='9'>No Users Found</td>
                 </tr>
               ) : (
-                users?.map((x, index) => {
+                users?.map((x = x + 1, index) => {
                   return (
                     <tr key={x._id ? x._id : 'tempkey'}>
                       <td>{index + 1}</td>
