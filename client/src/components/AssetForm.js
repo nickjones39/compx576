@@ -40,10 +40,19 @@ const AssetForm = ({
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     alert(asset.assignedTo);
-    alert(assetToUpdate.assignedTo._id);
     disableAssignedToSelect.disabled = false;
     document.getElementById('setAssignedTo').value = asset.assignedTo;
-    document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
+    //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
+    
+    let sel = document.getElementById('setAssignedTo');
+
+    for(var i = 0; i < sel.options.length; ++i) {
+      if(sel.options[i].value === asset.assignedTo) {
+         sel.selectedIndex = i;
+         break;
+      }
+    }
+
   } else {
     disableAssignedToSelect.disabled = true;
   }
@@ -199,7 +208,7 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Control {...disableAssignedToSelect} 
+              <Form.Control 
                   as='select'
                   value={asset.assignedTo}
                   name='assignedTo'
@@ -210,7 +219,8 @@ const AssetForm = ({
                   {usersList?.map((x) => (
                     <option key={x._id} value={x._id} selected={asset.assignedTo ? asset.assignedTo == x._id ? true : 'true' : 'false'} >{x.name}</option>
                   ))}
-                  
+
+                  {...disableAssignedToSelect} 
               </Form.Control>
           </Form.Group>
         
