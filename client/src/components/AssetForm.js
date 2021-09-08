@@ -47,16 +47,16 @@ const AssetForm = ({
         assignedUser.style.display = 'block';
       } else {
 
-        document.getElementById('setAssignedTo').value = null;
+        document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
         assignedUser.style.visibility = 'hidden';
         assignedUser.style.display = 'none';
 
         console.log("Assigned to user: " + asset.assignedTo);
 
-        setAsset({ ...asset, "assignedTo": null });
+        setAsset({ ...asset, "assignedTo": '61386d38268d951496513125' });
 
-        asset.assignedTo = null;
+        asset.assignedTo = '61386d38268d951496513125';
 
         console.log("Assigned to user: " + asset.assignedTo);
       }
