@@ -111,10 +111,8 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
-alert(asset.location);
 
   if(asset.location === '611718f1a9e02900161fb087') {
-    alert("working!");
     document.getElementById('assignedUser').style.visibility = 'visible';
     document.getElementById('assignedUser').style.display = 'block';
   }
@@ -199,6 +197,7 @@ alert(asset.location);
               </Form.Control>
           </Form.Group>
         </div>
+
 
 
         <Form.Group>
