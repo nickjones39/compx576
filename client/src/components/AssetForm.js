@@ -110,47 +110,12 @@ const AssetForm = ({
   }
   
 
+  const { data } = axios.get('/api/users?search=');
 
-
-
-
-
-
-
- const fetchFilteredUsers = async (dispatch) => {
-    try {
-      dispatch({ type: 'fetch-filtered-users-request', loading: true });
-      const { data } = await axios.get('/api/users?search=');
-      console.log('in fetchFilteredUsers - data.data is:', data.data);
-
-
-
-      // document.getElementById("usersHack").innerHTML = JSON.stringify(data.data);
-  
-      const jsonObj = JSON.stringify(data.data);  // document.getElementById("usersHack").innerHTML;
-      const usersList = JSON.parse(jsonObj);
-
-      usersList.sort(sortByProperty("name"));
-  
-      dispatch({
-        type: 'fetch-filtered-users-ok',
-        filteredUsers: data.data,
-        loading: false,
-      });
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: 'fetch-filtered-users-fail', loading: false, error });
-    }
-  };
-
-
-
-
-  fetchFilteredUsers(dispatch, state.userSearchTerm);
-
-
-
-
+  const jsonObj = JSON.stringify(data.data);  // document.getElementById("usersHack").innerHTML;
+  let usersList = JSON.parse(jsonObj);
+    
+  usersList.sort(sortByProperty("name"));
 
   
 
