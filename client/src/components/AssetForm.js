@@ -242,6 +242,7 @@ const AssetForm = ({
             value={asset.model}
             placeholder='Optional Model'
             onChange={onChange}
+            onLoad={onLoad}
           />
         </Form.Group>
         <Form.Group>
