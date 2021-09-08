@@ -47,7 +47,7 @@ const AssetForm = ({
         document.getElementById('setAssignedTo').selectedIndex = 0;
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        setAsset({ ...asset, [assignedTo.target.name]: '' });
+        setAsset({ ...asset, [asset.assignedTo.target.name]: '' });
       }
     }
 
