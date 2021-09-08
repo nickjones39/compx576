@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 
 
-    
-
 const AssetForm = ({
   create,
   categories,
@@ -14,17 +12,9 @@ const AssetForm = ({
   assetToUpdate,
   updateAsset,
 }) => { 
-  
-  try {
-    //alert("pre-loading 1.2: " + assetToUpdate.assignedTo);
-  }
-  catch (e) {
-    //alert("Creating New Asset");
-  }
- 
-  
-  const [asset, setAsset] = useState(
 
+
+const [asset, setAsset] = useState(
 
     assetToUpdate
       ? {
@@ -62,37 +52,19 @@ const AssetForm = ({
   
   let jsonObj = document.getElementById("usersHack").innerHTML; 
   let usersList = JSON.parse(jsonObj);
-        
   usersList.sort(sortByProperty("name"));
-
-
   
-
   const onChange = (e) => {
-
-
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
-
-        
         document.getElementById('setAssignedTo').value = asset.assignedTo;
-        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo;
-       
-       
-
+        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo
       } else {
-
-        // document.getElementById("setAssignedTo").disabled = true;
-
         document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
-
         console.log("Assigned to user: " + asset.assignedTo);
-
         setAsset({ ...asset, "assignedTo": '61386d38268d951496513125' });
-
         asset.assignedTo = '61386d38268d951496513125';
-
         console.log("Assigned to user: " + asset.assignedTo);
       }
     }
@@ -104,17 +76,21 @@ const AssetForm = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (create) {
-      addAsset(dispatch, asset);
+    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo === '61386d38268d951496513125') {
+      alert('Error: Please select user to assign asset to');
     } else {
-      updateAsset(dispatch, assetToUpdate._id, asset);
+      if (create) {
+        addAsset(dispatch, asset);
+      } else {
+        updateAsset(dispatch, assetToUpdate._id, asset);
+      }
+      document.getElementById('editing').classList.add('hidden');
+      document.getElementById('submitted').classList.remove('hidden');
+      setTimeout(() => {
+        history.push('/assets');
+        window.location.reload();
+      }, 1500);
     }
-    document.getElementById('editing').classList.add('hidden');
-    document.getElementById('submitted').classList.remove('hidden');
-    setTimeout(() => {
-      history.push('/assets');
-      window.location.reload();
-    }, 1500);
   };
 
   useEffect(() => {
@@ -124,19 +100,15 @@ const AssetForm = ({
   }, [assetToUpdate, history]);
 
 
-
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
-
     try {
-      //alert("version 1.3: " + assetToUpdate.assignedTo);
       disableAssignedToSelect.value = assetToUpdate.assignedTo;
     }
     catch (e) {
       disableAssignedToSelect.value = asset.assignedTo;
     }
-    
   } else {
     disableAssignedToSelect.disabled = true;
     try {
