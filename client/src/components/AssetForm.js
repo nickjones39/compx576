@@ -121,7 +121,7 @@ const AssetForm = ({
   usersList.sort(sortByProperty("name"));
 
 
-  const onLoad = (e) => {
+  function onLoad () {
       alert(e.target.value);  // asset.assignedTo
       if(e.target.value != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
@@ -143,7 +143,7 @@ const AssetForm = ({
         <div id='editing'>
           <Alert variant='primary'>Update Asset</Alert>
         </div>
-      )}
+      ), onLoad()}
       <div id='submitted' className='hidden'>
         <Alert variant='success'>Data Submitted</Alert>
       </div>
