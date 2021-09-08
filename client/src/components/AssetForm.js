@@ -16,10 +16,10 @@ const AssetForm = ({
 }) => { 
   
   try {
-    alert("pre-loading 1.2: " + assetToUpdate.assignedTo);
+    //alert("pre-loading 1.2: " + assetToUpdate.assignedTo);
   }
   catch (e) {
-    alert("Creating New Asset");
+    //alert("Creating New Asset");
   }
  
   
@@ -70,35 +70,15 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    // let sel = document.getElementById('assignedUser')
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
 
-       /// sel.disabled = false;
-
+        
         document.getElementById('setAssignedTo').value = asset.assignedTo;
-        //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
-
-        //$('#setAssignedTo').val(asset.assignedTo);
-
-        //for(var i = 0; i < sel.options.length; ++i) {
-        //  if(sel.options[i].value === asset.assignedTo) {
-        //     sel.selectedIndex = i;
-        //     break;
-        //  }
-        //}
-
-        document.getElementById("setAssignedTo").selectedIndex=asset.assignedTo;
-
-        //let sel = document.getElementById('setAssignedTo');
-
-        //for(var i = 0; i < sel.options.length; ++i) {
-        //  if(sel.options[i].value === asset.assignedTo) {
-        //     sel.selectedIndex = i;
-        //     break;
-        //  }
-        //}
+        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo;
+       
+       
 
       } else {
 
@@ -145,24 +125,12 @@ const AssetForm = ({
 
 
 
-  if(asset.location === '611718f1a9e02900161fb087') {
-    const style = document.createElement('style');
-      style.innerHTML = `
-          #assignedUser {
-              display: block;
-              visibility: visible;
-          }
-      `;
-  }
-  
-
-
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
 
     try {
-      alert("version 1.3: " + assetToUpdate.assignedTo);
+      //alert("version 1.3: " + assetToUpdate.assignedTo);
       disableAssignedToSelect.value = assetToUpdate.assignedTo;
     }
     catch (e) {
