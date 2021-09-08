@@ -49,24 +49,27 @@ const AssetForm = ({
 
     if (asset.location === '611718f1a9e02900161fb087') {
 
-      alert("version 3: " + asset.assignedTo);
+      alert("version 3.1: " + asset.assignedTo);
       
-      sel.removeAttribute("disabled");
+      sel.disabled = false;
       sel.value = asset.assignedTo;
       sel.selectedIndex = asset.assignedTo;
       //$('#setAssignedTo').val(asset.assignedTo);
 
     //let sel = document.getElementById('setAssignedTo');
 
-    for(var i = 0; i < sel.options.length; ++i) {
-      if(sel.options[i].value === asset.assignedTo) {
-         sel.selectedIndex = i;
-         break;
-      }
-    }
+    //for(var i = 0; i < sel.options.length; ++i) {
+    //  if(sel.options[i].value === asset.assignedTo) {
+    //     sel.selectedIndex = i;
+    //     break;
+    //  }
+    //}
+
+    document.getElementById("setAssignedTo").options.namedItem(asset.assignedTo).selected=true;
+
 
     } else {
-      sel.setAttribute('disabled', 'disabled');
+      document.getElementById("setAssignedTo").disabled = true;
     }
 
   })
@@ -80,20 +83,21 @@ const AssetForm = ({
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
 
-        sel.removeAttribute("disabled");
+        sel.disabled = false;
 
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
 
         //$('#setAssignedTo').val(asset.assignedTo);
 
-        for(var i = 0; i < sel.options.length; ++i) {
-          if(sel.options[i].value === asset.assignedTo) {
-             sel.selectedIndex = i;
-             break;
-          }
-        }
+        //for(var i = 0; i < sel.options.length; ++i) {
+        //  if(sel.options[i].value === asset.assignedTo) {
+        //     sel.selectedIndex = i;
+        //     break;
+        //  }
+        //}
 
+        document.getElementById("setAssignedTo").options.namedItem(asset.assignedTo).selected=true;
 
         //let sel = document.getElementById('setAssignedTo');
 
@@ -106,7 +110,7 @@ const AssetForm = ({
 
       } else {
 
-        sel.setAttribute('disabled', 'disabled');
+        document.getElementById("setAssignedTo").disabled = true;
 
         document.getElementById('setAssignedTo').value = '61386d38268d951496513125';
         document.getElementById('setAssignedTo').selectedIndex = 0;
