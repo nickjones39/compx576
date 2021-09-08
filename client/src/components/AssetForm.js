@@ -195,7 +195,7 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Select {...disableAssignedToSelect}
+              <Form.Control {...disableAssignedToSelect}
                   id='setAssignedTo'
                   as='select'
                   name='assignedTo'
@@ -208,7 +208,7 @@ const AssetForm = ({
                       {x.name}
                   </option>
                   ))}
-              </Form.Select>
+              </Form.Control>
           </Form.Group>
         
 
