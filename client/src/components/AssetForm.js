@@ -44,16 +44,16 @@ const AssetForm = ({
     document.getElementById('setAssignedTo').value = asset.assignedTo;
     //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
     
-    $('#setAssignedTo').val(asset.assignedTo);
+    //$('#setAssignedTo').val(asset.assignedTo);
 
-    //let sel = document.getElementById('setAssignedTo');
+    let sel = document.getElementById('setAssignedTo');
 
-    //for(var i = 0; i < sel.options.length; ++i) {
-    //  if(sel.options[i].value === asset.assignedTo) {
-    //     sel.selectedIndex = i;
-    //     break;
-    //  }
-    //}
+    for(var i = 0; i < sel.options.length; ++i) {
+      if(sel.options[i].value === asset.assignedTo) {
+         sel.selectedIndex = i;
+         break;
+      }
+    }
 
   } else {
     disableAssignedToSelect.disabled = true;
@@ -68,7 +68,18 @@ const AssetForm = ({
         disableAssignedToSelect.disabled = false;
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
-        $('#setAssignedTo').val(asset.assignedTo);
+        //$('#setAssignedTo').val(asset.assignedTo);
+
+
+        let sel = document.getElementById('setAssignedTo');
+
+        for(var i = 0; i < sel.options.length; ++i) {
+          if(sel.options[i].value === asset.assignedTo) {
+             sel.selectedIndex = i;
+             break;
+          }
+        }
+
       } else {
 
         disableAssignedToSelect.disabled = true;
