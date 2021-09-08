@@ -1,22 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 
-function sortByProperty(property){  
-  return function(a,b){  
-     if(a[property] > b[property])  
-        return 1;  
-     else if(a[property] < b[property])  
-        return -1;  
-     return 0;  
-  }  
-}
 
-const jsonObj = document.getElementById("usersHack").innerHTML;
-let usersList = JSON.parse(jsonObj);
-  
-usersList.sort(sortByProperty("name"));
-
-var assignedUser = '';
 
 const AssetForm = ({
   create,
@@ -114,17 +99,30 @@ const AssetForm = ({
   }, [assetToUpdate, history]);
 
   
-
+  function sortByProperty(property){  
+    return function(a,b){  
+       if(a[property] > b[property])  
+          return 1;  
+       else if(a[property] < b[property])  
+          return -1;  
+       return 0;  
+    }  
+  }
   
-
+  const jsonObj = document.getElementById("usersHack").innerHTML;
+  let usersList = JSON.parse(jsonObj);
+    
+  usersList.sort(sortByProperty("name"));
+  
+  var assignedUser = '';
   
 
   if(asset.location === '611718f1a9e02900161fb087') {
     const style = document.createElement('style');
       style.innerHTML = `
           #assignedUser {
-              display: none;
-              visibility: hidden;
+              display: block;
+              visibility: visible;
           }
       `;
   }
