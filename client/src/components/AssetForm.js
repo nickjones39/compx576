@@ -37,9 +37,11 @@ const AssetForm = ({
         }
   );
 
-  let disableAssignedToSelect = {};
+
+  window.addEventListener('load', function () {
+    let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
-    alert("version 1: " + asset.assignedTo);
+    alert("version 2: " + asset.assignedTo);
     disableAssignedToSelect.disabled = false;
     document.getElementById('setAssignedTo').value = asset.assignedTo;
     //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
@@ -58,6 +60,9 @@ const AssetForm = ({
   } else {
     disableAssignedToSelect.disabled = true;
   }
+  })
+
+  
 
   const onChange = (e) => {
 
