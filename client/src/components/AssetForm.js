@@ -61,11 +61,13 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
 
-        console.log(asset.assignedTo);
+        console.log("Assigned to user: " + asset.assignedTo);
 
         setAsset({ ...asset, "assignedTo": '' });
 
-        console.log(asset.assignedTo);
+        asset.assignedTo = '';
+
+        console.log("Assigned to user: " + asset.assignedTo);
       }
     }
 
