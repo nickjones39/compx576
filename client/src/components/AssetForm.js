@@ -112,6 +112,7 @@ const AssetForm = ({
   usersList.sort(sortByProperty("name"));
 
   const onLoad = (e) => {
+    alert("Working!");
     if(asset.location === '611718f1a9e02900161fb087') {
       document.getElementById('assignedUser').style.visibility = 'visible';
       document.getElementById('assignedUser').style.display = 'block';
