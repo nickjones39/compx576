@@ -40,6 +40,8 @@ const AssetForm = ({
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
+    alert(asset.assignedTo);
+    disableAssignedToSelect.value = asset.assignedTo;
   } else {
     disableAssignedToSelect.disabled = true;
   }
@@ -53,6 +55,8 @@ const AssetForm = ({
         assignedUser.style.visibility = 'visible';
         assignedUser.style.display = 'block';
         disableAssignedToSelect.disabled = false;
+        alert(asset.assignedTo);
+        disableAssignedToSelect.value = asset.assignedTo;
       } else {
 
         disableAssignedToSelect.disabled = true;
