@@ -38,6 +38,18 @@ const AssetForm = ({
   );
 
 
+  (function() {
+    // Load the script
+    var script = document.createElement("SCRIPT");
+    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+    script.type = 'text/javascript';
+    script.onload = function() {
+        var $ = window.jQuery;
+        // Use $ here...
+    };
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+
   window.addEventListener('load', function () {
     let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
@@ -46,16 +58,16 @@ const AssetForm = ({
     document.getElementById('setAssignedTo').value = asset.assignedTo;
     //document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
     
-    //$('#setAssignedTo').val(asset.assignedTo);
+    $('#setAssignedTo').val(asset.assignedTo);
 
-    let sel = document.getElementById('setAssignedTo');
+    //let sel = document.getElementById('setAssignedTo');
 
-    for(var i = 0; i < sel.options.length; ++i) {
-      if(sel.options[i].value === asset.assignedTo) {
-         sel.selectedIndex = i;
-         break;
-      }
-    }
+    //for(var i = 0; i < sel.options.length; ++i) {
+    //  if(sel.options[i].value === asset.assignedTo) {
+    //     sel.selectedIndex = i;
+    //     break;
+    //  }
+    //}
 
   } else {
     disableAssignedToSelect.disabled = true;
@@ -73,17 +85,19 @@ const AssetForm = ({
         disableAssignedToSelect.disabled = false;
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
-        //$('#setAssignedTo').val(asset.assignedTo);
+        
+        
+        $('#setAssignedTo').val(asset.assignedTo);
 
 
-        let sel = document.getElementById('setAssignedTo');
+        //let sel = document.getElementById('setAssignedTo');
 
-        for(var i = 0; i < sel.options.length; ++i) {
-          if(sel.options[i].value === asset.assignedTo) {
-             sel.selectedIndex = i;
-             break;
-          }
-        }
+        //for(var i = 0; i < sel.options.length; ++i) {
+        //  if(sel.options[i].value === asset.assignedTo) {
+        //     sel.selectedIndex = i;
+        //     break;
+        //  }
+        //}
 
       } else {
 
