@@ -43,12 +43,11 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
       } else {
-        console.log( "Begining: " + document.getElementById('setAssignedTo').value);
         document.getElementById('setAssignedTo').value = '';
         document.getElementById('setAssignedTo').selectedIndex = 0;
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        console.log( "After: " + document.getElementById('setAssignedTo').value);
+        setAsset({ ...asset, [assignedTo.target.name]: '' });
       }
     }
 
