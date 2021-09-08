@@ -113,11 +113,11 @@ const AssetForm = ({
 
 
   const onLoad = (e) => {
-      alert(asset.assignedTo);
-      if(asset.assignedTo != '') {
+      alert(e.target.value);  // asset.assignedTo
+      if(e.target.value != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
-        document.getElementById('setAssignedTo').selectedIndex = asset.assignedTo;
+        document.getElementById('setAssignedTo').selectedIndex = e.target.value;
       }
   };
 
@@ -132,7 +132,7 @@ const AssetForm = ({
       )}
       {!create && (
         <div id='editing'>
-          <Alert variant='primary' onLoadStart={onLoad}>Update Asset</Alert>
+          <Alert variant='primary'>Update Asset</Alert>
         </div>
       )}
       <div id='submitted' className='hidden'>
@@ -185,12 +185,13 @@ const AssetForm = ({
 
         <div id="assignedUser">
           <Form.Group>
-              <Form.Label>Assigned to</Form.Label>
+              <Form.Label >Assigned to</Form.Label>
               <Form.Control
                   id="setAssignedTo"
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
+                  onLoad={onLoad}
                   onChange={onChange}
               >
                   <option value="">-- Please select user to assign asset to --</option>
