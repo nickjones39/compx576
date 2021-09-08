@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 
+function sortByProperty(property){  
+  return function(a,b){  
+     if(a[property] > b[property])  
+        return 1;  
+     else if(a[property] < b[property])  
+        return -1;  
+     return 0;  
+  }  
+}
+
 const jsonObj = document.getElementById("usersHack").innerHTML;
 let usersList = JSON.parse(jsonObj);
   
 usersList.sort(sortByProperty("name"));
 
-var div = document.createElement('div');
-div.setAttribute('class', 'assignedUser'); 
-document.body.appendChild(div);
-const assignedUser =  document.querySelector('.assignedUser');
 
 
 const AssetForm = ({
@@ -50,6 +56,7 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
+    assignedUser = document.getElementById('assignedUser')
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
@@ -59,8 +66,8 @@ const AssetForm = ({
 
         document.getElementById('setAssignedTo').value = '';
         document.getElementById('setAssignedTo').selectedIndex = 0;
-        assignedUser.style.visibility = 'visible';
-        assignedUser.style.display = 'block';
+        assignedUser.style.visibility = 'hidden';
+        assignedUser.style.display = 'none';
 
         console.log("Assigned to user: " + asset.assignedTo);
 
@@ -106,23 +113,20 @@ const AssetForm = ({
     }
   }, [assetToUpdate, history]);
 
-  function sortByProperty(property){  
-    return function(a,b){  
-       if(a[property] > b[property])  
-          return 1;  
-       else if(a[property] < b[property])  
-          return -1;  
-       return 0;  
-    }  
- }
+  
 
   
 
   
 
   if(asset.location === '611718f1a9e02900161fb087') {
-    assignedUser.style.visibility = 'visible';
-    assignedUser.style.display = 'block';
+    const style = document.createElement('style');
+      style.innerHTML = `
+          #assignedUser {
+              display: none;
+              visibility: hidden;
+          }
+      `;
   }
   
 
@@ -186,7 +190,7 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div class="assignedUser">
+        <div id="assignedUser">
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
               <Form.Control
@@ -269,3 +273,6 @@ const AssetForm = ({
 
 
 export default AssetForm;
+
+assignedUser =  document.getElementById('assignedUser');
+
