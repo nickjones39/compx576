@@ -41,11 +41,11 @@ const AssetForm = ({
 
     if (e.target.value === "611718f1a9e02900161fb087") {
       //alert("On Lease Selected!");
-      document.getElementById('assignedTo').style.visibility = 'visible';
-      document.getElementById('assignedTo').style.display = 'block';
+      document.getElementById('assignedUser').style.visibility = 'visible';
+      document.getElementById('assignedUser').style.display = 'block';
     } else {
-      document.getElementById('assignedTo').style.visibility = 'hidden';
-      document.getElementById('assignedTo').style.display = 'none';
+      document.getElementById('assignedUser').style.visibility = 'hidden';
+      document.getElementById('assignedUser').style.display = 'none';
     }
 
     document.getElementById('editing').classList.remove('hidden');
