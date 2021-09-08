@@ -39,34 +39,40 @@ const AssetForm = ({
 
 
   
-  let sel = document.getElementById('setAssignedTo');
-
-  if (asset.location === '611718f1a9e02900161fb087') {
-
-    alert("version 3.1: " + asset.assignedTo);
-    
-    sel.disabled = false;
-    sel.value = asset.assignedTo;
-    sel.selectedIndex = asset.assignedTo;
-    //$('#setAssignedTo').val(asset.assignedTo);
-
-  //let sel = document.getElementById('setAssignedTo');
-
-  //for(var i = 0; i < sel.options.length; ++i) {
-  //  if(sel.options[i].value === asset.assignedTo) {
-  //     sel.selectedIndex = i;
-  //     break;
-  //  }
-  //}
-
-  document.getElementById("setAssignedTo").options.namedItem(asset.assignedTo).selected=true;
 
 
-  } else {
-    document.getElementById("setAssignedTo").disabled = true;
-  }
+  setTimeout(function(){
 
 
+    let sel = document.getElementById('setAssignedTo');
+
+    if (asset.location === '611718f1a9e02900161fb087') {
+  
+      alert("version 3.1: " + asset.assignedTo);
+      
+      sel.disabled = false;
+      sel.value = asset.assignedTo;
+      sel.selectedIndex = asset.assignedTo;
+      //$('#setAssignedTo').val(asset.assignedTo);
+  
+    //let sel = document.getElementById('setAssignedTo');
+  
+    //for(var i = 0; i < sel.options.length; ++i) {
+    //  if(sel.options[i].value === asset.assignedTo) {
+    //     sel.selectedIndex = i;
+    //     break;
+    //  }
+    //}
+  
+    document.getElementById("setAssignedTo").options.namedItem(asset.assignedTo).selected=true;
+  
+  
+    } else {
+      document.getElementById("setAssignedTo").disabled = true;
+    }
+
+
+   }, 500);
 
   //window.addEventListener('load', function () {
 
