@@ -51,7 +51,7 @@ const AssetForm = ({
         document.getElementById('setAssignedTo').selectedIndex = 0;
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        setAsset({ ...asset, [assetToUpdate.assignedTo]: '' });
+        setAsset({ ...asset, [assetToUpdate._id.assignedTo]: '' });
         console.log(assetToUpdate.assignedTo);
       }
     }
@@ -98,8 +98,8 @@ const AssetForm = ({
   usersList.sort(sortByProperty("name"));
 
   const onLoad = (e) => {
-      alert(assetToUpdate.assignedTo);
-      if(assetToUpdate.assignedTo != '') {
+      alert(assetToUpdate._id.assignedTo);
+      if(assetToUpdate._id.assignedTo != '') {
         document.getElementById('assignedUser').style.visibility = 'visible';
         document.getElementById('assignedUser').style.display = 'block';
         document.getElementById('setAssignedTo').selectedIndex = assetToUpdate.assignedTo;
