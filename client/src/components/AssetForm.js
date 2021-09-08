@@ -115,13 +115,13 @@ const AssetForm = ({
       )}
       {!create && (
         <div id='editing'>
-          <Alert variant='primary'>Update Asset</Alert>
+          <Alert variant='primary' onLoad={onLoad}>Update Asset</Alert>
         </div>
       )}
       <div id='submitted' className='hidden'>
         <Alert variant='success'>Data Submitted</Alert>
       </div>
-      <Form onSubmit={onSubmit} onLoad={onLoad}>
+      <Form onSubmit={onSubmit}>
         <Form.Group>
           <Form.Label>Name</Form.Label>
           <Form.Control
