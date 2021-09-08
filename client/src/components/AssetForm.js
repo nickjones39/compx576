@@ -37,9 +37,11 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    if (e.target.value == "611718f1a9e02900161fb087") {
+    alert(e.target.value);
+
+    if (e.target.value === "611718f1a9e02900161fb087") {
       alert("On Lease Selected!");
-      setShowAssignedTo(true)
+      //setShowAssignedTo(true)
     }
 
     document.getElementById('editing').classList.remove('hidden');
