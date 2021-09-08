@@ -109,7 +109,7 @@ const AssetForm = ({
     }  
   }
   
-  const { data } = await axios.get('/api/users?search=');
+  const { data } = axios.get('/api/users?search=');
 
   const jsonObj = JSON.stringify(data.data);  // document.getElementById("usersHack").innerHTML;
   let usersList = JSON.parse(jsonObj);
