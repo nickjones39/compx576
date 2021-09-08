@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
-
+import axios from 'axios';
 
 
 const AssetForm = ({
@@ -19,7 +19,7 @@ const AssetForm = ({
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
           location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
-          assignedTo: assetToUpdate.assignedTo._id ?? '',  // default is not assigned
+          assignedTo: assetToUpdate.assignedTo._id ?? null,  // default is not assigned
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
@@ -29,7 +29,7 @@ const AssetForm = ({
           name: '',
           category: '61171936a9e02900161fb08a', // hardcode a category id for assets with unassigned category
           location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
-          assignedTo: '',                       // default is not assigned
+          assignedTo: null,                       // default is not assigned
           serialNumber: '',
           model: '',
           description: '',
@@ -49,14 +49,14 @@ const AssetForm = ({
         assignedUser.style.display = 'block';
       } else {
 
-        document.getElementById('setAssignedTo').value = '';
+        document.getElementById('setAssignedTo').value = null;
         document.getElementById('setAssignedTo').selectedIndex = 0;
         assignedUser.style.visibility = 'hidden';
         assignedUser.style.display = 'none';
 
         console.log("Assigned to user: " + asset.assignedTo);
 
-        setAsset({ ...asset, "assignedTo": '' });
+        setAsset({ ...asset, "assignedTo": null });
 
         asset.assignedTo = '';
 
