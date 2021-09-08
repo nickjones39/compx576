@@ -201,7 +201,7 @@ const AssetForm = ({
                   id="setAssignedTo"
                   as='select'
                   name='assignedTo'
-                  defaultValue={asset.assignedTo}
+                  value={asset.assignedTo}
                   onChange={onChange}
                   
                   required
