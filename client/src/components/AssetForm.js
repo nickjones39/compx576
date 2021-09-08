@@ -160,6 +160,7 @@ const AssetForm = ({
                   value={asset.assignedTo}
                   onChange={onChange}
               >
+                  <option value="">Please select user to assign asset to</option>
                   {usersList?.map((x) => (
                   <option key={x._id} value={x._id}>
                       {x.name}
