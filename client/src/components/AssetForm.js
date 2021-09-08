@@ -15,7 +15,13 @@ const AssetForm = ({
   updateAsset,
 }) => { 
   
-  alert("pre-loading 1.1: " + assetToUpdate.assignedTo);
+  try {
+    alert("pre-loading 1.1: " + assetToUpdate.assignedTo);
+  }
+  catch (e) {
+    alert("Creating New Asset");
+  }
+ 
   
   const [asset, setAsset] = useState(
 
@@ -58,7 +64,6 @@ const AssetForm = ({
   let usersList = JSON.parse(jsonObj);
         
   usersList.sort(sortByProperty("name"));
-
 
 
   
@@ -155,7 +160,13 @@ const AssetForm = ({
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
-    alert("version 1.1: " + assetToUpdate.assignedTo);
+
+    try {
+      alert("version 1.1: " + assetToUpdate.assignedTo);
+    }
+    catch (e) {
+  
+    }
     disableAssignedToSelect.value = assetToUpdate.assignedTo;
   } else {
     disableAssignedToSelect.disabled = true;
