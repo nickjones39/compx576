@@ -109,6 +109,10 @@ const AssetForm = ({
   
   usersList.sort(sortByProperty("name"));
 
+  if(asset.location === '611718f1a9e02900161fb087') {
+    document.getElementById('assignedUser').style.visibility = 'visible';
+    document.getElementById('assignedUser').style.display = 'block';
+  }
 
   function onLoad () {
       alert(asset.assignedTo);  // asset.assignedTo
@@ -131,7 +135,7 @@ const AssetForm = ({
         <div id='editing'>
           <Alert variant='primary'>Update Asset</Alert>
         </div>
-      ), onLoad()}
+      )}
       <div id='submitted' className='hidden'>
         <Alert variant='success'>Data Submitted</Alert>
       </div>
