@@ -178,17 +178,17 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div id="assignedUser">
+        <div id='assignedUser'>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
               <Form.Control
-                  id="setAssignedTo"
+                  id='setAssignedTo'
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
                   onChange={onChange}
               >
-                  <option value="">-- Please select user to assign asset to --</option>
+                  <option value=''>-- Please select user to assign asset to --</option>
                   {usersList?.map((x) => (
                   <option key={x._id} value={x._id}>
                       {x.name}
