@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 
+const jsonObj = document.getElementById("usersHack").innerHTML;
+let usersList = JSON.parse(jsonObj);
+  
+usersList.sort(sortByProperty("name"));
+
+var div = document.createElement('div');
+div.setAttribute('class', 'assignedUser'); 
+document.body.appendChild(div);
+const assignedUser =  document.querySelector('.assignedUser');
+
+
 const AssetForm = ({
   create,
   categories,
@@ -35,10 +46,7 @@ const AssetForm = ({
         }
   );
 
-  var div = document.createElement('div');
-  div.setAttribute('class', 'assignedUser'); 
-  document.body.appendChild(div);
-  const assignedUser =  document.querySelector('.assignedUser');
+
 
   const onChange = (e) => {
 
@@ -108,10 +116,7 @@ const AssetForm = ({
     }  
  }
 
-  const jsonObj = document.getElementById("usersHack").innerHTML;
-  let usersList = JSON.parse(jsonObj);
   
-  usersList.sort(sortByProperty("name"));
 
   
 
