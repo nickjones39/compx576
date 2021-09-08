@@ -17,7 +17,7 @@ const AssetForm = ({
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
           location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
-          //assignedTo: assetToUpdate.assignedTo._id ?? '',  // default is not assigned
+          assignedTo: assetToUpdate.assignedTo._id ?? '61386d38268d951496513125', 
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
@@ -27,7 +27,7 @@ const AssetForm = ({
           name: '',
           category: '61171936a9e02900161fb08a', // hardcode a category id for assets with unassigned category
           location: '611718e8a9e02900161fb086', // hardcode a location id for assets with unassigned location 610f4ed1c40f480015e66f61
-          //assignedTo: '',                       // default is not assigned
+          assignedTo: '61386d38268d951496513125',  
           serialNumber: '',
           model: '',
           description: '',
@@ -183,7 +183,7 @@ const AssetForm = ({
         <div id='assignedUser'></div>
           <Form.Group>
               <Form.Label >Assigned to</Form.Label>
-              <Form.Select defaultValue='-- Please select user to assign asset to --'
+              <Form.Select 
                   id='setAssignedTo'
                   as='select'
                   name='assignedTo'
