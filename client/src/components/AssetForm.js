@@ -48,7 +48,7 @@ const AssetForm = ({
 
     if (asset.location === '611718f1a9e02900161fb087') {
   
-      alert("version 3.1: " + asset.assignedTo);
+      alert("version 3.3: " + asset.assignedTo);
       
       sel.disabled = false;
       sel.value = asset.assignedTo;
@@ -72,7 +72,7 @@ const AssetForm = ({
     }
 
 
-   }, 500);
+   }, 1000);
 
   //window.addEventListener('load', function () {
 
