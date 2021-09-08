@@ -38,17 +38,7 @@ const AssetForm = ({
   );
 
 
-  (function() {
-    // Load the script
-    var script = document.createElement("SCRIPT");
-    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
-    script.type = 'text/javascript';
-    script.onload = function() {
-        var $ = window.jQuery;
-        // Use $ here...
-    };
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
+  
 
 
 
@@ -64,16 +54,16 @@ const AssetForm = ({
       sel.disabled = false;
       sel.value = asset.assignedTo;
       sel.selectedIndex = asset.assignedTo;
-      $('#setAssignedTo').val(asset.assignedTo);
+      //$('#setAssignedTo').val(asset.assignedTo);
 
     //let sel = document.getElementById('setAssignedTo');
 
-    //for(var i = 0; i < sel.options.length; ++i) {
-    //  if(sel.options[i].value === asset.assignedTo) {
-    //     sel.selectedIndex = i;
-    //     break;
-    //  }
-    //}
+    for(var i = 0; i < sel.options.length; ++i) {
+      if(sel.options[i].value === asset.assignedTo) {
+         sel.selectedIndex = i;
+         break;
+      }
+    }
 
     } else {
       sel.disabled = true;
@@ -85,16 +75,22 @@ const AssetForm = ({
 
   const onChange = (e) => {
 
-    let assignedUser = document.getElementById('assignedUser')
+    let sel = document.getElementById('assignedUser')
 
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
         disableAssignedToSelect.disabled = false;
         document.getElementById('setAssignedTo').value = asset.assignedTo;
         //document.getElementById('setAssignedTo').selectedIndex == asset.assignedTo;
-        
-        
-        $('#setAssignedTo').val(asset.assignedTo);
+
+        //$('#setAssignedTo').val(asset.assignedTo);
+
+        for(var i = 0; i < sel.options.length; ++i) {
+          if(sel.options[i].value === asset.assignedTo) {
+             sel.selectedIndex = i;
+             break;
+          }
+        }
 
 
         //let sel = document.getElementById('setAssignedTo');
