@@ -39,6 +39,7 @@ const AssetForm = ({
 
   let disableAssignedToSelect = {};
   if (asset.location === '611718f1a9e02900161fb087') {
+    alert(asset.assignedTo.name);
     disableAssignedToSelect.disabled = false;
     disableAssignedToSelect.value = asset.assignedTo;
     disableAssignedToSelect.selectedIndex = asset.assignedTo;
@@ -200,6 +201,7 @@ const AssetForm = ({
               <Form.Control {...disableAssignedToSelect} 
                   as='select'
                   defaultValue={asset.assignedTo}
+                  value={asset.assignedTo}
                   name='assignedTo'
                   id="setAssignedTo"
                   onChange={onChange}
