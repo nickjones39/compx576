@@ -117,7 +117,7 @@ const AssetForm = ({
 
 
 
-  export const fetchFilteredUsers = async (dispatch) => {
+ const fetchFilteredUsers = async (dispatch) => {
     try {
       dispatch({ type: 'fetch-filtered-users-request', loading: true });
       const { data } = await axios.get('/api/users?search=');
@@ -125,7 +125,7 @@ const AssetForm = ({
 
 
 
-      document.getElementById("usersHack").innerHTML = JSON.stringify(data.data);
+      // document.getElementById("usersHack").innerHTML = JSON.stringify(data.data);
   
       const jsonObj = JSON.stringify(data.data);  // document.getElementById("usersHack").innerHTML;
       const usersList = JSON.parse(jsonObj);
