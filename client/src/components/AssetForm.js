@@ -200,6 +200,7 @@ const AssetForm = ({
               <Form.Label >Assigned to</Form.Label>
               <Form.Control {...disableAssignedToSelect} 
                   defaultValue='-- Please select user to assign asset to --'
+                  id="setAssignedTo"
                   as='select'
                   name='assignedTo'
                   value={asset.assignedTo}
