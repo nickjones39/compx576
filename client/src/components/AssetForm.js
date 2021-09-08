@@ -48,12 +48,12 @@ const AssetForm = ({
         document.getElementById('assignedUser').style.display = 'block';
       } else {
 
-        alert(assetToUpdate.assignedTo);
-        alert(assetToUpdate._id.assignedTo);
-        alert(asset.assignedTo._id);
-        alert(asset.assetToUpdate.assignedTo._id);
-        alert(assetToUpdate._id);
-        alert(asset._id);
+        //alert(assetToUpdate.assignedTo);
+        //alert(assetToUpdate._id.assignedTo);
+        //alert(asset.assignedTo._id);
+        //alert(asset.assetToUpdate.assignedTo._id);
+        //alert(assetToUpdate._id);
+        //alert(asset._id);
 
 
         document.getElementById('setAssignedTo').value = '';
