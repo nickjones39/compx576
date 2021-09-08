@@ -40,7 +40,7 @@ const AssetForm = ({
     //alert(e.target.value);
 
     if (e.target.value === "611718f1a9e02900161fb087") {
-      alert("On Lease Selected!");
+      //alert("On Lease Selected!");
       document.getElementById('assignedTo').style.visibility = 'visible';
       document.getElementById('assignedTo').style.display = 'block';
     } else {
