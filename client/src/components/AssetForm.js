@@ -205,6 +205,7 @@ const AssetForm = ({
                   name='assignedTo'
                   value={asset.assignedTo}
                   onChange={onChange}
+                  required
               >
                   
                   {usersList?.map((x) => (
