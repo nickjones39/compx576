@@ -16,7 +16,7 @@ let usersList = JSON.parse(jsonObj);
   
 usersList.sort(sortByProperty("name"));
 
-
+var assignedUser = '';
 
 const AssetForm = ({
   create,
