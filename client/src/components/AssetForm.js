@@ -146,7 +146,23 @@ const AssetForm = ({
         </Form.Group>
 
 
-        <div id="assignedUser"><AssignedTo /></div>
+        <div id="assignedUser">
+          <Form.Group>
+              <Form.Label>Assigned to</Form.Label>
+              <Form.Control
+                  as='select'
+                  name='assignedTo'
+                  value={asset.assignedTo}
+                  onChange={onChange}
+              >
+                  {usersList?.map((x) => (
+                  <option key={x._id} value={x._id}>
+                      {x.name}
+                  </option>
+                  ))}
+              </Form.Control>
+          </Form.Group>
+        </div>
 
 
         <Form.Group>
