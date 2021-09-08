@@ -69,7 +69,7 @@ const ManageUsers = ({
                 </tr>
               ) : (
                 users?.map((x, index) => {
-                  if(this.x._id != '61386d38268d951496513125') {
+                  if(x.name != '-- Please select user to assign asset to --') {
                     return (
                       <tr key={x._id ? x._id : 'tempkey'}>
                         <td>{index + 1}</td>
