@@ -45,12 +45,14 @@ const AssetForm = ({
       } else {
         
         
-        alert( document.getElementById('setAssignedTo').selected.value)
+        alert( document.getElementById('setAssignedTo').selectedIndex.value)
 
 
         document.getElementById('assignedUser').style.visibility = 'hidden';
         document.getElementById('assignedUser').style.display = 'none';
-        document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
+        
+        //document.getElementById('setAssignedTo').getElementsByTagName('option')[0].selected = true;
+
         //assetToUpdate.assignedTo._id = '';
         //alert( assetToUpdate.assignedTo._id)
       }
