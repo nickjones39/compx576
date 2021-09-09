@@ -49,10 +49,12 @@ const [asset, setAsset] = useState(
        return 0;  
     }  
   }
+
+  let usersList = {}
   
   try {
     let jsonObj = document.getElementById("usersHack").innerHTML; 
-    let usersList = JSON.parse(jsonObj);
+    usersList = JSON.parse(jsonObj);
     usersList.sort(sortByProperty("name"));
   } catch (e) {
     window.location.reload();
