@@ -57,7 +57,7 @@ const [asset, setAsset] = useState(
     usersList = JSON.parse(jsonObj);
     usersList.sort(sortByProperty("name"));
   } catch (e) {
-    window.location.reload();
+    window.location.reload(true);
   }
   
   
