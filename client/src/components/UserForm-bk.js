@@ -18,18 +18,12 @@ const UserForm = ({
     userToUpdate
       ? {
           name: userToUpdate.name,
-          address: userToUpdate.address,
-          phone: userToUpdate.phone,
           email: userToUpdate.email,
-          userId: userToUpdate.userId,
           admin: userToUpdate.admin ?? false,
         }
       : {
           name: '',
-          address: '',
-          phone: '',
           email: '',
-          userId: '',
           password: '',
           admin: false,
         }
@@ -48,9 +42,9 @@ const UserForm = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (create && user.password.length < 8) {
+    if (create && user.password.length < 6) {
       document.getElementById('error-message').textContent =
-        'Please enter a password of 8 chars or more';
+        'Please enter a password of 6 chars or more';
     } else if (create && (!user.email || !validateEmail(user.email))) {
       document.getElementById('error-message').textContent =
         'Please enter a valid email address for the user';
@@ -100,39 +94,6 @@ const UserForm = ({
             name='name'
             value={user.name}
             placeholder='User Name'
-            onChange={onChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Address</Form.Label>
-          <Form.Control
-            type='text'
-            name='address'
-            value={user.address}
-            placeholder='User Address'
-            onChange={onChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Phone</Form.Label>
-          <Form.Control
-            type='text'
-            name='phone'
-            value={user.phone}
-            placeholder='User Phone'
-            onChange={onChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>User Id</Form.Label>
-          <Form.Control
-            type='text'
-            name='userId'
-            value={user.userId}
-            placeholder='UserId'
             onChange={onChange}
             required
           />
