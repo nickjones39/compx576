@@ -50,9 +50,15 @@ const [asset, setAsset] = useState(
     }  
   }
   
-  let jsonObj = document.getElementById("usersHack").innerHTML; 
-  let usersList = JSON.parse(jsonObj);
-  usersList.sort(sortByProperty("name"));
+  try {
+    let jsonObj = document.getElementById("usersHack").innerHTML; 
+    let usersList = JSON.parse(jsonObj);
+    usersList.sort(sortByProperty("name"));
+  } catch (e) {
+    window.location.reload();
+  }
+  
+  
   
   const onChange = (e) => {
     if(e.target.name === "location") {
