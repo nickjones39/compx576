@@ -147,22 +147,30 @@ const App = () => {
                   />
                 </Jumbotron>
               </Tab>
-              <Tab eventKey='by-category' title='ByCategory'>
-                <ByCategory
-                  assets={state.assets}
-                  categories={state.categories}
-                  loading={state.loading}
-                  error={state.error}
-                />
-              </Tab>
-              <Tab eventKey='by-location' title='ByLocation'>
-                <ByLocation
-                  assets={state.assets}
-                  locations={state.locations}
-                  loading={state.loading}
-                  error={state.error}
-                />
-              </Tab>
+              
+              
+              {admin && (
+                <Tab eventKey='by-category' title='ByCategory'>
+                  <ByCategory
+                    assets={state.assets}
+                    categories={state.categories}
+                    loading={state.loading}
+                    error={state.error}
+                  />
+                </Tab>
+              )}
+
+              {admin && (
+                <Tab eventKey='by-location' title='ByLocation'>
+                  <ByLocation
+                    assets={state.assets}
+                    locations={state.locations}
+                    loading={state.loading}
+                    error={state.error}
+                  />
+                </Tab>
+              )}
+
             </Tabs>
           </Route>
 
