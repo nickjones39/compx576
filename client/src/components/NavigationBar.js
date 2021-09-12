@@ -21,7 +21,7 @@ const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
               <i className='fas fa-info-circle'></i> About
             </Nav.Link>
           </LinkContainer>
-          {token && (
+          {admin && (
             <NavDropdown title='Manage'>
               <LinkContainer to='/assets'>
                 <NavDropdown.Item>
