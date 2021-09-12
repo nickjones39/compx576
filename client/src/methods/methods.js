@@ -132,15 +132,8 @@ export const fetchFilteredUsers = async (dispatch, term) => {
     dispatch({ type: 'fetch-filtered-users-request', loading: true });
     const { data } = await axios.get(`/api/users?search=${term}`);
     console.log('in fetchFilteredUsers - data.data is:', data.data);
-
-
-    
-
+    /* added usersHack line below, to allow ability to get all users on create and edit asset form */
     document.getElementById("usersHack").innerHTML = JSON.stringify(data.data);
-
-
-
-
     dispatch({
       type: 'fetch-filtered-users-ok',
       filteredUsers: data.data,
