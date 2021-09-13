@@ -3,20 +3,21 @@ import { Table, Alert } from 'react-bootstrap';
 import Loading from './Loading';
 
 
-
 const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
   const onRefreshHandler = () => {
-    refreshAfterError(dispatch);   
+    refreshAfterError(dispatch);
   };
-
- 
-  window.location.href = "https://compx576.herokuapp.com/";
-  
 
   return (
     <div className='my-table'>
       {loading ? (
         <Loading />
+      ) : error ? (
+        <Alert variant='danger' className='refresh' onClick={onRefreshHandler}>
+          {error.message ? error.message : 'An Error Occured'} - Click to
+          refresh
+         
+        </Alert>
       ) : (
         <Table responsive>
           <thead>
