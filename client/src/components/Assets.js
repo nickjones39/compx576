@@ -35,9 +35,9 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
             ) : (
               assets.map((asset, index) => {
                 
-                let myUser = document.getElementById("userHack").innerHTML;
-                console.log("User ID: " + myUser);
-                console.log("Email : " + asset.assignedTo?.email);
+                //let myUser = document.getElementById("userHack").innerHTML;
+                //console.log("User ID: " + myUser);
+                //console.log("Email : " + asset.assignedTo?.email);
 
                 //if(asset.assignedTo?.email === myUser) {
                   return (
