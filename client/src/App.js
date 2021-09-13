@@ -59,7 +59,7 @@ import {
   deleteUser,
 } from './methods/methods';
 
-const App = () => {
+const App = ({admin}) => {
   const [state, dispatch] = useReducer(reducer, {
     assets: [],
     categories: [],

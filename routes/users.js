@@ -5,12 +5,12 @@ const usersController = require('../controllers/users');
 const adminonly = require('../middleware/adminonly');
 const authorize = require('../middleware/authorize');
 
-router.post('/', usersController.createUser);  // adminonly,
-router.post('/login', usersController.loginUser);
-router.get('/', usersController.readUsers); // adminonly, 
-router.get('/:id',  usersController.readUser); // adminonly,
-router.patch('/:id', usersController.updateUser); // adminonly,
-router.delete('/:id', usersController.deleteUser); // adminonly,
+router.post('/', adminonly, usersController.createUser);  // adminonly,
+router.post('/login', adminonly, usersController.loginUser);
+router.get('/', adminonly, usersController.readUsers); // adminonly, 
+router.get('/:id',  adminonly, usersController.readUser); // adminonly,
+router.patch('/:id', adminonly, usersController.updateUser); // adminonly,
+router.delete('/:id', adminonly, usersController.deleteUser); // adminonly,
 router.patch(
   '/changeownpassword/:id',
   authorize,
