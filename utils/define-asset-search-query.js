@@ -1,15 +1,17 @@
 var mongoose = require('mongoose');
 
 const defineSearchQuery = (req) => {
+  
+  /*
   try {
     var id = mongoose.Types.ObjectId(req.query.search);
 
     return req.query.search
     ? {
         $or: [
-          //{ name: { $regex: req.query.search, $options: 'i' } },
+          { name: { $regex: req.query.search, $options: 'i' } },
           //{ description: { $regex: req.query.search, $options: 'i' } },
-          { _id: { $eq: id } },
+          { userId: { $eq: id } },
         ],
       }
     : {};
@@ -18,13 +20,13 @@ const defineSearchQuery = (req) => {
   catch {
 
   }
-
+*/
   return req.query.search
     ? {
         $or: [
           { name: { $regex: req.query.search, $options: 'i' } },
           { description: { $regex: req.query.search, $options: 'i' } },
-          //{ _id: { $eq: req.query.search } },
+          { userId: { $eq: req.query.search } },
         ],
       }
     : {};
