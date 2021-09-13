@@ -49,6 +49,8 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                       <td>{asset.assignedTo?.name}</td>
                     </tr>
                   );
+                } else {
+                  return null
                 }
 
               })
