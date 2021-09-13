@@ -13,12 +13,6 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
     <div className='my-table'>
       {loading ? (
         <Loading />
-      ) : error ? (
-        <Alert variant='danger' className='refresh' onClick={onRefreshHandler}>
-          {error.message ? error.message : 'An Error Occured'} - Click to
-          refresh
-         
-        </Alert>
       ) : (
         <Table responsive>
           <thead>
