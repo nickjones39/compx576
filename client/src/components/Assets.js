@@ -31,7 +31,7 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
           <tbody>
             {assets?.length === 0 ? (
               <tr>
-                <td colSpan='5'>No Assets Found</td>
+                <td colSpan='5'>Please sign-in to view assets</td>
               </tr>
             ) : (
               assets.map((asset, index) => {
