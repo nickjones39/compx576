@@ -37,15 +37,19 @@ exports.readAssets = async (req, res, next) => {
       : allAssetsCount;
 
     //alert(searchQuery);
-    console.log(searchQuery);
+    //console.log(searchQuery);
 
 
     //db.parents.find(
     //  {'children.age': {$gte: 18}},
     //  {children:{$elemMatch:{age: {$gte: 18}}}})
 
-    const assets = await Asset.find().populate(populateQuery).find(searchQuery)
-    //assets = await Asset.find(searchQuery) //searchQuery
+    let assets = await Asset.find().populate(populateQuery)  //.find(searchQuery)
+    
+    console.log(assets);
+    console.log(searchQuery);
+
+    assets = await Asset.find(searchQuery) //searchQuery
       .skip(pagination.startIndex)
       .limit(pagination.limit)
       //.populate(populateQuery)
