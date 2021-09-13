@@ -22,18 +22,14 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
             <tr>
               <th>#</th>
               <th>Name</th>
-              <th>Category</th>
               <th>Location</th>
-              <th>Serial Number</th>
-              <th>Model</th>
-              <th>Description</th>
-              <th>Condition</th>
+              <th>User</th>
             </tr>
           </thead>
           <tbody>
             {assets?.length === 0 ? (
               <tr>
-                <td colSpan='8'>No Assets Found</td>
+                <td colSpan='4'>No Assets Found</td>
               </tr>
             ) : (
               assets.map((asset, index) => {
@@ -41,12 +37,8 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                   <tr key={asset._id}>
                     <td>{index + 1}</td>
                     <td>{asset.name}</td>
-                    <td>{asset.category?.name}</td>
                     <td>{asset.location?.name}</td>
-                    <td>{asset.serialNumber}</td>
-                    <td>{asset.model}</td>
-                    <td>{asset.description}</td>
-                    <td>{asset.condition}</td>
+                    <td>{asset.assignedTo?.name}</td>
                   </tr>
                 );
               })
