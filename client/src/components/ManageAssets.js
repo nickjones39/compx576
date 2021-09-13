@@ -69,7 +69,7 @@ const ManageAssets = ({
                     <tr key={asset._id ? asset._id : 'tempkey'}>
                       <td>{index + 1}</td>
                       <td>
-                        <Link to={`/asset/${asset._id}`}>
+                        <Link to={'/asset/${asset._id}'}>
                           <i className='far fa-edit'></i>
                         </Link>
                       </td>
