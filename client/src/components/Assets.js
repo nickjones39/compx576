@@ -33,16 +33,23 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                 <td colSpan='5'>No Assets Found</td>
               </tr>
             ) : (
-              assets.map((asset, index) => { 
-                return (
-                  <tr key={asset._id}>
-                    <td>{index + 1}</td>
-                    <td>{asset.name}</td>
-                    <td>{asset.category?.name}</td>
-                    <td>{asset.location?.name}</td>
-                    <td>{asset.assignedTo?._id}</td>
-                  </tr>
-                );
+              assets.map((asset, index) => {
+                
+                let myUser = document.getElementById("userHack").innerHTML;
+                console.log("User ID: " + myUser);
+
+                if(asset.assignedTo?._id == myUser) {
+                  return (
+                    <tr key={asset._id}>
+                      <td>{index + 1}</td>
+                      <td>{asset.name}</td>
+                      <td>{asset.category?.name}</td>
+                      <td>{asset.location?.name}</td>
+                      <td>{asset.assignedTo?._id}</td>
+                    </tr>
+                  );
+                }
+
               })
             )}
           </tbody>

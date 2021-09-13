@@ -26,6 +26,12 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
         <Alert variant='primary'>User Sign In</Alert>
       </div>
       <div id='submitted' className='hidden'>
+
+    
+        
+        { document.getElementById("userHack").innerHTML = user._id }
+     
+
         <Alert variant='success'>Logging {user.email} in ...</Alert>
       </div>
       <Form onSubmit={onSubmit}>
