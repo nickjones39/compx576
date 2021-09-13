@@ -140,14 +140,7 @@ const App = () => {
                   dispatch={dispatch}
                   refreshAfterError={refreshAfterError}
                 />
-                <Jumbotron>
-                  <PaginationButtons
-                    numberOfPages={state.numberOfPages}
-                    page={state.page}
-                    setPage={setPage}
-                    dispatch={dispatch}
-                  />
-                </Jumbotron>
+               
               </Tab>
               
               
@@ -190,6 +183,14 @@ const App = () => {
                   deleteAsset={deleteAsset}
                 />
 
+                <Jumbotron>
+                  <PaginationButtons
+                    numberOfPages={state.numberOfPages}
+                    page={state.page}
+                    setPage={setPage}
+                    dispatch={dispatch}
+                  />
+                </Jumbotron>
 
               </>
             ) : (

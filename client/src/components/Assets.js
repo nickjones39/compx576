@@ -17,7 +17,7 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
           refresh
         </Alert>
       ) : (
-        <Table>
+        <Table responsive>
           <thead>
             <tr>
               <th>#</th>
