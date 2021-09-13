@@ -39,6 +39,54 @@ exports.readAssets = async (req, res, next) => {
     //alert(searchQuery);
     console.log(searchQuery);
 
+
+    //db.parents.find(
+    //  {'children.age': {$gte: 18}},
+    //  {children:{$elemMatch:{age: {$gte: 18}}}})
+
+    const assets = await Asset.find({'assignedTo._id':'6104df0fa12f710015cf6df1'}) //searchQuery
+      .skip(pagination.startIndex)
+      .limit(pagination.limit)
+      .populate(populateQuery)
+      .sort('name');
+    res.status(200).json({
+      all: allAssetsCount,
+      filtered: filteredAssetsCount,
+      count: assets.length,
+      page: pagination.page,
+      limit: pagination.limit,
+      previous: pagination.previous,
+      next:
+        pagination.nextPageIndex < filteredAssetsCount ? pagination.next : null,
+      data: assets,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+
+
+exports.readMyAssets = async (req, res, next) => {
+  try {
+    const populateQuery = [
+      { path: 'category', select: ['name', 'description'] },
+      { path: 'location', select: ['name', 'description'] },
+      { path: 'assignedTo', select: ['name', 'userId' ]},
+    ];
+    const searchQuery = defineSearchQuery(req);
+    const pagination = calculatePaginationValues(req);
+    const allAssetsCount = await Asset.estimatedDocumentCount();
+    const filteredAssetsCount = searchQuery
+      ? (await Asset.find(searchQuery)).length
+      : allAssetsCount;
+
+    //alert(searchQuery);
+    console.log(searchQuery);
+
+   // 6104df0fa12f710015cf6df1
+
+
     const assets = await Asset.find(searchQuery)
       .skip(pagination.startIndex)
       .limit(pagination.limit)
