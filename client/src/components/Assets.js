@@ -37,8 +37,9 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                 
                 let myUser = document.getElementById("userHack").innerHTML;
                 console.log("User ID: " + myUser);
+                console.log("Email : " + asset.assignedTo?.email);
 
-                if(asset.assignedTo?.email == myUser) {
+                if(asset.assignedTo?.email === myUser) {
                   return (
                     <tr key={asset._id}>
                       <td>{index + 1}</td>
