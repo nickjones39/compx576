@@ -41,6 +41,8 @@ export const fetchAssets = async (dispatch) => {
   }
 };
 
+
+
 export const fetchFilteredAssets = async (dispatch, term, page) => {
   try {
     dispatch({ type: 'fetch-filtered-assets-request', loading: true });
@@ -62,6 +64,7 @@ export const fetchFilteredAssets = async (dispatch, term, page) => {
     dispatch({ type: 'fetch-filtered-assets-fail', loading: false, error });
   }
 };
+
 
 export const fetchCategories = async (dispatch) => {
   try {

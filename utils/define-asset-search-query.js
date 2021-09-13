@@ -7,6 +7,7 @@ const defineSearchQuery = (req) => {
           { "name": { $regex: req.query.search, $options: 'i' } },
           { "description": { $regex: req.query.search, $options: 'i' } },
           { "assignedTo._id": { $regex: ObjectId(req.query.search), $options: 'i'  } },
+          { "assignedTo.email": { $regex: req.query.search, $options: 'i' } },
         ],
       }
     : {};
