@@ -50,7 +50,7 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                     </tr>
                   );
                 } else {
-                  return null
+                  assets[asset].remove();
                 }
 
               })
