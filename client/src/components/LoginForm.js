@@ -29,7 +29,7 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
 
     
         
-        { document.getElementById("userHack").innerHTML = user._id }
+        { document.getElementById("userHack").innerHTML = user.email }
      
 
         <Alert variant='success'>Logging {user.email} in ...</Alert>

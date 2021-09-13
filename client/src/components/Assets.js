@@ -38,14 +38,14 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                 let myUser = document.getElementById("userHack").innerHTML;
                 console.log("User ID: " + myUser);
 
-                if(asset.assignedTo?._id == myUser) {
+                if(asset.assignedTo?.email == myUser) {
                   return (
                     <tr key={asset._id}>
                       <td>{index + 1}</td>
                       <td>{asset.name}</td>
                       <td>{asset.category?.name}</td>
                       <td>{asset.location?.name}</td>
-                      <td>{asset.assignedTo?._id}</td>
+                      <td>{asset.assignedTo?.name}</td>
                     </tr>
                   );
                 }

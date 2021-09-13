@@ -27,7 +27,7 @@ exports.readAssets = async (req, res, next) => {
     const populateQuery = [
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
-      { path: 'assignedTo', select: ['name', 'userId' ]},
+      { path: 'assignedTo', select: ['name', 'userId', 'email' ]},
     ];
     const searchQuery = defineSearchQuery(req);
     const pagination = calculatePaginationValues(req);
@@ -72,7 +72,7 @@ exports.readMyAssets = async (req, res, next) => {
     const populateQuery = [
       { path: 'category', select: ['name', 'description'] },
       { path: 'location', select: ['name', 'description'] },
-      { path: 'assignedTo', select: ['name', 'userId' ]},
+      { path: 'assignedTo', select: ['name', 'userId', 'email' ]},
     ];
     const searchQuery = defineSearchQuery(req);
     const pagination = calculatePaginationValues(req);
