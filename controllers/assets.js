@@ -2,7 +2,7 @@ const Asset = require('../models/asset');
 const Category = require('../models/category');
 const Location = require('../models/location');
 
-const defineSearchQuery = require('../utils/define-search-query');
+const defineSearchQuery = require('../utils/define-asset-search-query');  // updated from define-search-query 
 const calculatePaginationValues = require('../utils/calculate-pagination-values');
 
 exports.createAsset = async (req, res, next) => {
