@@ -2,16 +2,18 @@ import { Table, Alert } from 'react-bootstrap';
 
 import Loading from './Loading';
 
-let myUser = document.getElementById("userHack").innerHTML;
 
-if(myUser != "") {
-  window.location.href = "https://compx576.herokuapp.com/";
-}
 
 const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
   const onRefreshHandler = () => {
     refreshAfterError(dispatch);   
   };
+
+  let myUser = document.getElementById("userHack").innerHTML;
+
+  if(myUser != "") {
+    window.location.href = "https://compx576.herokuapp.com/";
+  }
 
   return (
     <div className='my-table'>
