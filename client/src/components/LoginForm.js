@@ -17,8 +17,8 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
     setTimeout(() => {
       loginUser(dispatch, user);
       history.push('/');
+      window.location.href = "https://compx576.herokuapp.com/";
     }, 1500);
-    //window.location.href = "https://compx576.herokuapp.com/";
   };
 
   return (
