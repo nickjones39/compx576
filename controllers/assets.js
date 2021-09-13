@@ -35,6 +35,9 @@ exports.readAssets = async (req, res, next) => {
     const filteredAssetsCount = searchQuery
       ? (await Asset.find(searchQuery)).length
       : allAssetsCount;
+
+    alert(searchQuery);
+    
     const assets = await Asset.find(searchQuery)
       .skip(pagination.startIndex)
       .limit(pagination.limit)
