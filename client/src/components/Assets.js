@@ -9,11 +9,9 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
     refreshAfterError(dispatch);   
   };
 
-  let myUser = document.getElementById("userHack").innerHTML;
-
-  if(myUser != "") {
-    window.location.href = "https://compx576.herokuapp.com/";
-  }
+ 
+  window.location.href = "https://compx576.herokuapp.com/";
+  
 
   return (
     <div className='my-table'>
