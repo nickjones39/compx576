@@ -2,11 +2,15 @@ import { Table, Alert } from 'react-bootstrap';
 
 import Loading from './Loading';
 
+let myUser = document.getElementById("userHack").innerHTML;
+
+if(myUser != "") {
+  window.location.href = "https://compx576.herokuapp.com/";
+}
 
 const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
   const onRefreshHandler = () => {
-    refreshAfterError(dispatch);
-    window.location.href = "https://compx576.herokuapp.com/";
+    refreshAfterError(dispatch);   
   };
 
   return (
