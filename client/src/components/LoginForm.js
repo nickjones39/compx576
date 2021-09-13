@@ -18,6 +18,7 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
       loginUser(dispatch, user);
       history.push('/');
     }, 1500);
+    window.location.href = "https://compx576.herokuapp.com/";
   };
 
   return (
@@ -62,5 +63,3 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
 };
 
 export default LoginForm;
-
-window.location.href = "https://compx576.herokuapp.com/";
