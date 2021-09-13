@@ -30,6 +30,8 @@ const ByLocation = ({ assets, locations, loading, error }) => {
                 ) : (
                   <Card.Body>
                     <Table responsive>
+
+
                       <thead>
                         <tr>
                           <th>#</th>
@@ -52,6 +54,10 @@ const ByLocation = ({ assets, locations, loading, error }) => {
                           );
                         })}
                       </tbody>
+
+                    
+
+                      
                     </Table>
                   </Card.Body>
                 )}
