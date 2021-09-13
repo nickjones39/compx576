@@ -36,6 +36,7 @@ const ByLocation = ({ assets, locations, loading, error }) => {
                           <th>Name</th>
                           <th>Description</th>
                           <th>Category</th>
+                          <th>Leasee</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -46,6 +47,7 @@ const ByLocation = ({ assets, locations, loading, error }) => {
                               <td>{asset.name}</td>
                               <td>{asset.description}</td>
                               <td>{asset.category?.name}</td>
+                              <td>{asset.assignedTo?.name}</td>
                             </tr>
                           );
                         })}
