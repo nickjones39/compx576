@@ -189,14 +189,8 @@ const App = () => {
                   changeSearchTerm={changeSearchTerm}
                   deleteAsset={deleteAsset}
                 />
-                <Jumbotron>
-                  <PaginationButtons
-                    numberOfPages={state.numberOfPages}
-                    page={state.page}
-                    setPage={setPage}
-                    dispatch={dispatch}
-                  />
-                </Jumbotron>
+
+
               </>
             ) : (
               <Alert variant='danger'>401 Not Authorized</Alert>
