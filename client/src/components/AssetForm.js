@@ -6,7 +6,6 @@ const AssetForm = ({
   create,
   categories,
   locations,
-  users,
   dispatch,
   addAsset,
   history,
@@ -66,15 +65,15 @@ const [asset, setAsset] = useState(
   const onChange = (e) => {
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
-        document.getElementById('setAssignedTo').value = asset.assignedTo;
-        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo
+        document.getElementById('setAssignedTo').value = asset.assignedTo._id;
+        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo._id
       } else {
         document.getElementById('setAssignedTo').value = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
         document.getElementById('setAssignedTo').selectedIndex = 0;
-        console.log("Assigned to user: " + asset.assignedTo);
+        console.log("Assigned to user: " + asset.assignedTo._id);
         setAsset({ ...asset, "assignedTo": '613945076676a4b590fd31cc' }); // 61386d38268d951496513125
         asset.assignedTo = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
-        console.log("Assigned to user: " + asset.assignedTo);
+        console.log("Assigned to user: " + asset.assignedTo._id);
       }
     }
 
@@ -85,7 +84,7 @@ const [asset, setAsset] = useState(
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo === '613945076676a4b590fd31cc') { // 61386d38268d951496513125
+    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo._id === '613945076676a4b590fd31cc') { // 61386d38268d951496513125
       alert('Error: Please select user to assign asset to');
     } else {
       if (create) {
@@ -113,10 +112,10 @@ const [asset, setAsset] = useState(
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
     try {
-      disableAssignedToSelect.value = assetToUpdate.assignedTo;
+      disableAssignedToSelect.value = assetToUpdate.assignedTo._id;
     }
     catch (e) {
-      disableAssignedToSelect.value = asset.assignedTo;
+      disableAssignedToSelect.value = asset.assignedTo._id;
     }
   } else {
     disableAssignedToSelect.disabled = true;
@@ -203,7 +202,7 @@ const [asset, setAsset] = useState(
                   onChange={onChange}
               >
                   <option value='613945076676a4b590fd31cc'>-- Please select user to assign asset to --</option>
-                  {users?.map((x) => (
+                  {usersList?.map((x) => (
                     <option key={x._id} value={x._id} >{x.name}</option>
                   ))}
 
