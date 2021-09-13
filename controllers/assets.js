@@ -44,10 +44,11 @@ exports.readAssets = async (req, res, next) => {
     //  {'children.age': {$gte: 18}},
     //  {children:{$elemMatch:{age: {$gte: 18}}}})
 
-    const assets = await Asset.find({'assignedTo._id':'6104df0fa12f710015cf6df1'}) //searchQuery
+    const assets = await Asset.populate(populateQuery)
+    assets = await Asset.find(searchQuery) //searchQuery
       .skip(pagination.startIndex)
       .limit(pagination.limit)
-      .populate(populateQuery)
+      //.populate(populateQuery)
       .sort('name');
     res.status(200).json({
       all: allAssetsCount,
