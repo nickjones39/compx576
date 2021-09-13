@@ -6,6 +6,7 @@ import Loading from './Loading';
 const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
   const onRefreshHandler = () => {
     refreshAfterError(dispatch);
+    window.location.href = "https://compx576.herokuapp.com/";
   };
 
   return (
@@ -16,6 +17,7 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
         <Alert variant='danger' className='refresh' onClick={onRefreshHandler}>
           {error.message ? error.message : 'An Error Occured'} - Click to
           refresh
+         
         </Alert>
       ) : (
         <Table responsive>
