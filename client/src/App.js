@@ -59,7 +59,7 @@ import {
   deleteUser,
 } from './methods/methods';
 
-const App = ({admin}) => {
+const App = () => {
   const [state, dispatch] = useReducer(reducer, {
     assets: [],
     categories: [],
@@ -149,7 +149,7 @@ const App = ({admin}) => {
               </Tab>
               
               
-              {admin && (
+              {state.admin && (
                 <Tab eventKey='by-category' title='ByCategory'>
                   <ByCategory
                     assets={state.assets}
@@ -160,7 +160,7 @@ const App = ({admin}) => {
                 </Tab>
               )}
 
-              {admin && (
+              {state.admin && (
                 <Tab eventKey='by-location' title='ByLocation'>
                   <ByLocation
                     assets={state.assets}
