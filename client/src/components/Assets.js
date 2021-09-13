@@ -40,7 +40,7 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                     <td>{asset.name}</td>
                     <td>{asset.category?.name}</td>
                     <td>{asset.location?.name}</td>
-                    <td>{asset.assignedTo?.name}</td>
+                    <td>{asset.assignedTo?._id}</td>
                   </tr>
                 );
               })
