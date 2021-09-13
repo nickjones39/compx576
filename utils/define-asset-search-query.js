@@ -3,8 +3,7 @@ const defineSearchQuery = (req) => {
     ? {
         $or: [
           { name: { $regex: req.query.search, $options: 'i' } },
-          { description: { $regex: req.query.search, $options: 'i' } },
-          { _id: { $regex: req.query.search } },
+          { _id: { $regex: req.query.search, $options: 'i' } },
         ],
       }
     : {};
