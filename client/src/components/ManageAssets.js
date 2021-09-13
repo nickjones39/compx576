@@ -54,6 +54,9 @@ const ManageAssets = ({
                 <th>#</th>
                 <th></th>
                 <th>Asset</th>
+                <th>Location</th>
+                <th>Serial Number</th>
+                <th>Leasee</th>
                 <th>Description</th>
                 <th></th>
               </tr>
@@ -61,7 +64,7 @@ const ManageAssets = ({
             <tbody>
               {assets?.length === 0 ? (
                 <tr>
-                  <td colSpan='5'>No Assets Found</td>
+                  <td colSpan='8'>No Assets Found</td>
                 </tr>
               ) : (
                 assets?.map((asset, index) => {
@@ -74,6 +77,9 @@ const ManageAssets = ({
                         </Link>
                       </td>
                       <td>{asset.name}</td>
+                      <td>{asset.location?.name}</td>
+                      <td>{asset.serialNumber}</td>
+                      <td>{asset.assignedTo?.name}</td>
                       <td>{asset.description}</td>
                       <td>
                         <i

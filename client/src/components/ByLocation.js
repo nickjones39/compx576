@@ -49,9 +49,9 @@ const ByLocation = ({ assets, locations, loading, error }) => {
                             <tr key={asset._id}>
                               <td>{index + 1}</td>
                               <td>
-                                <Link to={'/asset/${asset._id}'}>
-                                  <i className='far fa-edit'></i>
-                                </Link>
+                              <Link to={`/asset/${asset._id}`}>
+                                <i className='far fa-edit'></i>
+                              </Link>
                               </td>
                               <td>{asset.name}</td>
                               <td>{asset.description}</td>
