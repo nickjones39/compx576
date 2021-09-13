@@ -6,6 +6,7 @@ const AssetForm = ({
   create,
   categories,
   locations,
+  users,
   dispatch,
   addAsset,
   history,
@@ -202,7 +203,7 @@ const [asset, setAsset] = useState(
                   onChange={onChange}
               >
                   <option value='613945076676a4b590fd31cc'>-- Please select user to assign asset to --</option>
-                  {assignedTo?.map((x) => (
+                  {users?.map((x) => (
                     <option key={x._id} value={x._id} >{x.name}</option>
                   ))}
 
