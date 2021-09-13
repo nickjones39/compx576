@@ -6,7 +6,7 @@ const authorize = require('../middleware/authorize');
 
 router.post('/', authorize, assetsController.createAsset);
 
-router.get('/', assetsController.readAssets);
+router.get('/', authorize, assetsController.readAssets);
 
 router.get('/:id', assetsController.readAsset);
 
