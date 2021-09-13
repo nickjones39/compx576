@@ -54,6 +54,8 @@ const ManageAssets = ({
                 <th>#</th>
                 <th></th>
                 <th>Asset</th>
+                <th>location</th>
+                <th>Serial Number</th>
                 <th>Description</th>
                 <th></th>
               </tr>
@@ -74,6 +76,8 @@ const ManageAssets = ({
                         </Link>
                       </td>
                       <td>{asset.name}</td>
+                      <td>{asset.location?.name}</td>
+                      <td>{asset.serialNumber}</td>
                       <td>{asset.description}</td>
                       <td>
                         <i
