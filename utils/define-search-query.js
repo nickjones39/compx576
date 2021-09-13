@@ -4,7 +4,7 @@ const defineSearchQuery = (req) => {
         $or: [
           { name: { $regex: req.query.search, $options: 'i' } },
           { description: { $regex: req.query.search, $options: 'i' } },
-          { assignedTo: { $regex: req.query.search } },
+          //{ assignedTo: { $regex: req.query.search, $options: 'i' } },
         ],
       }
     : {};
