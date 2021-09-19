@@ -21,7 +21,7 @@ const [asset, setAsset] = useState(
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
           location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
-          assignedTo: assetToUpdate.assignedTo._id ?? '613945076676a4b590fd31cc', // ?? '61386d38268d951496513125',  
+          assignedTo: assetToUpdate.assignedTo ?? '613945076676a4b590fd31cc', // ?? '61386d38268d951496513125',  
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
@@ -65,15 +65,15 @@ const [asset, setAsset] = useState(
   const onChange = (e) => {
     if(e.target.name === "location") {
       if (e.target.value === "611718f1a9e02900161fb087") {
-        document.getElementById('setAssignedTo').value = asset.assignedTo._id;
-        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo._id
+        document.getElementById('setAssignedTo').value = asset.assignedTo;
+        document.getElementById("setAssignedTo").selectedIndex = asset.assignedTo
       } else {
         document.getElementById('setAssignedTo').value = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
         document.getElementById('setAssignedTo').selectedIndex = 0;
-        console.log("Assigned to user: " + asset.assignedTo._id);
+        console.log("Assigned to user: " + asset.assignedTo);
         setAsset({ ...asset, "assignedTo": '613945076676a4b590fd31cc' }); // 61386d38268d951496513125
         asset.assignedTo = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
-        console.log("Assigned to user: " + asset.assignedTo._id);
+        console.log("Assigned to user: " + asset.assignedTo);
       }
     }
 
@@ -84,7 +84,7 @@ const [asset, setAsset] = useState(
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo._id === '613945076676a4b590fd31cc') { // 61386d38268d951496513125
+    if (asset.location === '611718f1a9e02900161fb087' && asset.assignedTo === '613945076676a4b590fd31cc') { // 61386d38268d951496513125
       alert('Error: Please select user to assign asset to');
     } else {
       if (create) {
@@ -112,10 +112,10 @@ const [asset, setAsset] = useState(
   if (asset.location === '611718f1a9e02900161fb087') {
     disableAssignedToSelect.disabled = false;
     try {
-      disableAssignedToSelect.value = assetToUpdate.assignedTo._id;
+      disableAssignedToSelect.value = assetToUpdate.assignedTo;
     }
     catch (e) {
-      disableAssignedToSelect.value = asset.assignedTo._id;
+      disableAssignedToSelect.value = asset.assignedTo;
     }
   } else {
     disableAssignedToSelect.disabled = true;
