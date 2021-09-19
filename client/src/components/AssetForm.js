@@ -21,7 +21,7 @@ const [asset, setAsset] = useState(
           name: assetToUpdate.name,
           category: assetToUpdate.category._id ?? '61171936a9e02900161fb08a',
           location: assetToUpdate.location._id ?? '611718e8a9e02900161fb086', // 610f4ed1c40f480015e66f61
-          assignedTo: assetToUpdate.assignedTo._id ?? '613945076676a4b590fd31cc', // ?? '61386d38268d951496513125',  
+          assignedTo: assetToUpdate.assignedTo ?? '613945076676a4b590fd31cc', // ?? '61386d38268d951496513125',  
           serialNumber: assetToUpdate.serialNumber,
           model: assetToUpdate.model,
           description: assetToUpdate.description,
