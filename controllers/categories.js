@@ -11,7 +11,7 @@ exports.createCategory = async (req, res, next) => {
     next(err);
   }
 };
-
+//
 exports.readCategories = async (req, res, next) => {
   try {
     const searchQuery = defineSearchQuery(req);

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Alert, Table, Jumbotron, Button } from 'react-bootstrap';
-
+//
 import Loading from './Loading';
 import Search from './Search';
 

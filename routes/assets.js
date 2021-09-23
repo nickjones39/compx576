@@ -15,3 +15,4 @@ router.patch('/:id', authorize, assetsController.updateAsset);
 router.delete('/:id', authorize, assetsController.deleteAsset);
 
 module.exports = router;
+//

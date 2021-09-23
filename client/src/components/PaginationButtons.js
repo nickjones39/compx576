@@ -1,5 +1,5 @@
 import { Pagination } from 'react-bootstrap';
-
+//
 const PaginationButtons = ({ numberOfPages, page, setPage, dispatch }) => {
   const buttons = [];
   for (let i = 0; i < numberOfPages; i++) {

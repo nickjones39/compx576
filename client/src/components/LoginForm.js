@@ -19,7 +19,7 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
       history.push('/');
     }, 1500);
   };
-
+//
   return (
     <>
       <div id='editing'>

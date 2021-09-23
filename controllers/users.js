@@ -21,7 +21,7 @@ exports.createUser = async (req, res, next) => {
         .status(400)
         .json({ error: 'Please enter a valid email for the user' });
     }
-
+//
     const emailExists = await User.findOne({ email: req.body.email });
 
     if (emailExists) {

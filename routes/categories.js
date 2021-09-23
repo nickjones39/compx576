@@ -15,3 +15,4 @@ router.patch('/:id', authorize, categoriesController.updateCategory);
 router.delete('/:id', authorize, categoriesController.deleteCategory);
 
 module.exports = router;
+//

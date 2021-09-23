@@ -71,7 +71,7 @@ const [asset, setAsset] = useState(
         document.getElementById('setAssignedTo').value = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
         document.getElementById('setAssignedTo').selectedIndex = 0;
         console.log("Assigned to user: " + asset.assignedTo);
-        setAsset({ ...asset, "assignedTo": '613945076676a4b590fd31cc' }); // 61386d38268d951496513125
+        setAsset({ ...asset, "assignedTo": '613945076676a4b590fd31cc' }); // 61386d38268d951496513125 //
         asset.assignedTo = '613945076676a4b590fd31cc'; // 61386d38268d951496513125
         console.log("Assigned to user: " + asset.assignedTo);
       }
