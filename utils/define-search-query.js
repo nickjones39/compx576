@@ -9,5 +9,5 @@ const defineSearchQuery = (req) => {
       }
     : {};
 };
-//
+
 module.exports = defineSearchQuery;

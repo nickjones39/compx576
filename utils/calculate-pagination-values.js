@@ -12,5 +12,5 @@ const calculatePaginationValues = (req) => {
   pagination.limit = limit || 0;
   return pagination;
 };
-//
+
 module.exports = calculatePaginationValues;
