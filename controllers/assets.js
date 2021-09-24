@@ -39,7 +39,7 @@ exports.readAssets = async (req, res, next) => {
     //alert(searchQuery);
     console.log(searchQuery);
 
-//
+
     //db.parents.find(
     //  {'children.age': {$gte: 18}},
     //  {children:{$elemMatch:{age: {$gte: 18}}}})

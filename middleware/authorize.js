@@ -18,5 +18,5 @@ const authorize = async (req, res, next) => {
     res.status(401).json({ error: 'Authorization denied' });
   }
 };
-//
+
 module.exports = authorize;

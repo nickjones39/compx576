@@ -15,4 +15,3 @@ router.patch('/:id', authorize, locationsController.updateLocation);
 router.delete('/:id', authorize, locationsController.deleteLocation);
 
 module.exports = router;
-//

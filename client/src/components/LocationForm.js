@@ -20,7 +20,7 @@ const LocationForm = ({
           description: '',
         }
   );
-//
+
   const onChange = (e) => {
     document.getElementById('editing').classList.remove('hidden');
     document.getElementById('submitted').classList.add('hidden');

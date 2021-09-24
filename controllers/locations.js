@@ -11,7 +11,7 @@ exports.createLocation = async (req, res, next) => {
     next(err);
   }
 };
-//
+
 exports.readLocations = async (req, res, next) => {
   try {
     const searchQuery = defineSearchQuery(req);

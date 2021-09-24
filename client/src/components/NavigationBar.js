@@ -1,6 +1,6 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-//
+
 const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
   const onLogoutHandler = () => {
     if (window.confirm('Confirm User Sign Out')) {

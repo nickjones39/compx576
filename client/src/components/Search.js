@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, InputGroup, Jumbotron, Button } from 'react-bootstrap';
-//
+
 const Search = ({ searchTerm, dispatch, changeSearchTerm }) => {
   const [search, setSearch] = useState({ term: searchTerm });
 

@@ -1,5 +1,5 @@
 import { Alert, Accordion, Card, Button, Table } from 'react-bootstrap';
-//
+
 import Loading from './Loading';
 
 const assetsByCat = (assets, cat) => {

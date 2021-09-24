@@ -14,5 +14,5 @@ const connect = async (dbConnectionString) => {
     console.log('Error on db connection - Code:', error.code);
   }
 };
-//
+
 module.exports = connect;
