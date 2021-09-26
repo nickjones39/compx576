@@ -136,6 +136,7 @@ const App = () => {
                 <Assets
                   assets={state.filteredAssets}
                   loading={state.loading}
+                  admin={state.admin}
                   error={state.error}
                   dispatch={dispatch}
                   refreshAfterError={refreshAfterError}
