@@ -48,8 +48,8 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                       <td>{asset.name}</td>
                       <td>{asset.category?.name}</td>
                       <td>{asset.location?.name}</td>
-                      {asset.assignedTo?.name.length === 0 ? (
-                          <td>Noone</td>
+                      {asset.location?.name === "In Stock" ? (
+                          <td>Request Asset</td>
                         ) : (
                           <td>{asset.assignedTo?.name}</td>
                         )
