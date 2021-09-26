@@ -1,4 +1,4 @@
-import { Table, Alert } from 'react-bootstrap';
+import { Table, Alert, Button } from 'react-bootstrap';
 
 import Loading from './Loading';
 
@@ -47,16 +47,18 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
                 // : (
                 //  <td>{asset.assignedTo?.name}</td>
                 //)
-                
+
                   return (
                     <tr key={asset._id}>
                       <td>{index + 1}</td>
                       <td>{asset.name}</td>
                       <td>{asset.category?.name}</td>
                       <td>{asset.location?.name}</td>
-                      {admin && (
+                      {admin && asset.location?.name === "In Stock" ? (
                           <td><Button as='input' type='submit' value='Request Asset' /></td>
-                        ) 
+                        ) : (
+                          <td>{asset.assignedTo?.name}</td>
+                        )
                       }
                     </tr>
                   );
