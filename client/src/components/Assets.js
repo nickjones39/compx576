@@ -42,17 +42,21 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
                 //console.log("Email : " + asset.assignedTo?.email);
 
                 //if(asset.assignedTo?.email === myUser) {
+
+                // asset.location?.name === "In Stock"
+                // : (
+                //  <td>{asset.assignedTo?.name}</td>
+                //)
+                
                   return (
                     <tr key={asset._id}>
                       <td>{index + 1}</td>
                       <td>{asset.name}</td>
                       <td>{asset.category?.name}</td>
                       <td>{asset.location?.name}</td>
-                      {admin && asset.location?.name === "In Stock" ? (
+                      {admin && (
                           <td><Button as='input' type='submit' value='Request Asset' /></td>
-                        ) : (
-                          <td>{asset.assignedTo?.name}</td>
-                        )
+                        ) 
                       }
                     </tr>
                   );
