@@ -3,7 +3,7 @@ import { Table, Alert } from 'react-bootstrap';
 import Loading from './Loading';
 
 
-const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
+const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) => {
   const onRefreshHandler = () => {
     refreshAfterError(dispatch);
   };
@@ -48,7 +48,7 @@ const Assets = ({ dispatch, assets, loading, error, refreshAfterError }) => {
                       <td>{asset.name}</td>
                       <td>{asset.category?.name}</td>
                       <td>{asset.location?.name}</td>
-                      {asset.location?.name === "In Stock" ? (
+                      {asset.location?.name === "In Stock" && !admin ? (
                           <td>Request Asset</td>
                         ) : (
                           <td>{asset.assignedTo?.name}</td>
