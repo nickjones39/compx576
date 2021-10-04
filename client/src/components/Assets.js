@@ -6,7 +6,7 @@ import Loading from './Loading';
 const onClick= (e) => {
   e.preventDefault();
   // send email
-  alert("Requesting Asset...");
+  alert(asset._id + "Requesting Asset...");
 };
 
 const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) => {
