@@ -3,10 +3,10 @@ import { Table, Alert, Button } from 'react-bootstrap';
 import Loading from './Loading';
 
 
-const onClick= (e) => {
+const onClick= (e, assetID) => {
   e.preventDefault();
   // send email
-  alert(asset._id + "Requesting Asset...");
+  alert(assetID + "Requesting Asset...");
 };
 
 const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) => {
@@ -61,7 +61,7 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
                       <td>{asset.category?.name}</td>
                       <td>{asset.location?.name}</td>
                       {!admin && asset.location?.name === "In Stock" ? (
-                          <td><Button as='input' type='submit' value='Request Asset' onClick={onClick} /></td>
+                          <td><Button as='input' type='submit' value='Request Asset' onClick={onClick(e, asset._id)} /></td>
                         ) : (
                           <td>{asset.assignedTo?.name}</td>
                         )
