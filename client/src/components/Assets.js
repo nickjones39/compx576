@@ -6,7 +6,7 @@ import Loading from './Loading';
 const onClick= (e) => {
   e.preventDefault();
   // send email, this has not been implemented
-  alert(assetID + "Request for Asset has been sent");
+  alert("Request for Asset has been sent");
 };
 
 const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) => {
