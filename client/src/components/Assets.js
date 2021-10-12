@@ -29,7 +29,7 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
     refreshAfterError(dispatch);
   };
 
-  refreshAfterError(dispatch);
+  //refreshAfterError(dispatch);
 
   return (
     <div className='my-table'>
