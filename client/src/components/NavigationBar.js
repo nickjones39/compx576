@@ -5,12 +5,12 @@ const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
   const onLogoutHandler = () => {
     if (window.confirm('Confirm User Sign Out')) {
       
-      //logoutUser(dispatch);
-
-      setTimeout(() => {
-        logoutUser(dispatch);
-        history.push('/');
-      }, 150);
+      logoutUser(dispatch);
+      history.pushState('/');
+      //setTimeout(() => {
+      //  logoutUser(dispatch);
+      //  history.push('/');
+      //}, 150);
       
     }
   };
