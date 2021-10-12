@@ -18,6 +18,14 @@ const onClick= (e) => {
          
         </Alert>
       )
+
+
+
+      assets?.length === 0 ? (
+              <tr>
+                <td colSpan='5'>Please sign-in to view assets</td>
+              </tr>
+            ) :
 */
 
 const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) => {
@@ -41,11 +49,7 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
             </tr>
           </thead>
           <tbody>
-            {assets?.length === 0 ? (
-              <tr>
-                <td colSpan='5'>Please sign-in to view assets</td>
-              </tr>
-            ) : (
+            { (
               assets.map((asset, index) => {
                 
                 //let myUser = document.getElementById("userHack").innerHTML;
