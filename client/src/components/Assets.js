@@ -32,6 +32,8 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
   const onRefreshHandler = () => {
     refreshAfterError(dispatch);
   };
+  
+  refreshAfterError(dispatch);
 
   return (
     <div className='my-table'>
