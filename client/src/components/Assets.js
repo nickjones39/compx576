@@ -9,6 +9,17 @@ const onClick= (e) => {
   alert("Request for Asset has been sent");
 };
 
+/*
+
+: error ? (
+        <Alert variant='danger' className='refresh' onClick={onRefreshHandler}>
+          {error.message ? error.message : 'An Error Occured'} - Click to
+          refresh
+         
+        </Alert>
+      )
+*/
+
 const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) => {
   const onRefreshHandler = () => {
     refreshAfterError(dispatch);
@@ -18,13 +29,7 @@ const Assets = ({ dispatch, assets, loading, admin, error, refreshAfterError }) 
     <div className='my-table'>
       {loading ? (
         <Loading />
-      ) : error ? (
-        <Alert variant='danger' className='refresh' onClick={onRefreshHandler}>
-          {error.message ? error.message : 'An Error Occured'} - Click to
-          refresh
-         
-        </Alert>
-      ) : (
+      )  : (
         <Table responsive>
           <thead>
             <tr>
