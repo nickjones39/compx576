@@ -17,7 +17,7 @@ const LoginForm = ({ dispatch, history, loginUser }) => {
     setTimeout(() => {
       loginUser(dispatch, user);
       history.push('/');
-    }, 1500);
+    }, 150);
   };
 
   return (
