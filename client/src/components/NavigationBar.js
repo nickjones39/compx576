@@ -4,7 +4,14 @@ import { LinkContainer } from 'react-router-bootstrap';
 const NavigationBar = ({ token, username, admin, dispatch, logoutUser }) => {
   const onLogoutHandler = () => {
     if (window.confirm('Confirm User Sign Out')) {
-      logoutUser(dispatch);
+      
+      //logoutUser(dispatch);
+
+      setTimeout(() => {
+        logoutUser(dispatch);
+        history.push('/');
+      }, 150);
+      
     }
   };
 
